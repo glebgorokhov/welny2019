@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Welny | Выбор времени</title>
+    <title>Welny | Выбор подписки</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
     <link href="favicon.ico" rel="shortcut icon">
@@ -44,7 +44,7 @@
                         </div>
                         <p class="steps__text">Массаж</p>
                     </li>
-                    <li class="steps__item is-active">
+                    <li class="steps__item">
                         <div class="steps__number-wrap">
                             <p class="steps__number">2</p>
                         </div>
@@ -68,23 +68,43 @@
         <div class="container">
             <div class="section">
                 <div class="section__header">
-                    <h1 class="section__title">Выберите время</h1>
+                    <h1 class="section__title">Любите массаж?</h1>
+                    <p class="section__subtitle">Оформите подписку Welny+ и экономьте до 20%!</p>
                 </div>
                 <div class="section__content">
-                    <div class="grid">
-                        <div class="grid__col grid__col_xl_6 grid__col_lg_12">
-                            <div class="inputbox">
-                                <p class="inputbox__label">Дата</p><input class="input" type="date" name="date" />
-                            </div>
-                        </div>
-                        <div class="grid__col grid__col_xl_6 grid__col_lg_12">
-                            <div class="inputbox">
-                                <p class="inputbox__label">Время</p><select class="select js-select" name="time">
-                                    <option value="15:00">15:00</option>
-                                    <option value="18:00">18:00</option>
-                                </select>
-                            </div>
-                        </div>
+                    <div class="subscriptions">
+                        <div class="subscriptions__top"><label class="subscriptions__item"><input class="subscriptions__input" type="radio" name="type" value="Welny+ Gold" /><span class="subscriptions__box"><span class="subscriptions__header"><span class="subscriptions__circle"></span>
+                                        <p class="subscriptions__title">Welny+ Gold</p>
+                                    </span><span class="subscriptions__list"><span class="subscriptions__list-item"><span class="subscriptions__image"><img src="assets/images/icon_1.svg" alt="@" /></span>
+                                            <p class="subscriptions__list-title">Стоимость подписки</p>
+                                            <p class="subscriptions__list-value">999 Р</p>
+                                        </span><span class="subscriptions__list-item"><span class="subscriptions__image"><img src="assets/images/icon_2.svg" alt="@" /></span>
+                                            <p class="subscriptions__list-title">Массажа со скидкой</p>
+                                            <p class="subscriptions__list-value">5 часов</p>
+                                        </span><span class="subscriptions__list-item"><span class="subscriptions__image"><img src="assets/images/icon_3.svg" alt="@" /></span>
+                                            <p class="subscriptions__list-title">Скидка на каждый час</p>
+                                            <p class="subscriptions__list-value">400 Р</p>
+                                        </span><span class="subscriptions__list-item"><span class="subscriptions__image"><img src="assets/images/icon_4.svg" alt="@" /></span>
+                                            <p class="subscriptions__list-title">Срок действия</p>
+                                            <p class="subscriptions__list-value">1 мес</p>
+                                        </span></span></span></label><label class="subscriptions__item"><input class="subscriptions__input" type="radio" name="type" value="Welny+ Platinum" /><span class="subscriptions__box"><span class="subscriptions__header"><span class="subscriptions__circle"></span>
+                                        <p class="subscriptions__title">Welny+ Platinum</p>
+                                    </span><span class="subscriptions__list"><span class="subscriptions__list-item"><span class="subscriptions__image"><img src="assets/images/icon_1.svg" alt="@" /></span>
+                                            <p class="subscriptions__list-title">Стоимость подписки</p>
+                                            <p class="subscriptions__list-value">2999 Р</p>
+                                        </span><span class="subscriptions__list-item"><span class="subscriptions__image"><img src="assets/images/icon_2.svg" alt="@" /></span>
+                                            <p class="subscriptions__list-title">Массажа со скидкой</p>
+                                            <p class="subscriptions__list-value">5 часов</p>
+                                        </span><span class="subscriptions__list-item"><span class="subscriptions__image"><img src="assets/images/icon_3.svg" alt="@" /></span>
+                                            <p class="subscriptions__list-title">Скидка на каждый час</p>
+                                            <p class="subscriptions__list-value">500 Р</p>
+                                        </span><span class="subscriptions__list-item"><span class="subscriptions__image"><img src="assets/images/icon_4.svg" alt="@" /></span>
+                                            <p class="subscriptions__list-title">Срок действия</p>
+                                            <p class="subscriptions__list-value">3 мес</p>
+                                        </span></span></span></label></div>
+                        <div class="subscriptions__bottom"><label class="subscriptions__simple"><input class="subscriptions__input" type="radio" name="type" value="Заказать без скидки" /><span class="subscriptions__simple-box"><span class="subscriptions__simple-circle"></span>
+                                    <p class="subscriptions__simple-text">Заказать без скидки</p>
+                                </span></label></div>
                     </div>
                 </div>
                 <div class="section__buttons"><a class="button section__button" href="#">Продолжить</a><a class="section__arrow-link" href="#">
