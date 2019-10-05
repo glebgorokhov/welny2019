@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Welny | Параметры сеанса</title>
+    <title>Welny | Выбор адреса</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
     <link href="favicon.ico" rel="shortcut icon">
@@ -68,45 +68,19 @@
         <div class="container">
             <div class="section">
                 <div class="section__header">
-                    <h1 class="section__title">Параметры сеанса</h1>
+                    <h1 class="section__title">Укажите адрес</h1>
+                    <p class="section__subtitle">Выберите из сохраненных адресов или укажите новый.</p>
                 </div>
                 <div class="section__content">
-                    <div class="details">
-                        <div class="details__section">
-                            <div class="details__content">
-                                <div class="details__left">
-                                    <div class="massage-card">
-                                        <div class="massage-card__image"><img src="assets/images/types/1.jpg" alt="Классический SPA WELNY" /></div>
-                                        <p class="massage-card__text">Классический SPA WELNY</p>
-                                    </div>
-                                </div>
-                                <div class="details__right">
-                                    <div class="details__subsection">
-                                        <div class="details__subtitle">Специалист</div>
-                                        <div class="details__items"><label class="details__item"><input class="details__input" type="radio" name="55646" value="Женщина" checked="checked" /><span class="details__box"><span class="details__image"><img src="assets/images/radios/1.svg" alt="Женщина" /><img src="assets/images/radios/1-1.svg" alt="Женщина" /></span>
-                                                    <p class="details__text">Женщина</p>
-                                                </span></label><label class="details__item"><input class="details__input" type="radio" name="55646" value="Любой" /><span class="details__box"><span class="details__image"><img src="assets/images/radios/2.svg" alt="Любой" /><img src="assets/images/radios/2-1.svg" alt="Любой" /></span>
-                                                    <p class="details__text">Любой</p>
-                                                </span></label><label class="details__item"><input class="details__input" type="radio" name="55646" value="Мужчина" /><span class="details__box"><span class="details__image"><img src="assets/images/radios/3.svg" alt="Мужчина" /><img src="assets/images/radios/3-1.svg" alt="Мужчина" /></span>
-                                                    <p class="details__text">Мужчина</p>
-                                                </span></label></div>
-                                    </div>
-                                    <div class="details__subsection">
-                                        <div class="details__subtitle">Массажный стол</div>
-                                        <div class="details__items"><label class="details__item"><input class="details__input" type="radio" name="86867" value="Взять с собой" checked="checked" /><span class="details__box"><span class="details__image"><img src="assets/images/radios/4.svg" alt="Взять с собой" /><img src="assets/images/radios/4-1.svg" alt="Взять с собой" /></span>
-                                                    <p class="details__text">Взять с собой</p>
-                                                </span></label><label class="details__item"><input class="details__input" type="radio" name="86867" value="Есть на месте" /><span class="details__box"><span class="details__image"><img src="assets/images/radios/5.svg" alt="Есть на месте" /><img src="assets/images/radios/5-1.svg" alt="Есть на месте" /></span>
-                                                    <p class="details__text">Есть на месте</p>
-                                                </span></label></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="details__comment">
-                            <div class="inputbox">
-                                <p class="inputbox__label">Пожелания</p><textarea class="textarea" name="comments"></textarea>
-                            </div>
-                        </div>
+                    <div class="addresses">
+                        <div class="addresses__items"><label class="addresses__item"><span class="addresses__wrapper"><input class="addresses__input" name="address" type="radio" value="Фрунзенская набережная, 46" checked="checked" /><span class="addresses__box">
+                                        <p class="addresses__text">Фрунзенская набережная, 46</p><span class="addresses__links"><a class="addresses__link" href="#">Изменить</a><a class="addresses__link" href="#">Удалить</a></span>
+                                    </span><span class="addresses__circle"></span></span></label><label class="addresses__item"><span class="addresses__wrapper"><input class="addresses__input" name="address" type="radio" value="проспект Лихачёва, 15" /><span class="addresses__box">
+                                        <p class="addresses__text">проспект Лихачёва, 15</p><span class="addresses__links"><a class="addresses__link" href="#">Изменить</a><a class="addresses__link" href="#">Удалить</a></span>
+                                    </span><span class="addresses__circle"></span></span></label><label class="addresses__item"><span class="addresses__wrapper"><input class="addresses__input" name="address" type="radio" value="улица Варварка, 6с4" /><span class="addresses__box">
+                                        <p class="addresses__text">улица Варварка, 6с4</p><span class="addresses__links"><a class="addresses__link" href="#">Изменить</a><a class="addresses__link" href="#">Удалить</a></span>
+                                    </span><span class="addresses__circle"></span></span></label></div>
+                        <p class="addresses__or">или</p><a class="button button_big button_dashed addresses__button" href="#">+ Использовать новый адрес</a>
                     </div>
                 </div>
                 <div class="section__buttons"><a class="button section__button" href="#">Продолжить</a><a class="section__arrow-link" href="#">
