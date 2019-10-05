@@ -1,0 +1,31 @@
+mixin tabs()
+  +b.tabs&attributes(attributes)
+    block
+
+mixin tab()
+  +e.tab&attributes(attributes)
+    block
+
+mixin tabs-wrappers()
+  .tabs-wrappers&attributes(attributes)
+    block
+
+mixin tab-wrapper()
+  .tabs-wrappers__tab-wrapper&attributes(attributes)
+    block
+
+mixin ui-kit-tabs()
+  +ui-section
+    +ui-section-head
+      +ui-title Табы
+      +ui-path
+        p Компонент: components/tabs/tabs
+
+    +ui-section-content()
+      +tabs
+        +tab.is-active Для одного
+        +tab Для двоих
+
+    //- При +ui-section-content(true) контейнер отсутствует
+    //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()
+    //- Рамка вокруг особой секции: +ui-special()

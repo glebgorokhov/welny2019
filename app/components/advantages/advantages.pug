@@ -1,0 +1,20 @@
+mixin advantages(data)
+  +b.UL.advantages&attributes(attributes)
+    each item in data
+      +e.LI.item
+        +icon(item.icon).__icon
+        +e.text!= item.text
+
+mixin ui-kit-advantages()
+  +ui-section
+    +ui-section-head
+      +ui-title Преимущества
+      +ui-path
+        p Компонент: components/advantages/advantages
+
+    +ui-section-content()
+      +advantages(getData('advantages').welnyPlus)
+
+    //- При +ui-section-content(true) контейнер отсутствует
+    //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()
+    //- Рамка вокруг особой секции: +ui-special()

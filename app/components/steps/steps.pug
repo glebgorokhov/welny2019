@@ -1,0 +1,25 @@
+mixin steps(activeNumber)
+  +b.steps&attributes(attributes)
+    .container
+      +e.UL.list
+        - var i = 0;
+        each item in getData('steps')
+          - i++;
+          +e.LI.item(class=(i === activeNumber ? 'is-active' : false))
+            +e.number-wrap
+              +e.P.number!= item.number
+            +e.P.text!= item.text
+
+mixin ui-kit-steps()
+  +ui-section
+    +ui-section-head
+      +ui-title Компонент steps
+      +ui-path
+        p Компонент: components/steps/steps
+
+    +ui-section-content()
+      +steps
+
+    //- При +ui-section-content(true) контейнер отсутствует
+    //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()
+    //- Рамка вокруг особой секции: +ui-special()

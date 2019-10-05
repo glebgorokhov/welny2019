@@ -1,0 +1,123 @@
+.details {
+  display: block;
+
+  $b: &;
+
+  &__section {
+    & + & {
+      @include rule(margin-top, (xl: 20px, lg: 40px));
+    }
+  }
+
+  &__title {
+    font-size: 16px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+
+  &__content {
+    @include rule(display, (xl: flex, lg: block));
+  }
+
+  &__left {
+    @include rule(width, (xl: 200px, lg: 100%));
+    @include rule(margin-right, (xl: 30px, lg: 0));
+
+    flex-shrink: 0;
+
+    .massage-card {
+      @include rule(width, (lg: 200px));
+      @include rule(margin, (lg: 0 auto));
+    }
+  }
+
+  &__right {
+    flex: 1;
+
+    @include rule(margin-top, (lg: 30px));
+  }
+
+  &__comment {
+    @include rule(margin-top, (lg: 20px));
+  }
+
+  &__subsection {
+    & + & {
+      margin-top: 20px;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  &__items {
+    display: flex;
+  }
+
+  &__item {
+    width: 33.333%;
+    text-align: center;
+    cursor: pointer;
+
+    @include rule(flex, (lg: 1));
+
+    &:not(:first-child) {
+      @include rule(margin-left, (lg: 5px));
+    }
+  }
+
+  &__input {
+    display: none;
+
+    &:checked + #{$b}__box {
+      @include rule(box-shadow, (lg: 0 2px 5px 0 rgba(black, .2)));
+
+      #{$b}__text {
+        @include rule(color, (lg: orange));
+      }
+    }
+  }
+
+  &__box {
+    display: block;
+    transition: box-shadow $ease-main;
+    width: 100%;
+
+    @include rule(border, (lg: 1px solid gray));
+    @include rule(padding, (lg: 5px));
+  }
+
+  &__image {
+    @include rule(height, (xl: 80px, lg: 40px));
+
+    position: relative;
+    display: block;
+
+    img {
+      @include center-image;
+
+      width: 80%;
+      height: 100%;
+      transition: opacity $ease-main;
+
+      &:first-child { opacity: 1; background: black; }
+      &:last-child { opacity: 0; background: orange; }
+    }
+
+    #{$b}__input:checked + #{$b}__box & {
+      img:first-child { opacity: 0; }
+      img:last-child { opacity: 1; }
+    }
+  }
+
+  &__text {
+    margin-top: 10px;
+    line-height: 1.2;
+    transition: color $ease-main;
+
+    @include rule(font-size, (xl: 14px, lg: 12px));
+  }
+}

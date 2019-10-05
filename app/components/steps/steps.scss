@@ -1,0 +1,55 @@
+.steps {
+  display: block;
+  color: white;
+  text-align: center;
+  margin-bottom: 30px;
+
+  $b: &;
+
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 -30px;
+  }
+
+  &__item {
+    @include rule(width, (xl: 80px, lg: 60px));
+  }
+
+  &__number-wrap {
+    display: flex;
+    align-items: center;
+
+    &::before, &::after {
+      content: '';
+      height: 2px;
+      flex-grow: 1;
+      background: green;
+    }
+
+    #{$b}__item:first-child &::before, #{$b}__item:last-child &::after {
+      opacity: 0;
+    }
+  }
+
+  &__number {
+    @include rule(width, (xl: 30px, lg: 22px));
+    @include rule(height, (xl: 30px, lg: 22px));
+    @include rule(line-height, (xl: 30px, lg: 22px));
+    @include rule(font-size, (xl: 16px, lg: 14px));
+
+    border-radius: 50%;
+    background: gray;
+
+    #{$b}__item.is-active & {
+      background: orange;
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 1.2;
+    margin-top: 5px;
+  }
+}

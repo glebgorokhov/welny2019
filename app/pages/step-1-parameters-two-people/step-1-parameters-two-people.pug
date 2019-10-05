@@ -1,0 +1,19 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = projectName + ' | Параметры сеанса'
+
+block content
+  +steps(1)
+
+  .container
+    +section
+      +section-header
+        +section-title Параметры сеанса
+
+      +section-content
+        +details(2)
+
+      +section-buttons
+        +button()(href="#").__button Продолжить
+        +e.A.arrow-link(href="#") <- Назад

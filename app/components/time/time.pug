@@ -1,0 +1,20 @@
+mixin time(text, selected)
+  +b.LABEL.time&attributes(attributes)
+    +e.INPUT.input(type="radio" name="time" value=text checked=selected)
+    +e.box
+      +e.IMG.image(src="assets/images/time.svg" alt=time)
+      +e.P.text!= text
+
+mixin ui-kit-time()
+  +ui-section
+    +ui-section-head
+      +ui-title Радиокнопка времени
+      +ui-path
+        p Компонент: components/time/time
+
+    +ui-section-content()
+      +time('60 минут', true)
+
+    //- При +ui-section-content(true) контейнер отсутствует
+    //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()
+    //- Рамка вокруг особой секции: +ui-special()

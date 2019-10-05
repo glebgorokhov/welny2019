@@ -1,0 +1,47 @@
+mixin details(type)
+  +b.details&attributes(attributes)
+    - var sections = type === 1 ? ["Массаж для двоих: 1/2"] : ["Массаж для двоих: 1/2", "Массаж для двоих: 2/2"];
+
+    each section in sections
+      +e.section
+        if type !== 1
+          +e.P.title Массаж для двоих: 1/2
+
+        +e.content
+          +e.left
+            +massage-card(getData('cards')[0])
+
+          +e.right
+            each subsection in getData('massage-radios')
+              +e.subsection
+                +e.subtitle!= subsection.title
+                +e.items
+                  - var name = Math.floor(Math.random()*90000) + 10000;
+                  each item in subsection.items
+                    +e.LABEL.item
+                      +e.INPUT.input(type="radio" name=name value=item.text checked=item.checked)
+                      +e.box
+                        +e.image
+                          img(src=item.image1, alt=item.text)
+                          img(src=item.image2, alt=item.text)
+                        +e.P.text!= item.text
+
+    +e.comment
+      +inputbox
+        +label Пожелания
+        +textarea(name="comments")
+
+
+mixin ui-kit-details()
+  +ui-section
+    +ui-section-head
+      +ui-title Детали сеанса
+      +ui-path
+        p Компонент: components/details/details
+
+    +ui-section-content()
+      +details
+
+    //- При +ui-section-content(true) контейнер отсутствует
+    //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()
+    //- Рамка вокруг особой секции: +ui-special()

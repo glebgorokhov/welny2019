@@ -1,0 +1,29 @@
+.advantages {
+  display: block;
+
+  @include rule(padding-bottom, (xl: 100px, lg: 0));
+
+  $b: &;
+
+  &__item {
+    display: flex;
+
+    &:not(:first-child) {
+      @include rule(margin-top, (xl: 40px, lg: 20px));
+    }
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+    background: black;
+    flex-shrink: 0;
+
+    @include rule(margin-right, (xl: 30px, lg: 15px));
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+}

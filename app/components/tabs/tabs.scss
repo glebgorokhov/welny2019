@@ -1,0 +1,38 @@
+.tabs {
+  display: flex;
+
+  $b: &;
+
+  &__tab {
+    font-size: 16px;
+    line-height: 1;
+    transition: border-color $ease-main;
+    border-bottom: 1px dashed;
+
+    &:not(:first-child) {
+      margin-left: 20px;
+    }
+
+    &.is-active {
+      border-color: transparent;
+    }
+  }
+
+  & + .tabs-wrappers {
+    @include rule(margin-top, (xl: 40px, lg: 20px));
+  }
+}
+
+.tabs-wrappers {
+  display: block;
+
+  $b: &;
+
+  &__tab-wrapper {
+    display: none;
+
+    &.is-active {
+      display: block;
+    }
+  }
+}

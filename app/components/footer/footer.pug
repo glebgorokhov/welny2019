@@ -1,0 +1,33 @@
+mixin footer()
+  +b.footer&attributes(attributes)
+    .container
+      +e.UL.menu.hide-lg
+        each item in getData('footer').menuDesktop
+          +e.LI.item
+            +e.A.link(href="#")!= item
+
+      +e.UL.menu.show-lg
+        each item in getData('footer').menuMobile
+          +e.LI.item
+            +e.A.link(href="#")!= item
+
+      +e.socials
+        each item in getData('footer').socials
+          +e.A.social(href=item.link)
+            +icon(item.icon)
+
+      +e.P.copyright Все права защищены с 2016-2019 ООО "Велни"
+
+mixin ui-kit-footer()
+  +ui-section
+    +ui-section-head
+      +ui-title Футер
+      +ui-path
+        p Компонент: components/footer/footer
+
+    +ui-section-content()
+      +footer
+
+    //- При +ui-section-content(true) контейнер отсутствует
+    //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()
+    //- Рамка вокруг особой секции: +ui-special()

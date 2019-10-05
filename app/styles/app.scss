@@ -19,6 +19,29 @@
   box-sizing: border-box;
 }
 
-.js-sr {
-  visibility: hidden;
+@each $i in ('xl', 'lg', 'md', 'sm', 'xs') {
+
+  .hide-#{$i} {
+    @include screen(#{$i}) {
+      display: none;
+    }
+  }
+}
+
+@each $i in ('xl', 'lg', 'md', 'sm', 'xs') {
+
+  .show-#{$i} {
+    @include screen(#{$i}, min) {
+      display: none;
+    }
+  }
+}
+
+body {
+  background: #333;
+}
+
+.main {
+  flex-grow: 1;
+  padding: 20px 0;
 }

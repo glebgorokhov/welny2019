@@ -1,0 +1,21 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = projectName + ' | Попробуйте Welny+'
+
+block content
+  +steps(1)
+
+  .container
+    +section
+      +section-header
+        +section-title Попробуйте Welny+!
+        +section-subtitle Оформите подписку во время вашего заказа!
+
+      +section-content
+        +advantages(getData('advantages').welnyPlus)
+
+      +section-buttons
+        +button()(href="#").__button Продолжить
+        +e.A.arrow-link(href="#") <- Назад
+

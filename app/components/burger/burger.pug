@@ -1,0 +1,28 @@
+mixin burger()
+  +b.burger&attributes(attributes)
+    +icon('close').__close
+
+    +e.UL.menu
+      each item in getData('burger')
+        +e.LI.item
+          +e.A.link(href="#")
+            +e.icon
+              +icon(item.icon)
+
+            +e.text!= item.text
+
+    +e.overlay
+
+mixin ui-kit-burger()
+  +ui-section
+    +ui-section-head
+      +ui-title Бургер-меню
+      +ui-path
+        p Компонент: components/burger/burger
+
+    +ui-section-content()
+      +burger
+
+    //- При +ui-section-content(true) контейнер отсутствует
+    //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()
+    //- Рамка вокруг особой секции: +ui-special()
