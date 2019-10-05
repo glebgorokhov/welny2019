@@ -1,0 +1,17 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = projectName + ' | Оставить отзыв'
+
+block content
+  .container
+    +section._reviews
+      +section-header
+        +section-title Расскажите Welny <span>о том, как прошёл Ваш сеанс</span>
+
+      +section-content
+        +add-review
+
+      +section-buttons
+        +button()(href="#").__button ОТПРАВИТЬ
+        +e.A.arrow-link(href="#") <- Назад

@@ -1,0 +1,150 @@
+.add-review {
+  display: block;
+
+  @include rule(padding-top, (xl: 30px, lg: 0));
+
+  $b: &;
+
+  &__sections {
+    @include rule(padding, (xl: 0 30px, lg: 0));
+  }
+
+  &__section {
+    &:not(:first-child) {
+      @include rule(margin-top, (xl: 50px, lg: 10px));
+    }
+
+    &_accordion {
+      @include screen('lg') {
+        background: white;
+        border-radius: 3px;
+        padding: 10px;
+        position: relative;
+
+        &::after {
+          content: '';
+          position: absolute;
+          width: 10px;
+          height: 5px;
+          right: 10px;
+          top: 10px;
+          background: black;
+          transition: transform $ease-main;
+        }
+
+        &.is-active {
+          &::after {
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+  }
+
+  &__title {
+    @include rule(font-size, (xl: 22px, lg: 18px));
+
+    line-height: 1.2;
+    font-weight: 700;
+    color: orange;
+  }
+
+  &__subtitle {
+    font-size: 12px;
+    margin-top: 5px;
+    line-height: 1.2;
+  }
+
+  &__grid {
+    @include rule(margin, (lg: 0));
+  }
+
+  &__col {
+    flex-direction: column;
+    align-items: flex-start;
+
+    @include screen('lg') {
+      align-items: center;
+      background: white;
+      border-radius: 3px;
+      padding: 10px;
+      text-align: center;
+
+      &:not(:first-child) {
+        margin-top: 10px;
+      }
+
+      #{$b}__section_accordion & {
+        padding: 10px 0 0;
+        border-top: 1px solid lightgray;
+
+        &:not(:first-child) {
+          margin-top: 0;
+        }
+
+        &:not(:last-child) {
+          padding-bottom: 10px;
+        }
+      }
+    }
+  }
+
+  &__items {
+    &:not(:first-child) {
+      margin-top: 20px;
+    }
+
+    #{$b}__section_accordion:not(.is-active) & {
+      @include rule(display, (lg: none));
+    }
+  }
+
+  &__question {
+    font-size: 18px;
+    line-height: 1.2;
+    font-weight: 500;
+    flex-grow: 1;
+  }
+
+  &__rating {
+    margin-top: 10px;
+  }
+
+  &__comment {
+    @include rule(margin-top, (xl: 50px, lg: 10px));
+
+    @include screen('lg') {
+      background: white;
+      border-radius: 3px;
+      padding: 10px;
+      text-align: center;
+    }
+  }
+
+  &__comment-title {
+    @include rule(padding, (xl: 0 30px, lg: 0));
+    @include rule(font-size, (xl: 16px, lg: 18px));
+    @include rule(font-weight, (xl: bold, lg: normal));
+
+    margin-bottom: 15px;
+    line-height: 1.2;
+  }
+
+  &__textarea {
+    border-radius: 10px;
+    resize: none;
+    height: 80px;
+    min-height: 0;
+    padding: 13px 29px;
+
+    @include screen('lg') {
+      height: 30px;
+      font-size: 14px;
+      line-height: 20px;
+      border: 0;
+      padding: 0;
+      border-bottom: 1px solid lightgray;
+      border-radius: 0;
+    }
+  }
+}

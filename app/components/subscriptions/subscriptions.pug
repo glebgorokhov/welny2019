@@ -1,0 +1,40 @@
+mixin subscriptions()
+  +b.subscriptions&attributes(attributes)
+    +e.top
+      each item in getData('subscriptions')
+        +e.LABEL.item
+          +e.INPUT.input(type="radio" name="type" value=item.title)
+          +e.box
+            +e.header
+              +e.circle
+              +e.P.title!= item.title
+
+            +e.list
+              each block in item.items
+                +e.list-item
+                  +e.image
+                    img(src=block.image, alt="@")
+
+                  +e.P.list-title!= block.title
+                  +e.P.list-value!= block.value
+
+    +e.bottom
+      +e.LABEL.simple
+        +e.INPUT.input(type="radio" name="type" value="Заказать без скидки")
+        +e.simple-box
+          +e.simple-circle
+          +e.P.simple-text Заказать без скидки
+
+mixin ui-kit-subscriptions()
+  +ui-section
+    +ui-section-head
+      +ui-title Типы подпискок
+      +ui-path
+        p Компонент: components/subscriptions/subscriptions
+
+    +ui-section-content()
+      +subscriptions
+
+    //- При +ui-section-content(true) контейнер отсутствует
+    //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()
+    //- Рамка вокруг особой секции: +ui-special()

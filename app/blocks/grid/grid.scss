@@ -9,6 +9,8 @@ $grid-col-width: $grid-container-width/$grid-cols; // Ширина одной к
   flex-wrap: wrap;
   margin: -$grid-gap-vertical (-$grid-gap/2) 0;
 
+  $b: &;
+
   &__col {
     box-sizing: border-box;
     padding: $grid-gap-vertical $grid-gap/2 0;
@@ -16,6 +18,10 @@ $grid-col-width: $grid-container-width/$grid-cols; // Ширина одной к
 
     &_grow {
       flex-grow: 1;
+    }
+
+    &_flex {
+      display: flex;
     }
 
     @for $i from 1 through 15 {
@@ -33,6 +39,19 @@ $grid-col-width: $grid-container-width/$grid-cols; // Ширина одной к
             width: $i * $grid-col-width;
           }
         }
+      }
+    }
+  }
+
+  &_reviews {
+    @include screen('lg', min) {
+      $grid-gap: 60px;
+      $grid-gap-vertical: 60px;
+
+      @include rule(margin, (xl: -$grid-gap-vertical (-$grid-gap/2) 0));
+
+      #{$b}__col {
+        @include rule(padding, (xl: $grid-gap-vertical $grid-gap/2 0));
       }
     }
   }

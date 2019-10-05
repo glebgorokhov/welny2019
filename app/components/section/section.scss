@@ -20,6 +20,18 @@
     }
   }
 
+  &_reviews {
+    max-width: 950px;
+    padding-left: 100px;
+    padding-right: 100px;
+
+    @include screen('lg') {
+      padding: 0;
+      background: transparent;
+      border-radius: 0;
+    }
+  }
+
   &__header {
     text-align: center;
   }
@@ -28,6 +40,17 @@
     @include rule(font-size, (xl: 24px, lg: 18px));
 
     line-height: 1.2;
+
+    #{$b}_reviews & {
+      @include rule(color, (lg: white));
+      @include screen('lg') {
+        span {
+          display: block;
+          margin-top: 5px;
+          font-size: 14px;
+        }
+      }
+    }
   }
 
   &__subtitle {
@@ -63,7 +86,7 @@
     width: 100%;
     font-size: 14px;
 
-    #{$b}_bill & {
+    #{$b}_bill &, #{$b}_reviews & {
       @include screen('lg') {
         color: white;
       }

@@ -1,0 +1,20 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = projectName + ' | Выбор подписки'
+
+block content
+  +steps(1)
+
+  .container
+    +section
+      +section-header
+        +section-title Любите массаж?
+        +section-subtitle Оформите подписку Welny+ и экономьте до 20%!
+
+      +section-content
+        +subscriptions
+
+      +section-buttons
+        +button()(href="#").__button Продолжить
+        +e.A.arrow-link(href="#") <- Назад

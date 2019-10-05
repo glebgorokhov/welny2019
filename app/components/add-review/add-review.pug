@@ -1,0 +1,32 @@
+mixin add-review()
+  +b.add-review&attributes(attributes)
+    +e.sections
+      each section in getData('reviews')
+        +e.section(class=section.class, class=(section.title ? '_accordion' : false))
+          if section.title
+            +e.P.title!= section.title
+            +e.P.subtitle.show-lg Оценка специалиста
+          +e.items
+            +grid.grid_reviews.add-review__grid
+              each item in section.items
+                +col({xl: 4, lg: 12}).grid__col_flex.add-review__col(class=item.class)
+                  +e.P.question!= item.question
+                  +rating().__rating
+
+    +e.comment
+      +e.P.comment-title Ваше мнение очень важно!
+      +textarea(name="comment" placeholder="Напишите здесь ваши пожелания").add-review__textarea
+
+mixin ui-kit-add-review()
+  +ui-section
+    +ui-section-head
+      +ui-title Добавить отзыв
+      +ui-path
+        p Компонент: components/add-review/add-review
+
+    +ui-section-content()
+      +add-review
+
+    //- При +ui-section-content(true) контейнер отсутствует
+    //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()
+    //- Рамка вокруг особой секции: +ui-special()

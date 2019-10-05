@@ -5,7 +5,7 @@ mixin steps(activeNumber)
         - var i = 0;
         each item in getData('steps')
           - i++;
-          +e.LI.item(class=(i === activeNumber ? 'is-active' : false))
+          +e.LI.item(class=(i <= activeNumber ? 'is-active' : false))
             +e.number-wrap
               +e.P.number!= item.number
             +e.P.text!= item.text

@@ -1,0 +1,25 @@
+mixin rating(count, name)
+  - var initialCount = Number(count) || 5
+  - var initialName = name || 'rating-'+ Math.random().toString(36).slice(2).split('').sort(() => Math.random() - .5).join('')
+
+  +b.rating._interactive&attributes(attributes)
+    each i in [1, 2, 3, 4, 5]
+      +e.LABEL.box
+        +e.INPUT(type='radio' name='name' value=i-1).control.js-rating-control
+        +icon('star').__icon
+
+mixin ui-kit-rating()
+  +ui-section
+    +ui-section-head
+      +ui-title Компонент rating
+      +ui-path
+        p Компонент: components/rating/rating
+      +ui-description
+        p Описание компонента
+
+    +ui-section-content()
+      +rating
+
+    //- При +ui-section-content(true) контейнер отсутствует
+    //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()
+    //- Рамка вокруг особой секции: +ui-special()
