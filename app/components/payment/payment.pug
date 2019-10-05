@@ -1,0 +1,43 @@
+mixin payment(people)
+  +b.payment&attributes(attributes)
+    +order-details(people).__details
+
+    +e.grid
+      +e.col._table
+        +e.TABLE.table
+          each row in getData('payment').table
+            tr
+              td!= row[0]
+              td!= row[1]
+
+      +e.col._promocode
+        +promocode
+
+      +e.HR.hr
+
+      +e.col._total
+        +e.total
+          p К оплате:
+          p 1990 Р
+
+      +e.col._warning
+        +e.warning
+          img(src="assets/images/warning.svg" alt="@")
+          span Банк зарезервирует сумму на вашем счете, списание средств произойдет после сеанса. <a href="#">Подробнее</a>
+
+    +e.cards
+      +cards(people)
+
+mixin ui-kit-payment()
+  +ui-section
+    +ui-section-head
+      +ui-title Оплата заказа
+      +ui-path
+        p Компонент: components/payment/payment
+
+    +ui-section-content()
+      +payment
+
+    //- При +ui-section-content(true) контейнер отсутствует
+    //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()
+    //- Рамка вокруг особой секции: +ui-special()

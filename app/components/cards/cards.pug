@@ -1,0 +1,66 @@
+mixin cards(type)
+  +b.cards&attributes(attributes)
+    +e.content
+      if (type === 1 || !type)
+        +e.card_left
+          +e.images.hide-lg
+            img(src="assets/images/payments/visa.svg" alt="Visa")
+            img(src="assets/images/payments/mastercard.svg" alt="MasterCard")
+
+          +e.grid
+            +grid.grid_card
+              +col({xl: 12})
+                +inputbox
+                  +input(name="" type="text" placeholder="Номер карты")
+
+              +col({xl: 12}).hide-lg
+                +inputbox.cards__inputbox
+                  +label Срок действия карты
+                  div
+                    +input(name="" type="text" placeholder="Месяц")
+                    +input(name="" type="text" placeholder="Год")
+
+              +col({xl: 6}).show-lg
+                +inputbox
+                  +input(name="" type="text" placeholder="Месяц / Год")
+
+              +col({xl: 6}).show-lg
+                +inputbox
+                  +input(name="" type="text" placeholder="CVV/CVC")
+
+              +col({xl: 12})
+                +inputbox
+                  +input(name="" type="text" placeholder="Имя и Фамилия")
+
+        +e.card_right.hide-lg
+          +input(type="text" name="CVC" placeholder="CVV / CVC")
+          p Последние 3 цифры на полосе для подписи
+
+      if (type && type === 2)
+        +e.P.choose Выберите карту для оплаты
+        +e.radios
+          +card-radio("...6337 (Master Card)", "cards", true).__radio
+          +card-radio("...6557 (Visa)", "cards", false).__radio
+
+        +e.P.or или
+        +button()(href="#")._big._dashed.__button + Добавить карту
+
+    +e.warning
+      img(src="assets/images/lock.svg" alt="@")
+      span Ваш платёж защищён шифрованием 128-bit SSL и производится через платежный сервис Payture
+
+mixin ui-kit-cards()
+  +ui-section
+    +ui-section-head
+      +ui-title Компонент cards
+      +ui-path
+        p Компонент: components/cards/cards
+      +ui-description
+        p Описание компонента
+
+    +ui-section-content()
+      +cards
+
+    //- При +ui-section-content(true) контейнер отсутствует
+    //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()
+    //- Рамка вокруг особой секции: +ui-special()

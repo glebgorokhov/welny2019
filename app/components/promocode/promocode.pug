@@ -1,0 +1,20 @@
+mixin promocode()
+  +b.promocode&attributes(attributes)
+    +e.P.title Есть промокод? Введите его тут
+    +e.FORM.form(action="#" method="post")
+      +input(name="code" type="text" placeholder="Есть промокод? Введите его тут" required).__input
+      +button('button')(type="submit" disabled).__button Применить
+
+mixin ui-kit-promocode()
+  +ui-section
+    +ui-section-head
+      +ui-title Промокод
+      +ui-path
+        p Компонент: components/promocode/promocode
+
+    +ui-section-content()
+      +promocode
+
+    //- При +ui-section-content(true) контейнер отсутствует
+    //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()
+    //- Рамка вокруг особой секции: +ui-special()

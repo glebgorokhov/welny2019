@@ -55,4 +55,15 @@ $grid-col-width: $grid-container-width/$grid-cols; // Ширина одной к
       }
     }
   }
+
+  &_card {
+    $grid-gap: 10px;
+    $grid-gap-vertical: 10px;
+
+    @include rule(margin, (xl: -$grid-gap-vertical (-$grid-gap/2) 0));
+
+    #{$b}__col {
+      @include rule(padding, (xl: $grid-gap-vertical $grid-gap/2 0));
+    }
+  }
 }

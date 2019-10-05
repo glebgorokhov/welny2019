@@ -1,0 +1,25 @@
+mixin card-radio(value, name, checked)
+  +b.LABEL.card-radio&attributes(attributes)
+    +e.INPUT.input(name=name type="radio" value=value checked=checked)
+    +e.box
+      +e.circle
+      +e.content
+        +e.P.name!= value
+        +e.links
+          +e.A.link(href="#") Удалить
+
+mixin ui-kit-card-radio()
+  +ui-section
+    +ui-section-head
+      +ui-title Компонент card-radio
+      +ui-path
+        p Компонент: components/card-radio/card-radio
+      +ui-description
+        p Описание компонента
+
+    +ui-section-content()
+      +card-radio
+
+    //- При +ui-section-content(true) контейнер отсутствует
+    //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()
+    //- Рамка вокруг особой секции: +ui-special()

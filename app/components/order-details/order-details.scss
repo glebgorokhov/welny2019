@@ -1,0 +1,81 @@
+.order-details {
+  @include rule(display, (xl: flex, lg: block));
+
+  border: 1px solid orange;
+
+  @include rule(box-shadow, (xl: 0 3px 7px rgba(orange, .5), lg: none));
+  @include rule(border-radius, (xl: 5px, lg: 2px));
+  @include rule(border-color, (lg: lightgrey));
+
+  $b: &;
+
+  &__col {
+    @include rule(padding, (xl: 30px, lg: 10px));
+
+    box-sizing: border-box;
+    flex: 1;
+
+    &_left {
+
+    }
+
+    &_right {
+      @include rule(border-left, (xl: 1px solid orange, lg: 0));
+      @include rule(border-top, (lg: 1px solid lightgrey));
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    &:not(:first-child) {
+      margin-top: 15px;
+    }
+  }
+
+  &__title {
+    @include rule(margin-bottom, (xl: 20px, lg: 10px));
+    @include rule(font-weight, (xl: bold, lg: normal));
+
+    font-size: 14px;
+    line-height: 1.2;
+    width: 100%;
+
+    @include screen('lg', min) {
+      #{$b}__col_two & {
+        width: auto;
+        flex: 1;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__icon {
+    @include rule(width, (xl: 24px, lg: 20px));
+    @include rule(height, (xl: 24px, lg: 20px));
+    @include rule(margin-right, (xl: 20px, lg: 10px));
+
+    background: orange;
+    flex-shrink: 0;
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 1.2;
+
+    #{$b}__col_two & {
+      width: 60px;
+    }
+  }
+
+  &__big-title {
+    @include rule(font-size, (xl: 16px, lg: 14px));
+    @include rule(margin-bottom, (xl: 20px, lg: 15px));
+
+    line-height: 1.2;
+    color: orange;
+    font-weight: 700;
+  }
+}

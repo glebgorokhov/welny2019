@@ -1,0 +1,20 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = projectName + ' | Оплата заказа'
+
+block content
+  +steps(4)
+
+  .container
+    +section
+      +section-header
+        +section-title Оплата заказа
+        +section-subtitle Мы уверены в качестве услуг исполнителей и вернём полную стоимость заказа, если вас не устроит результат!
+
+      +section-content
+        +payment(2)
+
+      +section-buttons
+        +button()(href="#").__button Продолжить
+        +e.A.arrow-link(href="#") <- Назад

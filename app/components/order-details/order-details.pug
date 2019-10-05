@@ -1,0 +1,35 @@
+mixin order-details(type)
+  +b.order-details&attributes(attributes)
+    +e.col._left(class=(type === 2 ? '_two' : false))
+      if type === 2
+        +e.big-title Для двоих
+      each item in (type === 1 ? getData('payment').details.leftOne : getData('payment').details.leftTwo)
+        +e.item
+          if item.title
+            +e.P.title!= item.title
+          +icon(item.icon).__icon
+          +e.P.text!= item.text
+
+    +e.col._right
+      each item in getData('payment').details.right
+        +e.item
+          if item.title
+            +e.P.title!= item.title
+          +icon(item.icon).__icon
+          +e.P.text!= item.text
+
+mixin ui-kit-order-details()
+  +ui-section
+    +ui-section-head
+      +ui-title Компонент order-details
+      +ui-path
+        p Компонент: components/order-details/order-details
+      +ui-description
+        p Описание компонента
+
+    +ui-section-content()
+      +order-details
+
+    //- При +ui-section-content(true) контейнер отсутствует
+    //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()
+    //- Рамка вокруг особой секции: +ui-special()

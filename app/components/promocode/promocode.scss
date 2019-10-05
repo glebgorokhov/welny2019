@@ -1,0 +1,45 @@
+.promocode {
+  display: block;
+  position: relative;
+
+  $b: &;
+
+  &__title {
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 5px;
+
+    @include rule(display, (lg: none));
+  }
+
+  &__form {
+    @include rule(display, (xl: flex, lg: block));
+  }
+
+  &__input {
+    width: 100%;
+    flex: 1;
+
+    @include screen('lg', min) {
+      &::placeholder {
+        opacity: 0;
+      }
+    }
+  }
+
+  &__button {
+    flex-shrink: 0;
+    height: 40px;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    line-height: 1;
+    font-size: 14px;
+    text-align: center;
+    justify-content: center;
+
+    @include rule(margin-left, (xl: 10px, lg: 0));
+    @include rule(margin-top, (lg: 15px));
+    @include rule(width, (lg: 100%));
+  }
+}

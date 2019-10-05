@@ -1,0 +1,72 @@
+.card-radio {
+  display: block;
+
+  $b: &;
+
+  &__input {
+    display: none;
+  }
+
+  &__box {
+    display: flex;
+  }
+
+  &__circle {
+    width: 20px;
+    height: 20px;
+    border: 1px solid orange;
+    border-radius: 50%;
+    display: flex;
+    position: relative;
+    flex-shrink: 0;
+    margin-right: 20px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      width: 12px;
+      height: 12px;
+      background: orange;
+      border-radius: 50%;
+      opacity: 0;
+      transition: opacity $ease-main;
+    }
+
+    #{$b}__input:checked + #{$b}__box & {
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__content {
+    flex: 1;
+  }
+
+  &__name {
+    @include rule(font-size, (xl: 18px, lg: 16px));
+
+    line-height: 1.2;
+    transition: color $ease-main;
+
+    #{$b}__input:checked + #{$b}__box & {
+      color: orange;
+    }
+  }
+
+  &__links {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__link {
+    font-size: 12px;
+    line-height: 1.2;
+  }
+}

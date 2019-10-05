@@ -1,0 +1,123 @@
+.payment {
+  display: block;
+
+  $b: &;
+
+  // Сетка
+  &__grid {
+    display: flex;
+    flex-wrap: wrap;
+
+    @include rule(margin-top, (xl: 60px, lg: 20px));
+    @include rule(padding, (xl: 0 10px, lg: 0));
+    @include rule(flex-direction, (lg: column));
+  }
+
+  &__col {
+    @include rule(padding, (xl: 0 20px, lg: 0));
+    @include rule(width, (xl: 50%, lg: 100%));
+
+    box-sizing: border-box;
+
+    &_table {
+      @include rule(order, (lg: -5));
+    }
+
+    &_total {
+      align-self: center;
+
+      @include rule(order, (lg: -3));
+    }
+
+    &_promocode {
+      @include rule(margin-top, (lg: 20px));
+    }
+
+    &_warning {
+      align-self: center;
+
+      @include rule(margin-top, (lg: 20px));
+    }
+  }
+
+  &__table-col {
+
+  }
+
+  &__table {
+    margin-top: -10px;
+    width: 100%;
+    line-height: 1.2;
+
+    @include rule(font-size, (xl: 16px, lg: 14px));
+
+    td {
+      padding-top: 10px;
+
+      &:last-child {
+        text-align: right;
+        font-weight: 700;
+      }
+    }
+  }
+
+  &__promocode {
+
+  }
+
+  &__hr {
+    min-width: 100%;
+    border: 0;
+    height: 1px;
+    background: gray;
+
+    @include rule(margin, (xl: 40px -10px, lg: 15px 0));
+    @include rule(order, (lg: -4));
+  }
+
+  &__total {
+    display: flex;
+    justify-content: space-between;
+
+    p {
+      @include rule(font-size, (xl: 20px, lg: 18px));
+
+      &:first-child {
+
+      }
+
+      &:last-child {
+
+      }
+    }
+  }
+
+  &__warning {
+    display: flex;
+
+    @include rule(align-items, (xl: center, lg: flex-start));
+
+    img {
+      width: 30px;
+      height: 30px;
+      background: black;
+      flex-shrink: 0;
+      margin-right: 20px;
+    }
+
+    span {
+      @include rule(font-size, (xl: 14px, lg: 12px));
+
+      line-height: 1.4;
+
+      a {
+        color: orange;
+      }
+    }
+  }
+
+  // Карты
+  &__cards {
+    @include rule(margin-top, (xl: 65px, lg: 30px));
+  }
+}

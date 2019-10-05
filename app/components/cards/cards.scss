@@ -1,0 +1,160 @@
+.cards {
+  display: block;
+
+  $b: &;
+
+  &__content {
+
+  }
+
+  &__card {
+    @include screen('lg', min) {
+      width: 420px;
+      height: 265px;
+      border-radius: 10px;
+      position: relative;
+      box-sizing: border-box;
+
+      &_left {
+        z-index: 1;
+        background-color: lightgrey;
+        box-shadow: 0 3px 6px rgba(black, .15);
+        padding: 25px 40px 0;
+      }
+
+      &_right {
+        background-color: grey;
+        margin-left: 224px;
+        margin-top: -200px;
+        padding: 120px 50px 0 240px;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 35px;
+          left: 0;
+          right: 0;
+          height: 65px;
+          background: rgba(black, .3);
+        }
+
+        .input {
+          width: 100px;
+        }
+
+        p {
+          margin-top: 10px;
+          font-size: 14px;
+          line-height: 1.5;
+        }
+      }
+    }
+
+    &_left {
+      @include screen('lg') {
+        padding: 10px;
+        background-color: lightgrey;
+        border-radius: 3px;
+      }
+    }
+  }
+
+  // Left
+
+  &__grid {
+
+  }
+
+  &__images {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    img {
+      width: 60px;
+      height: 30px;
+      background: orange;
+
+      &:not(:first-child) {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  &__inputbox {
+    div {
+      display: flex;
+      justify-content: flex-start;
+
+      .input {
+        width: 85px;
+      }
+
+      .input:not(:first-child) {
+        margin-left: 20px;
+      }
+    }
+  }
+
+  // Bottom
+
+  &__warning {
+    display: flex;
+
+    @include rule(align-items, (xl: center, lg: flex-start));
+    @include rule(margin-top, (xl: 40px, lg: 20px));
+
+    img {
+      @include rule(margin-left, (xl: 30px, lg: 0));
+
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      margin-right: 20px;
+      background: orange;
+    }
+
+    span {
+      @include rule(font-size, (xl: 16px, lg: 12px));
+
+      line-height: 1.4;
+      flex: 1;
+    }
+  }
+
+  // Type 2
+  &__choose {
+    @include rule(font-size, (xl: 18px, lg: 16px));
+    @include rule(padding, (xl: 0 30px, lg: 0));
+
+    line-height: 1.2;
+  }
+
+  &__radios {
+    margin-top: 20px;
+  }
+
+  &__radio {
+    @include rule(padding, (xl: 15px 30px, lg: 15px 0));
+
+    border-top: 1px solid lightgrey;
+
+    &:last-child {
+      border-bottom: 1px solid lightgrey;
+    }
+  }
+
+  &__or {
+    font-size: 14px;
+    line-height: 1.2;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  &__button {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
