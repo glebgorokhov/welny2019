@@ -1,0 +1,23 @@
+mixin popup()
+  +b.popup&attributes(attributes)
+    +e.block
+      +icon('close').__close
+      +e.top
+        +e.P.title Яна
+        +e.image
+          img(src="assets/images/123.jpg")
+      +e.BUTTON.button(type="button") Удалить из избранных
+
+mixin ui-kit-popup()
+  +ui-section
+    +ui-section-head
+      +ui-title Попап
+      +ui-path
+        p Компонент: components/popup/popup
+
+    +ui-section-content()
+      +popup
+
+    //- При +ui-section-content(true) контейнер отсутствует
+    //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()
+    //- Рамка вокруг особой секции: +ui-special()

@@ -1,0 +1,75 @@
+.popup {
+  display: flex;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999999999;
+  background: rgba(black, .3);
+  align-items: center;
+  justify-content: center;
+
+  $b: &;
+
+  &__block {
+    width: 250px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px 0 rgba(black, .3);
+    position: relative;
+    text-align: center;
+    font-size: 0;
+    overflow: hidden;
+    max-width: calc(100% - 32px);
+  }
+
+  &__top {
+    padding: 15px 20px 30px;
+  }
+
+  &__close {
+    width: 16px;
+    height: 16px;
+    background: black;
+    position: absolute;
+    z-index: 5;
+    right: 15px;
+    top: 15px;
+    cursor: pointer;
+  }
+
+  &__title {
+    font-size: 18px;
+    line-height: 1.2;
+    font-weight: 700;
+  }
+
+  &__image {
+    margin-top: 10px;
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid orange;
+    overflow: hidden;
+    position: relative;
+
+    img {
+      @include fill-img;
+
+      background: green;
+    }
+  }
+
+  &__button {
+    height: 40px;
+    padding: 0 15px;
+    text-align: center;
+    color: white;
+    background: orange;
+    font-size: 16px;
+    line-height: 40px;
+    width: 100%;
+  }
+}
