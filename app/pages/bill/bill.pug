@@ -1,0 +1,16 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = projectName + ' | Чек'
+
+block content
+  +steps(1)
+
+  .container
+    +section._bill
+      +section-content
+        +bill
+
+      +section-buttons
+        +button()(href="#").__button Продолжить
+        +e.A.arrow-link(href="#") <- Назад

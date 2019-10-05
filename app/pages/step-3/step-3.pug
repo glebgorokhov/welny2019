@@ -1,0 +1,20 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = projectName + ' | Выбор адреса'
+
+block content
+  +steps(1)
+
+  .container
+    +section
+      +section-header
+        +section-title Укажите адрес
+        +section-subtitle Выберите из сохраненных адресов или укажите новый.
+
+      +section-content
+        +addresses
+
+      +section-buttons
+        +button()(href="#").__button Продолжить
+        +e.A.arrow-link(href="#") <- Назад

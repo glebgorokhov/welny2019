@@ -1,0 +1,30 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = projectName + ' | Выбор времени'
+
+block content
+  +steps(1)
+
+  .container
+    +section
+      +section-header
+        +section-title Выберите время
+
+      +section-content
+        +grid
+          +col({xl: 6, lg: 12})
+            +inputbox
+              +label Дата
+              +input(type="date" name="date")
+
+          +col({xl: 6, lg: 12})
+            +inputbox
+              +label Время
+              +select(name="time")
+                option(value="15:00") 15:00
+                option(value="18:00") 18:00
+
+      +section-buttons
+        +button()(href="#").__button Продолжить
+        +e.A.arrow-link(href="#") <- Назад

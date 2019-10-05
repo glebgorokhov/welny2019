@@ -1,0 +1,113 @@
+.addresses {
+  display: block;
+
+  $b: &;
+
+  &__items {
+
+  }
+
+  &__item {
+    @include rule(padding, (xl: 20px, lg: 10px 0));
+
+    display: block;
+    border-top: 1px solid rgba(orange, .3);
+
+    &:last-child {
+      @include rule(border-bottom, (lg: 1px solid rgba(orange, .3)));
+
+      @include screen('lg', min) {
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  &__input {
+    display: none;
+  }
+
+  &__box {
+    display: block;
+  }
+
+  &__wrapper {
+    @include rule(padding-left, (xl: 50px, lg: 30px));
+
+    position: relative;
+    display: block;
+  }
+
+  &__text {
+    @include rule(font-size, (xl: 18px, lg: 16px));
+
+    line-height: 1.2;
+    transition: color $ease-main;
+
+    #{$b}__input:checked + #{$b}__box & {
+      color: orange;
+    }
+  }
+
+  &__links {
+    margin-top: 10px;
+    display: flex;
+  }
+
+  &__link {
+    font-size: 14px;
+    line-height: 1.2;
+
+    &:not(:first-child) {
+      margin-left: 15px;
+    }
+  }
+
+  &__circle {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 16px;
+    height: 16px;
+    box-shadow: 0 0 0 2px black inset;
+    transition: box-shadow $ease-main;
+    border-radius: 50%;
+
+    &::after {
+      content: '';
+      transition: opacity $ease-main;
+      opacity: 0;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: orange;
+
+      @include center-image;
+    }
+
+    #{$b}__input:checked ~ & {
+      box-shadow: 0 0 0 4px orange inset;
+
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__or {
+    font-size: 14px;
+    text-align: center;
+    line-height: 1.2;
+
+    &:not(:first-child) {
+      @include rule(margin-top, (xl: 20px, lg: 10px));
+    }
+  }
+
+  &__button {
+    width: 100%;
+
+    &:not(:first-child) {
+      @include rule(margin-top, (xl: 20px, lg: 10px));
+    }
+  }
+}

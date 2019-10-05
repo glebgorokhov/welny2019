@@ -1,0 +1,30 @@
+mixin addresses()
+  +b.addresses&attributes(attributes)
+    +e.items
+      each item in getData('addresses')
+        +e.LABEL.item
+          +e.wrapper
+            +e.INPUT.input(name="address" type="radio" value=item.text checked=item.checked)
+            +e.box
+              +e.P.text!= item.text
+              +e.links
+                +e.A.link(href="#") Изменить
+                +e.A.link(href="#") Удалить
+            +e.circle
+
+    +e.P.or или
+    +button()(href="#")._big._dashed.__button + Использовать новый адрес
+
+mixin ui-kit-addresses()
+  +ui-section
+    +ui-section-head
+      +ui-title Выбор адреса
+      +ui-path
+        p Компонент: components/addresses/addresses
+
+    +ui-section-content()
+      +addresses
+
+    //- При +ui-section-content(true) контейнер отсутствует
+    //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()
+    //- Рамка вокруг особой секции: +ui-special()

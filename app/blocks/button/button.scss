@@ -13,12 +13,25 @@
   color: white;
   appearance: none;
   border-radius: 3px;
+  text-align: center;
 
   $b: &;
 
   &[disabled] {
     opacity: .5;
     cursor: not-allowed;
+  }
+
+  &_big {
+    @include rule(height, (xl: 66px, lg: 50px));
+    @include rule(line-height, (xl: 64px, lg: 50px));
+    @include rule(font-size, (xl: 16px, lg: 14px));
+  }
+
+  &_dashed {
+    border: 1px dashed;
+    color: orange;
+    background: transparent;
   }
 
   &:hover {

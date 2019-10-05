@@ -1,0 +1,44 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = projectName + ' | Выбор адреса'
+
+block content
+  +steps(1)
+
+  .container
+    +section
+      +section-header
+        +section-title Адрес
+        +section-subtitle На данный момент сервис предоставляется в г. Москва в пределах МКАД
+
+      +section-content
+        +grid
+          +col({xl: 6, lg: 12})
+            +inputbox
+              +label Улица, дом
+              +input(type="text" name="address")
+
+          +col({xl: 6, lg: 12})
+            +inputbox
+              +label Квартира
+              +input(type="text" name="room")
+
+          +col({xl: 6, lg: 12})
+            +inputbox
+              +label Этаж
+              +input(type="text" name="floor")
+
+          +col({xl: 6, lg: 12})
+            +inputbox
+              +label Подъезд
+              +input(type="text" name="porch")
+
+          +col({xl: 6, lg: 12})
+            +inputbox
+              +label Код домофона
+              +input(type="text" name="code")
+
+      +section-buttons
+        +button()(href="#").__button Продолжить
+        +e.A.arrow-link(href="#") <- Назад
