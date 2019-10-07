@@ -20,6 +20,11 @@
     }
   }
 
+  &_account {
+    max-width: none;
+    padding: 37px 50px 25px;
+  }
+
   &_reviews {
     max-width: 950px;
     padding-left: 100px;
@@ -32,14 +37,75 @@
     }
   }
 
+  &_mobile {
+    padding: 0;
+    background: transparent;
+    min-height: calc(100vh - 100px);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  &__index-image {
+    position: absolute;
+    background: orange;
+    width: 100%;
+    height: 200px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: -20px;
+    animation: indexImage 1s ease 1s 1 forwards;
+
+    @keyframes indexImage {
+      0% { opacity: 1; transform: translate3d(0, 0, 0); }
+      100% { opacity: 0; transform: translate3d(0, 50px, 0); }
+    }
+  }
+
   &__header {
     text-align: center;
+
+    @keyframes header {
+      0% { transform: translate3d(0, 0, 0); }
+      100% { transform: translate3d(0, 20vh, 0); }
+    }
+
+    #{$b}_index & {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 5vh;
+      animation: header 1s ease 1s 1 forwards;
+      z-index: 2;
+    }
+  }
+
+  &__buttons-text {
+    text-align: center;
+    margin-bottom: 10px;
+    color: white;
+    font-size: 14px;
+    line-height: 1.4;
+
+    span {
+      display: block;
+      color: orange;
+    }
   }
 
   &__title {
     @include rule(font-size, (xl: 24px, lg: 18px));
 
     line-height: 1.2;
+
+    #{$b}_mobile & {
+      color: white;
+    }
+
+    #{$b}_index & {
+      font-weight: 700;
+    }
 
     #{$b}_reviews & {
       @include rule(color, (lg: white));
@@ -58,12 +124,37 @@
 
     color: gray;
 
+    #{$b}_index & {
+      opacity: 0;
+      animation: subtitle 1s ease 1s 1 forwards;
+
+      @keyframes subtitle {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+      }
+    }
+
+    #{$b}_mobile & {
+      color: white;
+    }
+
     &:not(:first-child) {
       margin-top: 10px;
     }
   }
 
   &__content {
+    #{$b}_mobile & {
+      flex-grow: 1;
+    }
+
+    &_mobile-center {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+    }
+
     &:not(:first-child) {
       @include rule(margin-top, (xl: 40px, lg: 20px));
     }

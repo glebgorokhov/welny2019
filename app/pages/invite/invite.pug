@@ -1,0 +1,16 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = projectName + ' | Пригласить друзей'
+
+block content
+  .container
+    +section._mobile
+      +section-header
+        +section-title Пригласить друзей
+
+      +section-content._mobile-center
+        +invite-mobile
+
+      +section-buttons
+        +button('button')(type="button").__button Скопировать код: PRLJM

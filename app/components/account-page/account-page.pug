@@ -1,0 +1,40 @@
+mixin account-page(data, type)
+  +b.account-page&attributes(attributes)
+    +e.left
+      +e.account
+        +account(true)._desktop
+
+      +e.about
+        +e.P.subscription-title Подписка
+
+        if (type === 1)
+          +advantages(getData('advantages').welnyPlus)._account
+          +button()(href="#").__button Оформить подписку
+        else
+          +subscription(getData('subscription').desktop)._desktop
+
+      +e.invite
+        +e.P.subscription-title Пригласить друзей
+        +button('button')(type="button")._big._dashed.__invite-button PRLJM
+        +e.P.invite-text Поделитесь промокодом с друзьями и каждый получит скидку <span>500 рублей</span> на их первый заказ!
+
+    +e.right
+      +e.texts
+        +e.H1.title Добро пожаловать в личный кабинет!
+        +e.P.text Здесь Вы найдете информацию о текущих и прошлых заказах. А также сможете заказать массаж от Welny.
+
+      +orders(data).__orders
+
+mixin ui-kit-account-page()
+  +ui-section
+    +ui-section-head
+      +ui-title Личный кабинет
+      +ui-path
+        p Компонент: components/account-page/account-page
+
+    +ui-section-content()
+      +account-page(getData('orders'))
+
+    //- При +ui-section-content(true) контейнер отсутствует
+    //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()
+    //- Рамка вокруг особой секции: +ui-special()

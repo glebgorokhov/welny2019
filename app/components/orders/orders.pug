@@ -1,0 +1,22 @@
+mixin orders(data)
+  +b.orders&attributes(attributes)
+    each section in data
+      +e.section
+        +e.P.section-title!= section.title
+        +e.items
+          each item in section.items
+            +e.item
+
+mixin ui-kit-orders()
+  +ui-section
+    +ui-section-head
+      +ui-title Заказы
+      +ui-path
+        p Компонент: components/orders/orders
+
+    +ui-section-content()
+      +orders(getData('orders'))
+
+    //- При +ui-section-content(true) контейнер отсутствует
+    //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()
+    //- Рамка вокруг особой секции: +ui-special()

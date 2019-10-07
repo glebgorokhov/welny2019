@@ -1,0 +1,25 @@
+mixin account()
+  +b.account&attributes(attributes)
+    +e.top
+      +e.IMG.image(src="" alt="@@")
+      +e.texts
+        +e.P.user Пользователь
+        +e.P.number + 7 (926) 664-29-60
+
+    +e.bottom
+      +e.P.credits КРЕДИТЫ:
+      +e.P.value 500 Р
+
+mixin ui-kit-account()
+  +ui-section
+    +ui-section-head
+      +ui-title Аккаунт
+      +ui-path
+        p Компонент: components/account/account
+
+    +ui-section-content()
+      +account
+
+    //- При +ui-section-content(true) контейнер отсутствует
+    //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()
+    //- Рамка вокруг особой секции: +ui-special()

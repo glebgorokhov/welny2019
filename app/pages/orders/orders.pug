@@ -1,0 +1,13 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = projectName + ' | Заказы'
+
+block content
+  .container
+    +section._mobile
+      +section-header
+        +section-title Заказы
+
+      +section-content
+        +orders(getData('orders'))

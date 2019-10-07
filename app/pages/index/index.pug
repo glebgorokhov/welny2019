@@ -4,4 +4,12 @@ block head
   - var pageTitle = projectName + ' | index'
 
 block content
-  p Страница: index
+  .container
+    +section._mobile._index
+      +section-header
+        +section-title Добро пожаловать!
+        +section-subtitle Хотите восстановить силы и избавиться от усталости?
+      +section-content
+        +e.IMG.index-image(src="assets/images/big-image.jpg" alt="@@")
+      +section-buttons
+        +button()(href="#").__button Сделать заказ

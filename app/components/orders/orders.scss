@@ -1,0 +1,18 @@
+.orders {
+  display: block;
+
+  $b: &;
+
+  &__section-title {
+    font-size: 16px;
+    line-height: 1.2;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  &__section {
+    & + & {
+      margin-top: 25px;
+    }
+  }
+}

@@ -3,13 +3,31 @@
 
   @include rule(padding-bottom, (xl: 100px, lg: 0));
 
+  &_account {
+    padding-bottom: 0;
+  }
+
   $b: &;
+
+  &_mobile {
+    color: white;
+
+    span {
+      color: orange;
+    }
+  }
 
   &__item {
     display: flex;
 
     &:not(:first-child) {
       @include rule(margin-top, (xl: 40px, lg: 20px));
+    }
+
+    #{$b}_account & {
+      &:not(:first-child) {
+        margin-top: 15px;
+      }
     }
   }
 
@@ -18,8 +36,13 @@
     height: 20px;
     background: black;
     flex-shrink: 0;
+    fill: orange;
 
     @include rule(margin-right, (xl: 30px, lg: 15px));
+
+    #{$b}_mobile & {
+      fill: white;
+    }
   }
 
   &__text {

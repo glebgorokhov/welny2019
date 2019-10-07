@@ -1,0 +1,10 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = projectName + ' | Личный кабинет'
+
+block content
+  .container
+    +section._account
+      +section-content
+        +account-page(getData('orders'), 1)

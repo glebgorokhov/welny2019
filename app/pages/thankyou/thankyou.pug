@@ -1,0 +1,16 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = projectName + ' | Попробуйте Welny+'
+
+block content
+  .container
+    +section._mobile
+      +section-header
+        +section-title Спасибо, что пользуетесь Welny
+
+      +section-content
+        +subscription(getData('subscription').mobile)._mobile
+
+      +section-buttons
+        +button()(href="#").__button Заказать

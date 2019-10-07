@@ -1,0 +1,80 @@
+.account {
+  display: block;
+  background: orange;
+  border-radius: 5px;
+  overflow: hidden;
+  color: white;
+
+  $b: &;
+
+  &_desktop {
+    border-radius: 15px;
+  }
+
+  &__top {
+    display: flex;
+    padding: 20px 15px;
+
+    #{$b}_desktop & {
+      padding: 30px 30px 40px;
+    }
+  }
+
+  &__image {
+    width: 30px;
+    height: 30px;
+    background: black;
+    margin-right: 10px;
+    flex-shrink: 0;
+
+    #{$b}_desktop & {
+      width: 40px;
+      height: 40px;
+      margin-right: 20px;
+    }
+  }
+
+  &__user {
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  &__number {
+    font-size: 14px;
+    line-height: 1.2;
+
+    #{$b}_desktop & {
+      font-size: 16px;
+    }
+
+    &:not(:first-child) {
+      margin-top: 10px;
+    }
+  }
+
+  &__bottom {
+    background: rgba(black, .1);
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    #{$b}_desktop & {
+      padding: 15px 30px;
+    }
+  }
+
+  &__credits {
+    font-size: 16px;
+    line-height: 1.2;
+  }
+
+  &__value {
+    font-size: 16px;
+    line-height: 1.2;
+
+    #{$b}_desktop & {
+      font-size: 18px;
+    }
+  }
+}

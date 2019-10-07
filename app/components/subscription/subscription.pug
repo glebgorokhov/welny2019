@@ -1,0 +1,23 @@
+mixin subscription(data)
+  +b.subscription&attributes(attributes)
+    each item in data
+      +e.row
+        +e.icon
+          +icon(item.icon)
+
+        +e.P.title!= item.title
+        +e.P.value!= item.value
+
+mixin ui-kit-subscription()
+  +ui-section
+    +ui-section-head
+      +ui-title Инфо о подписке
+      +ui-path
+        p Компонент: components/subscription/subscription
+
+    +ui-section-content()
+      +subscription(getData('subscription').desktop)
+
+    //- При +ui-section-content(true) контейнер отсутствует
+    //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()
+    //- Рамка вокруг особой секции: +ui-special()
