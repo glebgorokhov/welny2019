@@ -4,15 +4,15 @@
   border: 0;
   vertical-align: middle;
   box-sizing: border-box;
-  background-color: orange;
-  transition: opacity $ease-main;
+  background-color: $color-main;
+  transition: background-color $ease-main;
   cursor: pointer;
   font-size: 14px;
-  line-height: 40px;
-  height: 40px;
+  line-height: 38px;
+  height: 38px;
   color: white;
   appearance: none;
-  border-radius: 3px;
+  border-radius: 5px;
   text-align: center;
 
   $b: &;
@@ -35,7 +35,7 @@
   }
 
   &:hover {
-    opacity: .5;
+    background-color: $color-main-light;
   }
 }
 

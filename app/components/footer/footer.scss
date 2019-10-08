@@ -1,8 +1,11 @@
 .footer {
   display: block;
-  background: brown;
-  padding: 10px 0;
   color: white;
+
+  @include rule(background, (xl: $color-brown, lg: $color-brown-1));
+  @include rule(padding, (xl: 22px 0, lg: 19px 0 17px));
+  @include rule(box-shadow, (lg: 0x 3px 40px 0px rgba(black, 0.45)));
+
 
   $b: &;
 
@@ -18,7 +21,9 @@
   &__item {
     font-size: 14px;
     line-height: 1.2;
+    box-sizing: border-box;
 
+    @include rule(padding-left, (lg: 15px));
     @include rule(width, (lg: 50%));
     @include rule(margin-top, (lg: 5px));
 
@@ -35,6 +40,11 @@
   }
 
   &__link {
+    transition: color $ease-main;
+
+    &:hover {
+      color: $color-main;
+    }
   }
 
   &__socials {
@@ -45,21 +55,29 @@
     font-size: 0;
 
     &:not(:first-child) {
-      margin-top: 20px;
+      margin-top: 21px;
     }
   }
 
   &__social {
     display: block;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 1px solid $color-main-light-2;
+    position: relative;
 
     svg {
-      width: 20px;
-      height: 20px;
-      background: white;
+      width: 10px;
+      height: 10px;
+      fill: $color-main-light-2;
+
+      @include center-image;
     }
 
     &:not(:first-child) {
-      margin-left: 20px;
+      margin-left: 10px;
     }
   }
 
@@ -67,13 +85,14 @@
     @include rule(display, (xl: none, lg: block));
 
     padding-top: 10px;
-    border-top: 1px solid white;
-    font-size: 14px;
+    border-top: 1px solid $color-brown-light-1;
+    font-size: 12px;
     text-align: center;
     line-height: 1.5;
+    color: $color-brown-light;
 
     &:not(:first-child) {
-      margin-top: 20px;
+      margin-top: 17px;
     }
   }
 }

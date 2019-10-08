@@ -1,8 +1,11 @@
 .header {
   display: block;
-  background: brown;
-  padding: 10px 0;
   color: white;
+
+  @include rule(background, (xl: rgba($color-brown, .5), lg: $color-brown-1));
+  @include rule(padding, (xl: 15px 0, lg: 7px 0));
+  @include rule(box-shadow, (lg: 0px 9px 15px 0px rgba(black, 0.25)));
+
 
   $b: &;
 
@@ -21,11 +24,16 @@
   &__logo {
     margin-right: 30px;
     font-size: 0;
+    transition: transform $ease-main;
+
+    &:hover {
+      transform: rotate(30deg);
+    }
 
     svg {
-      width: 40px;
-      height: 40px;
-      background: white;
+      @include rule(width, (xl: 45px, lg: 28px));
+      @include rule(height, (xl: 45px, lg: 28px));
+      @include rule(fill, (xl: white, lg: $color-main-light-2));
     }
   }
 
@@ -49,21 +57,25 @@
     font-size: 14px;
     line-height: 1;
 
+    &:hover {
+      text-decoration: underline;
+    }
+
     @include rule(display, (lg: none));
   }
 
   &__burger-button {
     @include rule(display, (xl: none, lg: flex));
 
-    width: 20px;
-    height: 20px;
+    width: 23px;
+    height: 19px;
     flex-direction: column;
     justify-content: space-between;
 
     &::before, &::after, span {
-      height: 2px;
+      height: 3px;
       width: 100%;
-      background: orange;
+      background: $color-main-light-2;
       border-radius: 100px;
       display: block;
     }

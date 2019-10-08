@@ -10,9 +10,10 @@
 @import '../pages/**/*';
 
 .container {
+  @include rule(padding-left, (xl: $container-padding, lg: 10px));
+  @include rule(padding-right, (xl: $container-padding, lg: 10px));
+
   width: $container-width;
-  padding-left: $container-padding;
-  padding-right: $container-padding;
   margin-left: auto;
   margin-right: auto;
   max-width: 100%;
@@ -38,7 +39,11 @@
 }
 
 body {
-  background: #333;
+  background-color: #28201d;
+  background-size: cover;
+  font-weight: 300;
+
+  @include rule(background-image, (xl: url('../images/bg.jpg'), lg: url('../images/bg_mobile.jpg')));
 }
 
 .main {
