@@ -8,6 +8,7 @@
   }
 
   // Сверху
+
   &__top {
     @include rule(display, (xl: flex, lg: block));
   }
@@ -28,14 +29,14 @@
     display: block;
     opacity: .5;
     transition: background-color $ease-main, box-shadow $ease-main, opacity $ease-main;
-    box-shadow: 0px 0 0 0px rgba(0, 0, 0, 0);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
     background-image: url('../images/subscription.jpg');
     background-size: cover;
     position: relative;
     overflow: hidden;
 
     #{$b}__input:checked + & {
-      box-shadow: 0px 15px 15px 0px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 15px 15px 0 rgba(0, 0, 0, .25);
       background-color: white;
       opacity: 1;
     }
@@ -72,6 +73,7 @@
     }
 
     #{$b}__input:checked + #{$b}__box & {
+
       &::after {
         opacity: 1;
       }
@@ -134,6 +136,7 @@
   }
 
   // Снизу
+
   &__bottom {
     @include rule(margin-top, (xl: 20px, lg: 20px));
   }
@@ -165,7 +168,7 @@
     #{$b}__input:checked + & {
       opacity: 1;
 
-      @include rule(box-shadow, (lg: 0px 15px 15px 0px rgba(0, 0, 0, 0.25)));
+      @include rule(box-shadow, (lg: 0 15px 15px 0 rgba(0, 0, 0, .25)));
     }
   }
 
@@ -200,6 +203,7 @@
     }
 
     #{$b}__input:checked + #{$b}__simple-box & {
+
       &::after {
         opacity: 1;
       }

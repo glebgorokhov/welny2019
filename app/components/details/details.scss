@@ -4,15 +4,16 @@
   $b: &;
 
   &__section {
+
     & + & {
-      @include rule(margin-top, (xl: 20px, lg: 40px));
+      @include rule(margin-top, (xl: 26px, lg: 40px));
     }
   }
 
   &__title {
     font-size: 16px;
     line-height: 1.2;
-    margin-bottom: 20px;
+    margin-bottom: 21px;
   }
 
   &__content {
@@ -20,13 +21,13 @@
   }
 
   &__left {
-    @include rule(width, (xl: 200px, lg: 100%));
-    @include rule(margin-right, (xl: 30px, lg: 0));
+    @include rule(width, (xl: 185px, lg: 100%));
+    @include rule(margin-right, (xl: 28px, lg: 0));
 
     flex-shrink: 0;
 
     .massage-card {
-      @include rule(width, (lg: 200px));
+      @include rule(width, (lg: 176px));
       @include rule(margin, (lg: 0 auto));
     }
   }
@@ -34,22 +35,24 @@
   &__right {
     flex: 1;
 
-    @include rule(margin-top, (lg: 30px));
+    @include rule(margin-top, (lg: 25px));
   }
 
   &__comment {
-    @include rule(margin-top, (lg: 20px));
+    @include rule(margin-top, (lg: 26px));
   }
 
   &__subsection {
+
     & + & {
-      margin-top: 20px;
+      @include rule(margin-top, (xl: 33px, lg: 26px));
     }
   }
 
   &__subtitle {
-    margin-bottom: 20px;
-    font-size: 14px;
+    @include rule(font-size, (xl: 16px, lg: 18px));
+    @include rule(margin-bottom, (xl: 20px, lg: 16px));
+
     line-height: 1.2;
   }
 
@@ -73,7 +76,7 @@
     display: none;
 
     &:checked + #{$b}__box {
-      @include rule(box-shadow, (lg: 0 2px 5px 0 rgba(black, .2)));
+      @include rule(box-shadow, (lg: 0 0 13px 0 rgba(0, 0, 0, .1)));
 
       #{$b}__text {
         @include rule(color, (lg: orange));
@@ -85,13 +88,15 @@
     display: block;
     transition: box-shadow $ease-main;
     width: 100%;
+    box-sizing: border-box;
 
-    @include rule(border, (lg: 1px solid gray));
-    @include rule(padding, (lg: 5px));
+    @include rule(border, (lg: 1px solid #eeeeee));
+    @include rule(padding, (lg: 7px 5px 11px));
+    @include rule(border-radius, (lg: 2px));
   }
 
   &__image {
-    @include rule(height, (xl: 80px, lg: 40px));
+    @include rule(height, (xl: 80px, lg: 43px));
 
     position: relative;
     display: block;
@@ -99,12 +104,12 @@
     img {
       @include center-image;
 
-      width: 80%;
-      height: 100%;
+      max-width: 100%;
+      max-height: 100%;
       transition: opacity $ease-main;
 
-      &:first-child { opacity: 1; background: black; }
-      &:last-child { opacity: 0; background: orange; }
+      &:first-child { opacity: 1; }
+      &:last-child { opacity: 0; }
     }
 
     #{$b}__input:checked + #{$b}__box & {
@@ -114,10 +119,15 @@
   }
 
   &__text {
-    margin-top: 10px;
+    @include rule(margin-top, (xl: 8px, lg: 6px));
+
     line-height: 1.2;
     transition: color $ease-main;
+    color: #aaa;
+    font-size: 14px;
 
-    @include rule(font-size, (xl: 14px, lg: 12px));
+    #{$b}__input:checked + #{$b}__box & {
+      color: $color-main;
+    }
   }
 }

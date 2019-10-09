@@ -1,6 +1,6 @@
 .account {
   display: block;
-  background: orange;
+  background: $color-main-light;
   border-radius: 5px;
   overflow: hidden;
   color: white;
@@ -13,7 +13,8 @@
 
   &__top {
     display: flex;
-    padding: 20px 15px;
+    padding: 27px 22px 33px;
+    align-items: flex-start;
 
     #{$b}_desktop & {
       padding: 30px 30px 40px;
@@ -21,9 +22,7 @@
   }
 
   &__image {
-    width: 30px;
-    height: 30px;
-    background: black;
+    width: 44px;
     margin-right: 10px;
     flex-shrink: 0;
 
@@ -35,12 +34,12 @@
   }
 
   &__user {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.2;
   }
 
   &__number {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.2;
 
     #{$b}_desktop & {
@@ -48,13 +47,13 @@
     }
 
     &:not(:first-child) {
-      margin-top: 10px;
+      margin-top: 6px;
     }
   }
 
   &__bottom {
-    background: rgba(black, .1);
-    padding: 10px 15px;
+    background: $color-main-light-2;
+    padding: 15px 22px;
     display: flex;
     align-items: center;
     justify-content: space-between;

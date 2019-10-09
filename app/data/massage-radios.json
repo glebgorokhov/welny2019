@@ -5,19 +5,19 @@
     "items": [
       {
         "text": "Женщина",
-        "image1": "assets/images/radios/1.svg",
-        "image2": "assets/images/radios/1-1.svg",
+        "image1": "assets/images/radios/1.png",
+        "image2": "assets/images/radios/1-1.png",
         "checked": true
       },
       {
         "text": "Любой",
-        "image1": "assets/images/radios/2.svg",
-        "image2": "assets/images/radios/2-1.svg"
+        "image1": "assets/images/radios/2.png",
+        "image2": "assets/images/radios/2-1.png"
       },
       {
         "text": "Мужчина",
-        "image1": "assets/images/radios/3.svg",
-        "image2": "assets/images/radios/3-1.svg"
+        "image1": "assets/images/radios/3.png",
+        "image2": "assets/images/radios/3-1.png"
       }
     ]
   },
@@ -26,14 +26,14 @@
     "items": [
       {
         "text": "Взять с собой",
-        "image1": "assets/images/radios/4.svg",
-        "image2": "assets/images/radios/4-1.svg",
+        "image1": "assets/images/radios/4.png",
+        "image2": "assets/images/radios/4-1.png",
         "checked": true
       },
       {
         "text": "Есть на месте",
-        "image1": "assets/images/radios/5.svg",
-        "image2": "assets/images/radios/5-1.svg"
+        "image1": "assets/images/radios/5.png",
+        "image2": "assets/images/radios/5-1.png"
       }
     ]
   }

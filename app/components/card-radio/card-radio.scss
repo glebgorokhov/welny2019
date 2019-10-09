@@ -38,6 +38,7 @@
     }
 
     #{$b}__input:checked + #{$b}__box & {
+
       &::after {
         opacity: 1;
       }

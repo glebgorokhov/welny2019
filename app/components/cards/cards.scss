@@ -83,6 +83,7 @@
   }
 
   &__inputbox {
+
     div {
       display: flex;
       justify-content: flex-start;
@@ -124,6 +125,7 @@
   }
 
   // Type 2
+
   &__choose {
     @include rule(font-size, (xl: 18px, lg: 16px));
     @include rule(padding, (xl: 0 30px, lg: 0));

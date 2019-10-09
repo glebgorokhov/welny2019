@@ -4,7 +4,7 @@
 
   @include rule(background, (xl: $color-brown, lg: $color-brown-1));
   @include rule(padding, (xl: 22px 0, lg: 19px 0 17px));
-  @include rule(box-shadow, (lg: 0x 3px 40px 0px rgba(black, 0.45)));
+  @include rule(box-shadow, (lg: 0x 3px 40px 0 rgba(black, .45)));
 
 
   $b: &;
@@ -29,6 +29,7 @@
 
     &:not(:first-child) {
       @include screen('lg', min) {
+
         &::before {
           content: '.';
           width: 30px;

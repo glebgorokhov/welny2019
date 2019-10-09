@@ -1,7 +1,7 @@
 extends ../../layouts/default
 
 block head
-  - var pageTitle = projectName + ' | step-1'
+  - var pageTitle = projectName + ' | Параметры сеанса'
 
 block content
   +steps(1)
@@ -15,4 +15,7 @@ block content
         +parameters(2)
 
       +section-buttons
-        +button()(href="#").__button Продолжить
+        +button()(href="#")._mid.__button ПРОДОЛЖИТЬ
+        +e.A.arrow-link(href="#")
+          +icon('arrow_left')
+          span Назад

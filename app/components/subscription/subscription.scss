@@ -2,7 +2,8 @@
   display: block;
   background: white;
   border-radius: 5px;
-  padding: 10px 10px 20px;
+  padding: 12px 15px 36px;
+  color: $color-brown;
 
   &_desktop {
     background: rgba(orange, .15);
@@ -17,17 +18,16 @@
     align-items: center;
 
     &:not(:first-child) {
-      margin-top: 20px;
+      margin-top: 26px;
     }
   }
 
   &__icon {
     width: 20px;
     height: 20px;
-    fill: orange;
-    background: orange;
+    fill: $color-main;
     flex-shrink: 0;
-    margin-right: 12px;
+    margin-right: 14px;
 
     svg {
       width: 100%;
@@ -36,14 +36,14 @@
   }
 
   &__title {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.2;
     flex: 1;
   }
 
   &__value {
     margin-left: 10px;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.2;
     font-weight: 700;
   }

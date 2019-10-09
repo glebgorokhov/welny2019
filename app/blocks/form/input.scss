@@ -15,9 +15,10 @@
 .textarea {
   @extend .input;
 
+  @include rule(min-height, (xl: 50px, lg: 85px));
+
   padding-top: 13px;
   padding-bottom: 13px;
-  min-height: 80px;
   resize: vertical;
   font-size: 14px;
 }

@@ -6,6 +6,7 @@
   $b: &;
 
   &__box {
+
     &:not(:first-child) {
       @include rule(margin-right, (xl: 7px, lg: 12px));
     }

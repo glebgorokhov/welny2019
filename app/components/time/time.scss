@@ -8,33 +8,36 @@
   }
 
   &__box {
-    @include rule(padding, (xl: 10px, lg: 5px));
+    @include rule(padding, (xl: 9px 9px 19px, lg: 13px 5px 11px));
+    @include rule(border-radius, (xl: 2px, lg: 5px));
 
-    box-shadow: 0 5px 5px 0 rgba(black, .2);
-    opacity: .5;
-    transition: opacity $ease-main;
+    opacity: .3;
+    transition: opacity $ease-main, box-shadow $ease-main;
     text-align: center;
     display: block;
     cursor: pointer;
-    border-radius: 5px;
+    border: 1px solid #eee;
 
     #{$b}__input:checked + & {
       opacity: 1;
       cursor: auto;
+
+      @include rule(box-shadow, (xl: -4px 4px 20px -9px rgba(0, 0, 0, .15), lg: 0 0 13px 0 rgba(0, 0, 0, .1)));
     }
   }
 
   &__image {
-    height: 30px;
-    width: 30px;
-    background: black;
+    @include rule(width, (xl: 41px, lg: 34px));
+
     display: inline-block;
   }
 
   &__text {
-    font-size: 14px;
+    @include rule(font-size, (xl: 16px, lg: 14px));
+    @include rule(margin-top, (xl: 7px, lg: 6px));
+
     line-height: 1.2;
-    margin-top: 10px;
     display: block;
+    color: $color-brown;
   }
 }

@@ -4,11 +4,7 @@
 
   @include rule(background, (xl: rgba($color-brown, .5), lg: $color-brown-1));
   @include rule(padding, (xl: 15px 0, lg: 7px 0));
-  @include rule(box-shadow, (lg: 0px 9px 15px 0px rgba(black, 0.25)));
-
-  // Убрать перед релизом
-  @include rule(margin-top, (lg: 15px));
-
+  @include rule(box-shadow, (lg: 0 9px 15px 0 rgba(black, .25)));
 
   $b: &;
 

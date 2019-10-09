@@ -9,6 +9,7 @@
 
   &__container {
     overflow: hidden;
+
     @include rule(margin, (xl: -10px 0, lg: -10px 0));
   }
 
@@ -19,7 +20,7 @@
   }
 
   &__slide {
-    opacity: .5;
+    opacity: .3;
     transition: opacity $ease-main;
     box-sizing: border-box;
     flex-shrink: 0;
@@ -35,16 +36,23 @@
 
   &__arrow {
     position: absolute;
-    width: 10px;
-    height: 20px;
-    background: black;
+
+    @include rule(width, (xl: 15px, lg: 8px));
+    @include rule(height, (xl: 26px, lg: 16px));
+
     top: 0;
     bottom: 0;
     font-size: 0;
     margin: auto;
     z-index: 5;
+    cursor: pointer;
+    transition: opacity $ease-main;
 
-    svg {
+    &:hover {
+      opacity: .5;
+    }
+
+    img {
       width: 100%;
       height: 100%;
     }
@@ -52,7 +60,7 @@
     &_prev {
       @include rule(left, (xl: 0, lg: 16px));
 
-      svg {
+      img {
         transform: rotate(180deg);
       }
     }

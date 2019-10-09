@@ -8,6 +8,7 @@
   }
 
   &__section {
+
     &:not(:first-child) {
       @include rule(margin-top, (xl: 41px, lg: 10px));
     }
@@ -33,6 +34,7 @@
         }
 
         &.is-active {
+
           &::after {
             transform: rotate(180deg);
           }
@@ -92,6 +94,7 @@
   }
 
   &__items {
+
     &:not(:first-child) {
       margin-top: 16px;
     }

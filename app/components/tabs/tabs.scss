@@ -6,20 +6,27 @@
   &__tab {
     font-size: 16px;
     line-height: 1;
-    transition: border-color $ease-main;
-    border-bottom: 1px dashed;
+    transition: border-color $ease-main, color $ease-main;
+    border-bottom: 1px dashed #ddd;
+    color: $color-brown;
+    cursor: pointer;
 
     &:not(:first-child) {
-      margin-left: 20px;
+      @include rule(margin-left, (xl: 13px, lg: 43px));
+    }
+
+    &:not(.is-active):hover {
+      color: $color-main;
     }
 
     &.is-active {
       border-color: transparent;
+      cursor: auto;
     }
   }
 
   & + .tabs-wrappers {
-    @include rule(margin-top, (xl: 40px, lg: 20px));
+    @include rule(margin-top, (xl: 22px, lg: 20px));
   }
 }
 

@@ -21,6 +21,7 @@
     flex: 1;
 
     @include screen('lg', min) {
+
       &::placeholder {
         opacity: 0;
       }

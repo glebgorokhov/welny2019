@@ -13,8 +13,10 @@
   &_mobile {
     color: white;
 
+    @include rule(padding, (lg: 0 10px));
+
     span {
-      color: orange;
+      color: $color-main;
     }
   }
 
@@ -26,6 +28,7 @@
     }
 
     #{$b}_account & {
+
       &:not(:first-child) {
         margin-top: 15px;
       }
@@ -47,6 +50,11 @@
 
     #{$b}_mobile & {
       fill: white;
+
+      &_stroke {
+        fill: transparent;
+        stroke: white;
+      }
     }
   }
 

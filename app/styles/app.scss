@@ -42,6 +42,7 @@ body {
   background-color: #28201d;
   background-size: cover;
   font-weight: 300;
+  color: $color-brown;
 
   @include rule(background-image, (xl: url('../images/bg.jpg'), lg: url('../images/bg_mobile.jpg')));
 }

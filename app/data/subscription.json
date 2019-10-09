@@ -1,44 +1,44 @@
 {
   "desktop": [
     {
-      "icon": "1",
+      "icon": "logo",
       "title": "Подписка",
       "value": "Welny+Gold"
     },
     {
-      "icon": "1",
+      "icon": "advantage_calendar",
       "title": "Дата начала",
       "value": "14.03.2019"
     },
     {
-      "icon": "1",
+      "icon": "advantage_calendar",
       "title": "Даты окончания",
       "value": "14.04.2019"
     },
     {
-      "icon": "1",
+      "icon": "advantage_time",
       "title": "Часы массажа со скидкой",
       "value": "3.5"
     }
   ],
   "mobile": [
     {
-      "icon": "1",
+      "icon": "logo",
       "title": "Подписка",
       "value": "Welny+Gold"
     },
     {
-      "icon": "1",
+      "icon": "advantage_calendar",
       "title": "Дата начала",
       "value": "14.03.2019"
     },
     {
-      "icon": "1",
+      "icon": "advantage_calendar",
       "title": "Даты окончания",
       "value": "14.04.2019"
     },
     {
-      "icon": "1",
+      "icon": "advantage_time",
       "title": "Часы со скидкой",
       "value": "3.5"
     }

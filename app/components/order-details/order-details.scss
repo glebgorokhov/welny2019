@@ -44,6 +44,7 @@
     width: 100%;
 
     @include screen('lg', min) {
+
       #{$b}__col_two & {
         width: auto;
         flex: 1;
