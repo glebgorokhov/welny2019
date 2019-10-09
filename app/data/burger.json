@@ -1,19 +1,23 @@
 [
   {
     "icon": "arrow_burger",
-    "text": "Аккаунт"
+    "text": "Аккаунт",
+    "class": "_arrow"
   },
   {
     "icon": "arrow_burger",
-    "text": "Welny+"
+    "text": "Welny+",
+    "class": "_arrow"
   },
   {
     "icon": "arrow_burger",
-    "text": "Пригласить друзей"
+    "text": "Пригласить друзей",
+    "class": "_arrow"
   },
   {
     "icon": "arrow_burger",
-    "text": "Заказать"
+    "text": "Заказать",
+    "class": "_arrow"
   },
   {
     "icon": "exit",

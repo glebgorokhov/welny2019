@@ -1,8 +1,6 @@
 .add-review {
   display: block;
 
-  @include rule(padding-top, (xl: 30px, lg: 0));
-
   $b: &;
 
   &__sections {
@@ -11,14 +9,14 @@
 
   &__section {
     &:not(:first-child) {
-      @include rule(margin-top, (xl: 50px, lg: 10px));
+      @include rule(margin-top, (xl: 41px, lg: 10px));
     }
 
     &_accordion {
       @include screen('lg') {
         background: white;
         border-radius: 3px;
-        padding: 10px;
+        padding: 15px 15px 17px;
         position: relative;
 
         &::after {
@@ -26,10 +24,12 @@
           position: absolute;
           width: 10px;
           height: 5px;
-          right: 10px;
-          top: 10px;
-          background: black;
+          right: 15px;
+          top: 26px;
           transition: transform $ease-main;
+          background-size: 100% 100%;
+          background-repeat: no-repeat;
+          background-image: url('../images/arrow_accordion_mobile.svg');
         }
 
         &.is-active {
@@ -42,17 +42,18 @@
   }
 
   &__title {
-    @include rule(font-size, (xl: 22px, lg: 18px));
+    @include rule(font-size, (xl: 18px, lg: 20px));
 
     line-height: 1.2;
     font-weight: 700;
-    color: orange;
+    color: $color-main;
   }
 
   &__subtitle {
-    font-size: 12px;
-    margin-top: 5px;
+    font-size: 14px;
+    margin-top: 3px;
     line-height: 1.2;
+    color: $color-brown-3;
   }
 
   &__grid {
@@ -66,8 +67,8 @@
     @include screen('lg') {
       align-items: center;
       background: white;
-      border-radius: 3px;
-      padding: 10px;
+      border-radius: 5px;
+      padding: 14px 16px 20px;
       text-align: center;
 
       &:not(:first-child) {
@@ -75,15 +76,16 @@
       }
 
       #{$b}__section_accordion & {
-        padding: 10px 0 0;
-        border-top: 1px solid lightgray;
+        padding: 14px 0 0;
+        border-top: 1px solid #d5d0cf;
+        border-radius: 0;
 
         &:not(:first-child) {
           margin-top: 0;
         }
 
         &:not(:last-child) {
-          padding-bottom: 10px;
+          padding-bottom: 19px;
         }
       }
     }
@@ -91,7 +93,7 @@
 
   &__items {
     &:not(:first-child) {
-      margin-top: 20px;
+      margin-top: 16px;
     }
 
     #{$b}__section_accordion:not(.is-active) & {
@@ -100,33 +102,36 @@
   }
 
   &__question {
-    font-size: 18px;
-    line-height: 1.2;
-    font-weight: 500;
+    @include rule(font-size, (xl: 13px, lg: 18px));
+    @include rule(line-height, (xl: 14px, lg: 24px));
+    @include rule(font-weight, (lg: 400));
+
     flex-grow: 1;
+    color: $color-brown-light-3;
   }
 
   &__rating {
-    margin-top: 10px;
+    @include rule(margin-top, (xl: 13px, lg: 16px));
   }
 
   &__comment {
-    @include rule(margin-top, (xl: 50px, lg: 10px));
+    @include rule(margin-top, (xl: 44px, lg: 10px));
 
     @include screen('lg') {
       background: white;
       border-radius: 3px;
-      padding: 10px;
+      padding: 15px;
       text-align: center;
     }
   }
 
   &__comment-title {
-    @include rule(padding, (xl: 0 30px, lg: 0));
-    @include rule(font-size, (xl: 16px, lg: 18px));
-    @include rule(font-weight, (xl: bold, lg: normal));
+    @include rule(padding, (xl: 0 30px, lg: 0 10px));
+    @include rule(font-size, (xl: 13px, lg: 20px));
+    @include rule(margin-bottom, (xl: 9px, lg: 27px));
+    @include rule(font-weight, (lg: 400));
 
-    margin-bottom: 15px;
+    color: $color-brown-light-3;
     line-height: 1.2;
   }
 
@@ -135,7 +140,7 @@
     resize: none;
     height: 80px;
     min-height: 0;
-    padding: 13px 29px;
+    padding: 11px 29px;
 
     @include screen('lg') {
       height: 30px;

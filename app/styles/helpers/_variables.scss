@@ -11,7 +11,7 @@ $grid-gap: 14px; // Расстояние между колонками
 $grid-gap-vertical: 14px; // Расстояние между строками в сетке
 $breakpoints: (
   'xl': 1920px,
-  'lg': 1280px,
+  'lg': 1024px,
   'md': 1024px,
   'sm': 768px,
   'xs': 480px
@@ -25,13 +25,18 @@ $color-placeholder: #777; // Основной цвет для placeholder
 $color-input: black; // Основной цвет input, select и textarea
 $color-main: #e08524; // Основной фирменный цвет
 $color-main-light: #FFA95C;
-$color-main-light-2: #FA850D;
 $color-border: #ccc; // Основной цвет границ таблиц, секций
 
 $color-brown: #2d140d;
 $color-brown-1: #3a1d16;
+$color-brown-2: #431d15;
+$color-brown-3: #482c23;
+$color-brown-4: #1b1716;
 $color-brown-light: #654d47;
 $color-brown-light-1: #5a413b;
+$color-brown-light-2: #40221c;
+$color-brown-light-3: #54423e;
+$color-brown-light-4: #58443e;
 
 // ##########
 // Массив цветов для UI-кита

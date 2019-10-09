@@ -6,6 +6,9 @@
   @include rule(padding, (xl: 15px 0, lg: 7px 0));
   @include rule(box-shadow, (lg: 0px 9px 15px 0px rgba(black, 0.25)));
 
+  // Убрать перед релизом
+  @include rule(margin-top, (lg: 15px));
+
 
   $b: &;
 
@@ -33,7 +36,7 @@
     svg {
       @include rule(width, (xl: 45px, lg: 28px));
       @include rule(height, (xl: 45px, lg: 28px));
-      @include rule(fill, (xl: white, lg: $color-main-light-2));
+      @include rule(fill, (xl: white, lg: $color-main));
     }
   }
 
@@ -75,7 +78,7 @@
     &::before, &::after, span {
       height: 3px;
       width: 100%;
-      background: $color-main-light-2;
+      background: $color-main;
       border-radius: 100px;
       display: block;
     }

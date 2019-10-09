@@ -3,22 +3,22 @@
     "title": "Welny+ Gold",
     "items": [
       {
-        "image": "assets/images/icon_1.svg",
+        "image": "advantage_money",
         "title": "Стоимость подписки",
         "value": "999 Р"
       },
       {
-        "image": "assets/images/icon_2.svg",
+        "image": "advantage_time",
         "title": "Массажа со скидкой",
         "value": "5 часов"
       },
       {
-        "image": "assets/images/icon_3.svg",
+        "image": "advantage_pig",
         "title": "Скидка на каждый час",
         "value": "400 Р"
       },
       {
-        "image": "assets/images/icon_4.svg",
+        "image": "advantage_calendar",
         "title": "Срок действия",
         "value": "1 мес"
       }
@@ -28,22 +28,22 @@
     "title": "Welny+ Platinum",
     "items": [
       {
-        "image": "assets/images/icon_1.svg",
+        "image": "advantage_money",
         "title": "Стоимость подписки",
         "value": "2999 Р"
       },
       {
-        "image": "assets/images/icon_2.svg",
+        "image": "advantage_time",
         "title": "Массажа со скидкой",
         "value": "5 часов"
       },
       {
-        "image": "assets/images/icon_3.svg",
+        "image": "advantage_pig",
         "title": "Скидка на каждый час",
         "value": "500 Р"
       },
       {
-        "image": "assets/images/icon_4.svg",
+        "image": "advantage_calendar",
         "title": "Срок действия",
         "value": "3 мес"
       }

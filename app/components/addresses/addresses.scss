@@ -1,5 +1,6 @@
 .addresses {
   display: block;
+  color: $color-brown;
 
   $b: &;
 
@@ -8,13 +9,14 @@
   }
 
   &__item {
-    @include rule(padding, (xl: 20px, lg: 10px 0));
+    @include rule(padding, (xl: 36px 0 27px 20px, lg: 16px 0));
+    @include rule(border-top, (xl: 1px dotted rgba($color-main, .7), lg: 1px dotted #eeecec));
 
     display: block;
-    border-top: 1px solid rgba(orange, .3);
+    cursor: pointer;
 
     &:last-child {
-      @include rule(border-bottom, (lg: 1px solid rgba(orange, .3)));
+      @include rule(border-bottom, (lg: 1px dotted #eeecec));
 
       @include screen('lg', min) {
         padding-bottom: 0;
@@ -31,7 +33,7 @@
   }
 
   &__wrapper {
-    @include rule(padding-left, (xl: 50px, lg: 30px));
+    @include rule(padding-left, (xl: 61px, lg: 45px));
 
     position: relative;
     display: block;
@@ -44,21 +46,27 @@
     transition: color $ease-main;
 
     #{$b}__input:checked + #{$b}__box & {
-      color: orange;
+      color: $color-main;
     }
   }
 
   &__links {
-    margin-top: 10px;
+    @include rule(margin-top, (xl: 14px, lg: 12px));
+
     display: flex;
   }
 
   &__link {
     font-size: 14px;
     line-height: 1.2;
+    transition: color $ease-main;
+
+    &:hover {
+      color: $color-main;
+    }
 
     &:not(:first-child) {
-      margin-left: 15px;
+      @include rule(margin-left, (xl: 15px, lg: 26px));
     }
   }
 
@@ -66,9 +74,11 @@
     position: absolute;
     left: 0;
     top: 0;
-    width: 16px;
-    height: 16px;
-    box-shadow: 0 0 0 2px black inset;
+
+    @include rule(width, (xl: 25px, lg: 26px));
+    @include rule(height, (xl: 25px, lg: 26px));
+    @include rule(box-shadow, (xl: 0 0 0 3px $color-brown inset, lg: 0 0 0 2px $color-main inset));
+
     transition: box-shadow $ease-main;
     border-radius: 50%;
 
@@ -76,16 +86,17 @@
       content: '';
       transition: opacity $ease-main;
       opacity: 0;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: orange;
 
+      @include rule(width, (xl: 9px, lg: 14px));
+      @include rule(height, (xl: 9px, lg: 14px));
       @include center-image;
+
+      border-radius: 50%;
+      background: $color-main;
     }
 
     #{$b}__input:checked ~ & {
-      box-shadow: 0 0 0 4px orange inset;
+      @include rule(box-shadow, (xl: 0 0 0 5px $color-main inset, lg: 0 0 0 2px $color-main inset));
 
       &::after {
         opacity: 1;
@@ -94,12 +105,12 @@
   }
 
   &__or {
-    font-size: 14px;
+    font-size: 16px;
     text-align: center;
     line-height: 1.2;
 
     &:not(:first-child) {
-      @include rule(margin-top, (xl: 20px, lg: 10px));
+      @include rule(margin-top, (xl: 20px, lg: 9px));
     }
   }
 
@@ -107,7 +118,7 @@
     width: 100%;
 
     &:not(:first-child) {
-      @include rule(margin-top, (xl: 20px, lg: 10px));
+      @include rule(margin-top, (xl: 22px, lg: 14px));
     }
   }
 }

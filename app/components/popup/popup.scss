@@ -5,53 +5,63 @@
   top: 0;
   right: 0;
   bottom: 0;
-  z-index: 9999999999;
-  background: rgba(black, .3);
+  z-index: 999;
+  background: rgba($color-brown-4, .8);
   align-items: center;
   justify-content: center;
 
   $b: &;
 
   &__block {
-    width: 250px;
+    width: 325px;
     background: white;
     border-radius: 10px;
-    box-shadow: 0 5px 15px 0 rgba(black, .3);
+    box-shadow: 0px 5px 24px 6px rgba(0, 0, 0, 0.25);
     position: relative;
     text-align: center;
     font-size: 0;
     overflow: hidden;
-    max-width: calc(100% - 32px);
+    max-width: calc(100% - 20px);
+    box-sizing: border-box;
   }
 
   &__top {
-    padding: 15px 20px 30px;
+    @include rule(padding, (xl: 17px 20px 32px, lg: 25px 20px 28px));
   }
 
   &__close {
-    width: 16px;
-    height: 16px;
-    background: black;
+    width: 11px;
+    height: 11px;
+    fill: $color-brown-3;
     position: absolute;
     z-index: 5;
-    right: 15px;
-    top: 15px;
+
+    @include rule(right, (xl: 11px, lg: 21px));
+    @include rule(top, (xl: 11px, lg: 21px));
+
     cursor: pointer;
+    transition: fill $ease-main;
+
+    &:hover {
+      fill: $color-main;
+    }
   }
 
   &__title {
-    font-size: 18px;
+    @include rule(font-size, (xl: 24px, lg: 20px));
+
     line-height: 1.2;
     font-weight: 700;
+    color: $color-brown-3;
   }
 
   &__image {
-    margin-top: 10px;
+    margin-top: 15px;
     display: inline-block;
-    width: 80px;
-    height: 80px;
+    width: 126px;
+    height: 126px;
     border-radius: 50%;
-    border: 2px solid orange;
+    border: 4px solid $color-main;
     overflow: hidden;
     position: relative;
 
@@ -63,13 +73,15 @@
   }
 
   &__button {
-    height: 40px;
+    height: 54px;
     padding: 0 15px;
     text-align: center;
     color: white;
-    background: orange;
-    font-size: 16px;
-    line-height: 40px;
+    background: $color-main;
+    line-height: 54px;
     width: 100%;
+    font-weight: 300;
+
+    @include rule(font-size, (xl: 18px, lg: 16px));
   }
 }

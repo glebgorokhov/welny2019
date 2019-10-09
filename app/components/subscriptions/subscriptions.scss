@@ -14,6 +14,7 @@
 
   &__item {
     flex: 1;
+    display: block;
 
     &:not(:first-child) {
       @include rule(margin-left, (xl: 10px, lg: 0));
@@ -22,41 +23,47 @@
   }
 
   &__box {
-    border-radius: 10px;
-    overflow: hidden;
+    @include rule(border-radius, (xl: 10px, lg: 10px));
+
     display: block;
-    background-color: rgba(black, .1);
     opacity: .5;
     transition: background-color $ease-main, box-shadow $ease-main, opacity $ease-main;
+    box-shadow: 0px 0 0 0px rgba(0, 0, 0, 0);
+    background-image: url('../images/subscription.jpg');
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
 
     #{$b}__input:checked + & {
-      box-shadow: 0 3px 8px 0 rgba(black, .15);
+      box-shadow: 0px 15px 15px 0px rgba(0, 0, 0, 0.25);
       background-color: white;
       opacity: 1;
     }
   }
 
   &__header {
+    @include rule(padding, (xl: 24px 16px 29px, lg: 25px 16px));
+
     display: flex;
-    padding: 20px 16px;
     align-items: center;
-    background: rgba(orange, .15);
+    background: rgba(#9f9f9f, .05);
   }
 
   &__circle {
-    width: 20px;
-    height: 20px;
+    width: 26px;
+    height: 26px;
     border-radius: 50%;
-    border: 1px solid orange;
+    border: 2px solid $color-main;
     position: relative;
-    margin-right: 20px;
+    margin-right: 15px;
     flex-shrink: 0;
+    box-sizing: border-box;
 
     &::after {
       content: '';
-      width: 10px;
-      height: 10px;
-      background: orange;
+      width: 14px;
+      height: 14px;
+      background: $color-main;
       border-radius: 50%;
       opacity: 0;
       transition: opacity $ease-main;
@@ -79,7 +86,8 @@
   }
 
   &__list {
-    padding: 20px 16px;
+    @include rule(padding, (xl: 27px 18px 35px 22px, lg: 17px 10px 26px 16px));
+
     display: block;
   }
 
@@ -88,45 +96,46 @@
     align-items: center;
 
     &:not(:first-child) {
-      margin-top: 20px;
+      margin-top: 18px;
     }
   }
 
   &__image {
-    @include rule(width, (xl: 30px, lg: 24px));
-    @include rule(height, (xl: 30px, lg: 24px));
+    @include rule(width, (xl: 22px, lg: 20px));
+    @include rule(height, (xl: 22px, lg: 20px));
 
     position: relative;
     flex-shrink: 0;
-    margin-right: 10px;
+    margin-right: 13px;
 
-    img {
+    svg {
       width: 100%;
       height: 100%;
-      background: black;
+      fill: $color-main;
 
       @include center-image;
     }
   }
 
   &__list-title {
-    @include rule(font-size, (xl: 16px, lg: 14px));
+    @include rule(font-size, (xl: 14px, lg: 16px));
 
     line-height: 1.2;
     flex: 1;
+    color: $color-brown-2;
   }
 
   &__list-value {
-    @include rule(font-size, (xl: 16px, lg: 14px));
+    @include rule(font-size, (xl: 14px, lg: 16px));
 
     padding-left: 10px;
     line-height: 1.2;
-    font-weight: 700;
+    color: $color-brown;
   }
 
   // Снизу
   &__bottom {
-    @include rule(margin-top, (xl: 30px, lg: 20px));
+    @include rule(margin-top, (xl: 20px, lg: 20px));
   }
 
   &__simple {
@@ -144,36 +153,45 @@
     display: flex;
     align-items: center;
 
-    @include rule(border-radius, (lg: 5px));
-    @include rule(padding, (xl: 20px 16px, lg: 16px));
+    @include rule(border-radius, (lg: 10px));
+    @include rule(padding, (xl: 20px 16px, lg: 22px 16px));
     @include rule(background, (lg: rgba(black, .1)));
+
+    @include screen('lg') {
+      background-image: url('../images/subscription.jpg');
+      background-size: cover;
+    }
 
     #{$b}__input:checked + & {
       opacity: 1;
+
+      @include rule(box-shadow, (lg: 0px 15px 15px 0px rgba(0, 0, 0, 0.25)));
     }
   }
 
   &__simple-text {
-    @include rule(font-size, (xl: 20px, lg: 18px));
+    @include rule(font-size, (xl: 20px, lg: 16px));
 
     line-height: 1.2;
     flex: 1;
+    font-weight: 400;
   }
 
   &__simple-circle {
-    width: 20px;
-    height: 20px;
+    width: 26px;
+    height: 26px;
     border-radius: 50%;
-    border: 1px solid orange;
+    border: 2px solid $color-main;
     position: relative;
+    box-sizing: border-box;
 
-    @include rule(margin-right, (xl: 20px, lg: 15px));
+    @include rule(margin-right, (xl: 15px, lg: 15px));
 
     &::after {
       content: '';
-      width: 10px;
-      height: 10px;
-      background: orange;
+      width: 14px;
+      height: 14px;
+      background: $color-main;
       border-radius: 50%;
       opacity: 0;
       transition: opacity $ease-main;

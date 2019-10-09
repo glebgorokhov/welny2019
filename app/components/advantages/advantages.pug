@@ -2,7 +2,7 @@ mixin advantages(data)
   +b.UL.advantages&attributes(attributes)
     each item in data
       +e.LI.item
-        +icon(item.icon).__icon
+        +icon(item.icon).__icon(class=item.class)
         +e.text!= item.text
 
 mixin ui-kit-advantages()

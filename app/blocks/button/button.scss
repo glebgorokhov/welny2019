@@ -5,7 +5,7 @@
   vertical-align: middle;
   box-sizing: border-box;
   background-color: $color-main;
-  transition: background-color $ease-main;
+  transition: background-color $ease-main, opacity $ease-main;
   cursor: pointer;
   font-size: 14px;
   line-height: 38px;
@@ -22,16 +22,27 @@
     cursor: not-allowed;
   }
 
+  &_mid {
+    @include rule(height, (xl: 46px, lg: 50px));
+    @include rule(line-height, (xl: 46px, lg: 50px));
+    @include rule(font-size, (lg: 16px));
+  }
+
   &_big {
-    @include rule(height, (xl: 66px, lg: 50px));
-    @include rule(line-height, (xl: 64px, lg: 50px));
-    @include rule(font-size, (xl: 16px, lg: 14px));
+    @include rule(height, (xl: 72px, lg: 60px));
+    @include rule(line-height, (xl: 70px, lg: 58px));
+
+    font-size: 16px;
   }
 
   &_dashed {
-    border: 1px dashed;
-    color: orange;
-    background: transparent;
+    border: 1px dashed $color-main;
+    color: $color-main;
+    background: transparent !important;
+
+    &:hover {
+      opacity: .7;
+    }
   }
 
   &:hover {

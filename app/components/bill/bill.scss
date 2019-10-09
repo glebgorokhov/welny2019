@@ -1,7 +1,9 @@
 .bill {
   display: block;
-  font-size: 16px;
-  line-height: 1.2;
+  color: $color-brown-light-3;
+
+  @include rule(font-size, (xl: 14px, lg: 11px));
+  @include rule(line-height, (xl: 20px, lg: 18px));
 
   @include screen('lg') {
     padding: 20px;
@@ -15,13 +17,13 @@
     &::before {
       content: '';
       position: absolute;
-      left: 10px;
-      top: 10px;
-      right: 10px;
-      bottom: 10px;
+      left: 7px;
+      top: 7px;
+      right: 7px;
+      bottom: 7px;
       border-radius: 2px;
       box-sizing: border-box;
-      border: 1px solid black;
+      border: 1px solid $color-brown-light-4;
       pointer-events: none;
     }
 
@@ -31,15 +33,16 @@
       left: 0;
       right: 0;
       height: 10px;
-      background: orange;
       position: absolute;
+      background-image: url('../images/bill_bg.png');
+      background-size: 100% 100%;
     }
   }
 
   $b: &;
 
   td {
-    padding-top: 5px;
+    @include rule(padding-top, (xl: 5px, lg: 2px));
 
     & + td {
       text-align: right;
@@ -48,6 +51,14 @@
 
   &__head {
     text-align: center;
+
+    @include rule(font-size, (lg: 12px));
+    @include rule(line-height, (lg: 17px));
+
+    &_big {
+      @include rule(font-size, (lg: 14px));
+      @include rule(padding-top, (lg: 9px));
+    }
   }
 
   &__stars {
@@ -64,9 +75,8 @@
     font-size: 0;
 
     img {
-      margin-top: 30px;
-
-      @include rule(width, (xl: 150px, lg: 100px));
+      @include rule(margin-top, (xl: 18px, lg: 8px));
+      @include rule(width, (xl: 105px, lg: 88px));
     }
   }
 }

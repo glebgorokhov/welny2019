@@ -1,17 +1,25 @@
 .section {
   display: block;
-  max-width: 700px;
   margin: 0 auto;
   background: white;
-  border-radius: 10px;
+  box-sizing: border-box;
 
-  @include rule(padding, (xl: 30px, lg: 16px));
+  @include rule(max-width, (xl: 645px, lg: none));
+  @include rule(border-radius, (xl: 15px, lg: 5px));
+  @include rule(padding, (xl: 38px 35px 27px, lg: 10px 16px 16px));
 
   $b: &;
 
   &_bill {
     max-width: none;
-    padding: 80px 120px 30px;
+    padding: 72px 214px 38px;
+    margin: 0 -60px;
+
+    @media (max-width: 1160px) {
+      padding-left: 100px;
+      padding-right: 100px;
+      margin: 0;
+    }
 
     @include screen('lg') {
       padding: 0;
@@ -26,9 +34,9 @@
   }
 
   &_reviews {
-    max-width: 950px;
-    padding-left: 100px;
-    padding-right: 100px;
+    max-width: 770px;
+    padding-left: 60px;
+    padding-right: 60px;
 
     @include screen('lg') {
       padding: 0;
@@ -95,9 +103,10 @@
   }
 
   &__title {
-    @include rule(font-size, (xl: 24px, lg: 18px));
+    @include rule(font-size, (xl: 24px, lg: 20px));
 
-    line-height: 1.2;
+    line-height: 1.5;
+    color: $color-brown;
 
     #{$b}_mobile & {
       color: white;
@@ -112,17 +121,18 @@
       @include screen('lg') {
         span {
           display: block;
-          margin-top: 5px;
-          font-size: 14px;
+          margin-top: 1px;
+          font-size: 16px;
         }
       }
     }
   }
 
   &__subtitle {
-    @include rule(font-size, (xl: 16px, lg: 14px));
+    font-size: 16px;
+    line-height: 20px;
 
-    color: gray;
+    color: #666;
 
     #{$b}_index & {
       opacity: 0;
@@ -139,7 +149,7 @@
     }
 
     &:not(:first-child) {
-      margin-top: 10px;
+      @include rule(margin-top, (xl: 11px, lg: 7px));
     }
   }
 
@@ -156,7 +166,7 @@
     }
 
     &:not(:first-child) {
-      @include rule(margin-top, (xl: 40px, lg: 20px));
+      @include rule(margin-top, (xl: 46px, lg: 23px));
     }
   }
 
@@ -164,7 +174,7 @@
     text-align: center;
 
     &:not(:first-child) {
-      @include rule(margin-top, (xl: 40px, lg: 20px));
+      @include rule(margin-top, (xl: 30px, lg: 27px));
     }
   }
 
@@ -173,18 +183,37 @@
   }
 
   &__arrow-link {
-    display: block;
+    @include rule(font-size, (xl: 12px, lg: 16px));
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    font-size: 14px;
+    line-height: 1;
+    fill: $color-brown;
+    color: $color-brown;
+    transition: fill $ease-main, color $ease-main;
+
+    &:hover {
+      fill: $color-main;
+      color: $color-main;
+    }
+
+    svg {
+      @include rule(width, (xl: 10px, lg: 14px));
+      @include rule(height, (xl: 6px, lg: 10px));
+      @include rule(margin-right, (xl: 3px, lg: 11px));
+    }
 
     #{$b}_bill &, #{$b}_reviews & {
       @include screen('lg') {
         color: white;
+        fill: white;
       }
     }
 
     &:not(:first-child) {
-      margin-top: 20px;
+      @include rule(margin-top, (xl: 20px, lg: 17px));
     }
   }
 }

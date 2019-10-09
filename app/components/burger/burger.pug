@@ -6,7 +6,7 @@ mixin burger()
       each item in getData('burger')
         +e.LI.item
           +e.A.link(href="#")
-            +e.icon
+            +e.icon(class=item.class)
               +icon(item.icon)
 
             +e.text!= item.text

@@ -6,7 +6,7 @@ html(lang='ru')
   include head
   body
     +header
-    +burger
+    +burger(class=(burgerActive ? 'is-active' : false))
     +b.MAIN.main
       block content
     +footer

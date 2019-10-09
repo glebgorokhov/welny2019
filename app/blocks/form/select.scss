@@ -5,9 +5,14 @@
 @import '../../node_modules/choices.js/public/assets/styles/choices.min.css';
 
 .select {
-  // appearance: none;
+  appearance: none;
 
   @extend .input;
+
+  background-size: 11px 6px;
+  background-position: right 21px center;
+  background-image: url('../images/select_arrow.png');
+  background-repeat: no-repeat;
 }
 
 .choices {

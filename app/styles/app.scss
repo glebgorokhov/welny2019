@@ -48,5 +48,6 @@ body {
 
 .main {
   flex-grow: 1;
-  padding: 20px 0;
+
+  @include rule(padding, (xl: 20px 0, lg: 25px 0 45px));
 }

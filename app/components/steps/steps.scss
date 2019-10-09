@@ -2,7 +2,9 @@
   display: block;
   color: white;
   text-align: center;
-  margin-bottom: 30px;
+
+  @include rule(margin-top, (xl: 21px, lg: -5px));
+  @include rule(margin-bottom, (xl: 33px, lg: 18px));
 
   $b: &;
 
@@ -14,7 +16,7 @@
   }
 
   &__item {
-    @include rule(width, (xl: 80px, lg: 60px));
+    @include rule(width, (xl: 99px, lg: 76px));
   }
 
   &__number-wrap {
@@ -25,7 +27,8 @@
       content: '';
       height: 2px;
       flex-grow: 1;
-      background: green;
+
+      @include rule(background, (xl: #111, lg: $color-brown));
     }
 
     #{$b}__item:first-child &::before, #{$b}__item:last-child &::after {
@@ -34,22 +37,23 @@
   }
 
   &__number {
-    @include rule(width, (xl: 30px, lg: 22px));
-    @include rule(height, (xl: 30px, lg: 22px));
-    @include rule(line-height, (xl: 30px, lg: 22px));
-    @include rule(font-size, (xl: 16px, lg: 14px));
+    @include rule(width, (xl: 34px, lg: 26px));
+    @include rule(height, (xl: 34px, lg: 26px));
+    @include rule(line-height, (xl: 34px, lg: 26px));
+    @include rule(font-size, (xl: 15px, lg: 14px));
 
     border-radius: 50%;
-    background: gray;
+    background: #888;
 
     #{$b}__item.is-active & {
-      background: orange;
+      @include rule(background, (xl: $color-main, lg: $color-main));
     }
   }
 
   &__text {
     font-size: 14px;
     line-height: 1.2;
-    margin-top: 5px;
+
+    @include rule(margin-top, (xl: 9px, lg: 7px));
   }
 }

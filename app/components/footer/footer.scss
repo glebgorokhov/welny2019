@@ -65,13 +65,13 @@
     height: 22px;
     border-radius: 50%;
     box-sizing: border-box;
-    border: 1px solid $color-main-light-2;
+    border: 1px solid $color-main;
     position: relative;
 
     svg {
       width: 10px;
       height: 10px;
-      fill: $color-main-light-2;
+      fill: $color-main;
 
       @include center-image;
     }

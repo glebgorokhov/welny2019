@@ -13,7 +13,7 @@ mixin subscriptions()
               each block in item.items
                 +e.list-item
                   +e.image
-                    img(src=block.image, alt="@")
+                    +icon(block.image)
 
                   +e.P.list-title!= block.title
                   +e.P.list-value!= block.value

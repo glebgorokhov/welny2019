@@ -2,8 +2,9 @@
   display: block;
 
   &__label {
-    margin-bottom: 10px;
-    font-size: 14px;
+    @include rule(margin-bottom, (xl: 12px, lg: 9px));
+    @include rule(font-size, (xl: 16px, lg: 18px));
+
     line-height: 1.2;
   }
 
