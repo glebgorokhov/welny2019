@@ -8,7 +8,15 @@
     <title>Welny | Параметры сеанса</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
-    <link href="favicon.ico" rel="shortcut icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicons/site.webmanifest">
+    <link rel="mask-icon" href="assets/favicons/safari-pinned-tab.svg" color="#e08524">
+    <link rel="shortcut icon" href="assets/favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#3a1d16">
+    <meta name="msapplication-config" content="assets/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#3a1d16">
     <link href="assets/styles/app.min.css" rel="stylesheet">
     <script src="assets/scripts/libs/jquery.min.js"></script>
 </head>
@@ -26,10 +34,10 @@
     </div>
     <div class="burger"><svg class="burger__close"><use xlink:href="assets/images/icon.svg#icon_close"></use></svg>
         <ul class="burger__menu">
-            <li class="burger__item"><a class="burger__link" href="#"><span class="burger__icon"><svg><use xlink:href="assets/images/icon.svg#icon_arrow_burger"></use></svg></span><span class="burger__text">Аккаунт</span></a></li>
-            <li class="burger__item"><a class="burger__link" href="#"><span class="burger__icon"><svg><use xlink:href="assets/images/icon.svg#icon_arrow_burger"></use></svg></span><span class="burger__text">Welny+</span></a></li>
-            <li class="burger__item"><a class="burger__link" href="#"><span class="burger__icon"><svg><use xlink:href="assets/images/icon.svg#icon_arrow_burger"></use></svg></span><span class="burger__text">Пригласить друзей</span></a></li>
-            <li class="burger__item"><a class="burger__link" href="#"><span class="burger__icon"><svg><use xlink:href="assets/images/icon.svg#icon_arrow_burger"></use></svg></span><span class="burger__text">Заказать</span></a></li>
+            <li class="burger__item"><a class="burger__link" href="#"><span class="burger__icon burger__icon_arrow"><svg><use xlink:href="assets/images/icon.svg#icon_arrow_burger"></use></svg></span><span class="burger__text">Аккаунт</span></a></li>
+            <li class="burger__item"><a class="burger__link" href="#"><span class="burger__icon burger__icon_arrow"><svg><use xlink:href="assets/images/icon.svg#icon_arrow_burger"></use></svg></span><span class="burger__text">Welny+</span></a></li>
+            <li class="burger__item"><a class="burger__link" href="#"><span class="burger__icon burger__icon_arrow"><svg><use xlink:href="assets/images/icon.svg#icon_arrow_burger"></use></svg></span><span class="burger__text">Пригласить друзей</span></a></li>
+            <li class="burger__item"><a class="burger__link" href="#"><span class="burger__icon burger__icon_arrow"><svg><use xlink:href="assets/images/icon.svg#icon_arrow_burger"></use></svg></span><span class="burger__text">Заказать</span></a></li>
             <li class="burger__item"><a class="burger__link" href="#"><span class="burger__icon"><svg><use xlink:href="assets/images/icon.svg#icon_exit"></use></svg></span><span class="burger__text">Выйти</span></a></li>
         </ul>
         <div class="burger__overlay"></div>
@@ -72,11 +80,11 @@
                 </div>
                 <div class="section__content">
                     <div class="parameters">
-                        <div class="parameters__times"><label class="time parameters__time"><input class="time__input" type="radio" name="time" value="60 минут" checked="checked" /><span class="time__box"><img class="time__image" src="assets/images/time.svg" alt="" role="presentation" />
+                        <div class="parameters__times"><label class="time parameters__time"><input class="time__input" type="radio" name="time" value="60 минут" checked="checked" /><span class="time__box"><img class="time__image" src="assets/images/time.png" alt="" role="presentation" />
                                     <p class="time__text">60 минут</p>
-                                </span></label><label class="time parameters__time"><input class="time__input" type="radio" name="time" value="90 минут" /><span class="time__box"><img class="time__image" src="assets/images/time.svg" alt="" role="presentation" />
+                                </span></label><label class="time parameters__time"><input class="time__input" type="radio" name="time" value="90 минут" /><span class="time__box"><img class="time__image" src="assets/images/time.png" alt="" role="presentation" />
                                     <p class="time__text">90 минут</p>
-                                </span></label><label class="time parameters__time"><input class="time__input" type="radio" name="time" value="120 минут" /><span class="time__box"><img class="time__image" src="assets/images/time.svg" alt="" role="presentation" />
+                                </span></label><label class="time parameters__time"><input class="time__input" type="radio" name="time" value="120 минут" /><span class="time__box"><img class="time__image" src="assets/images/time.png" alt="" role="presentation" />
                                     <p class="time__text">120 минут</p>
                                 </span></label></div>
                         <div class="tabs parameters__tabs">
@@ -87,31 +95,31 @@
                             <div class="tabs-wrappers__tab-wrapper is-active">
                                 <div class="parameters__section">
                                     <div class="slider">
-                                        <div class="slider__arrow slider__arrow_prev"><svg><use xlink:href="assets/images/icon.svg#icon_arrow_slider"></use></svg></div>
-                                        <div class="slider__arrow slider__arrow_next"><svg><use xlink:href="assets/images/icon.svg#icon_arrow_slider"></use></svg></div>
+                                        <div class="slider__arrow slider__arrow_prev"><img src="assets/images/arrow_slider.png" /></div>
+                                        <div class="slider__arrow slider__arrow_next"><img src="assets/images/arrow_slider.png" /></div>
                                         <div class="slider__container">
                                             <div class="slider__wrapper">
                                                 <div class="slider__slide">
                                                     <div class="massage-card">
-                                                        <div class="massage-card__image"><img src="assets/images/types/1.jpg" alt="Классический SPA WELNY" /></div>
+                                                        <div class="massage-card__image"><img src="assets/images/types/1.png" alt="Классический SPA WELNY" /></div>
                                                         <p class="massage-card__text">Классический SPA WELNY</p>
                                                     </div>
                                                 </div>
                                                 <div class="slider__slide is-active">
                                                     <div class="massage-card">
-                                                        <div class="massage-card__image"><img src="assets/images/types/2.jpg" alt="Спортивный SPA WELNY" /></div>
+                                                        <div class="massage-card__image"><img src="assets/images/types/2.png" alt="Спортивный SPA WELNY" /></div>
                                                         <p class="massage-card__text">Спортивный SPA WELNY</p>
                                                     </div>
                                                 </div>
                                                 <div class="slider__slide">
                                                     <div class="massage-card">
-                                                        <div class="massage-card__image"><img src="assets/images/types/3.jpg" alt="Антицеллюлитный SPA WELNY" /></div>
+                                                        <div class="massage-card__image"><img src="assets/images/types/3.png" alt="Антицеллюлитный SPA WELNY" /></div>
                                                         <p class="massage-card__text">Антицеллюлитный SPA WELNY</p>
                                                     </div>
                                                 </div>
                                                 <div class="slider__slide">
                                                     <div class="massage-card">
-                                                        <div class="massage-card__image"><img src="assets/images/types/1.jpg" alt="Классический SPA WELNY" /></div>
+                                                        <div class="massage-card__image"><img src="assets/images/types/1.png" alt="Классический SPA WELNY" /></div>
                                                         <p class="massage-card__text">Классический SPA WELNY</p>
                                                     </div>
                                                 </div>
@@ -124,31 +132,31 @@
                                 <div class="parameters__section">
                                     <p class="parameters__title">Массаж для двоих: 1/2</p>
                                     <div class="slider">
-                                        <div class="slider__arrow slider__arrow_prev"><svg><use xlink:href="assets/images/icon.svg#icon_arrow_slider"></use></svg></div>
-                                        <div class="slider__arrow slider__arrow_next"><svg><use xlink:href="assets/images/icon.svg#icon_arrow_slider"></use></svg></div>
+                                        <div class="slider__arrow slider__arrow_prev"><img src="assets/images/arrow_slider.png" /></div>
+                                        <div class="slider__arrow slider__arrow_next"><img src="assets/images/arrow_slider.png" /></div>
                                         <div class="slider__container">
                                             <div class="slider__wrapper">
                                                 <div class="slider__slide">
                                                     <div class="massage-card">
-                                                        <div class="massage-card__image"><img src="assets/images/types/1.jpg" alt="Классический SPA WELNY" /></div>
+                                                        <div class="massage-card__image"><img src="assets/images/types/1.png" alt="Классический SPA WELNY" /></div>
                                                         <p class="massage-card__text">Классический SPA WELNY</p>
                                                     </div>
                                                 </div>
                                                 <div class="slider__slide is-active">
                                                     <div class="massage-card">
-                                                        <div class="massage-card__image"><img src="assets/images/types/2.jpg" alt="Спортивный SPA WELNY" /></div>
+                                                        <div class="massage-card__image"><img src="assets/images/types/2.png" alt="Спортивный SPA WELNY" /></div>
                                                         <p class="massage-card__text">Спортивный SPA WELNY</p>
                                                     </div>
                                                 </div>
                                                 <div class="slider__slide">
                                                     <div class="massage-card">
-                                                        <div class="massage-card__image"><img src="assets/images/types/3.jpg" alt="Антицеллюлитный SPA WELNY" /></div>
+                                                        <div class="massage-card__image"><img src="assets/images/types/3.png" alt="Антицеллюлитный SPA WELNY" /></div>
                                                         <p class="massage-card__text">Антицеллюлитный SPA WELNY</p>
                                                     </div>
                                                 </div>
                                                 <div class="slider__slide">
                                                     <div class="massage-card">
-                                                        <div class="massage-card__image"><img src="assets/images/types/1.jpg" alt="Классический SPA WELNY" /></div>
+                                                        <div class="massage-card__image"><img src="assets/images/types/1.png" alt="Классический SPA WELNY" /></div>
                                                         <p class="massage-card__text">Классический SPA WELNY</p>
                                                     </div>
                                                 </div>
@@ -159,31 +167,31 @@
                                 <div class="parameters__section">
                                     <p class="parameters__title">Массаж для двоих: 2/2</p>
                                     <div class="slider">
-                                        <div class="slider__arrow slider__arrow_prev"><svg><use xlink:href="assets/images/icon.svg#icon_arrow_slider"></use></svg></div>
-                                        <div class="slider__arrow slider__arrow_next"><svg><use xlink:href="assets/images/icon.svg#icon_arrow_slider"></use></svg></div>
+                                        <div class="slider__arrow slider__arrow_prev"><img src="assets/images/arrow_slider.png" /></div>
+                                        <div class="slider__arrow slider__arrow_next"><img src="assets/images/arrow_slider.png" /></div>
                                         <div class="slider__container">
                                             <div class="slider__wrapper">
                                                 <div class="slider__slide">
                                                     <div class="massage-card">
-                                                        <div class="massage-card__image"><img src="assets/images/types/1.jpg" alt="Классический SPA WELNY" /></div>
+                                                        <div class="massage-card__image"><img src="assets/images/types/1.png" alt="Классический SPA WELNY" /></div>
                                                         <p class="massage-card__text">Классический SPA WELNY</p>
                                                     </div>
                                                 </div>
                                                 <div class="slider__slide is-active">
                                                     <div class="massage-card">
-                                                        <div class="massage-card__image"><img src="assets/images/types/2.jpg" alt="Спортивный SPA WELNY" /></div>
+                                                        <div class="massage-card__image"><img src="assets/images/types/2.png" alt="Спортивный SPA WELNY" /></div>
                                                         <p class="massage-card__text">Спортивный SPA WELNY</p>
                                                     </div>
                                                 </div>
                                                 <div class="slider__slide">
                                                     <div class="massage-card">
-                                                        <div class="massage-card__image"><img src="assets/images/types/3.jpg" alt="Антицеллюлитный SPA WELNY" /></div>
+                                                        <div class="massage-card__image"><img src="assets/images/types/3.png" alt="Антицеллюлитный SPA WELNY" /></div>
                                                         <p class="massage-card__text">Антицеллюлитный SPA WELNY</p>
                                                     </div>
                                                 </div>
                                                 <div class="slider__slide">
                                                     <div class="massage-card">
-                                                        <div class="massage-card__image"><img src="assets/images/types/1.jpg" alt="Классический SPA WELNY" /></div>
+                                                        <div class="massage-card__image"><img src="assets/images/types/1.png" alt="Классический SPA WELNY" /></div>
                                                         <p class="massage-card__text">Классический SPA WELNY</p>
                                                     </div>
                                                 </div>
@@ -196,7 +204,7 @@
                         <div class="parameters__description">Мы уверены в качестве услуг исполнителей и вернём полную стоимость заказа, если вас не устроит результат!</div>
                     </div>
                 </div>
-                <div class="section__buttons"><a class="button section__button" href="#">Продолжить</a></div>
+                <div class="section__buttons"><a class="button button_mid section__button" href="#">ПРОДОЛЖИТЬ</a></div>
             </div>
         </div>
     </main>
@@ -216,7 +224,7 @@
                 <li class="footer__item"><a class="footer__link" href="#">Блог</a></li>
                 <li class="footer__item"><a class="footer__link" href="#">Welny для офиса</a></li>
             </ul>
-            <div class="footer__socials"><a class="footer__social" href="#"><svg><use xlink:href="assets/images/icon.svg#icon_vk"></use></svg></a><a class="footer__social" href="#"><svg><use xlink:href="assets/images/icon.svg#icon_facebook"></use></svg></a><a class="footer__social" href="#"><svg><use xlink:href="assets/images/icon.svg#icon_instagram"></use></svg></a></div>
+            <div class="footer__socials"><a class="footer__social" href="#"><svg><use xlink:href="assets/images/icon.svg#icon_vk"></use></svg></a><a class="footer__social" href="#"><svg><use xlink:href="assets/images/icon.svg#icon_fb"></use></svg></a><a class="footer__social" href="#"><svg><use xlink:href="assets/images/icon.svg#icon_instagram"></use></svg></a></div>
             <p class="footer__copyright">Все права защищены с 2016-2019 ООО "Велни"</p>
         </div>
     </div>
