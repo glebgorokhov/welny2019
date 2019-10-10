@@ -1,16 +1,16 @@
 .order-details {
   @include rule(display, (xl: flex, lg: block));
 
-  border: 1px solid orange;
+  border: 1px solid rgba($color-main, .5);
 
-  @include rule(box-shadow, (xl: 0 3px 7px rgba(orange, .5), lg: none));
+  @include rule(box-shadow, (xl: 0 3px 7px rgba($color-main, .1), lg: none));
   @include rule(border-radius, (xl: 5px, lg: 2px));
-  @include rule(border-color, (lg: lightgrey));
+  @include rule(border-color, (lg: #eeeeee));
 
   $b: &;
 
   &__col {
-    @include rule(padding, (xl: 30px, lg: 10px));
+    @include rule(padding, (xl: 23px 30px 35px, lg: 16px 12px 20px));
 
     box-sizing: border-box;
     flex: 1;
@@ -20,8 +20,8 @@
     }
 
     &_right {
-      @include rule(border-left, (xl: 1px solid orange, lg: 0));
-      @include rule(border-top, (lg: 1px solid lightgrey));
+      @include rule(border-left, (xl: 1px solid rgba($color-main, .5), lg: 0));
+      @include rule(border-top, (lg: 1px solid #eeeeee));
     }
   }
 
@@ -31,17 +31,19 @@
     flex-wrap: wrap;
 
     &:not(:first-child) {
-      margin-top: 15px;
+      margin-top: 18px;
     }
   }
 
   &__title {
-    @include rule(margin-bottom, (xl: 20px, lg: 10px));
+    @include rule(margin-bottom, (xl: 23px, lg: 18px));
     @include rule(font-weight, (xl: bold, lg: normal));
+    @include rule(color, (xl: $color-brown-light-3, lg: $color-brown));
 
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.2;
     width: 100%;
+    font-weight: 400;
 
     @include screen('lg', min) {
 
@@ -54,29 +56,37 @@
   }
 
   &__icon {
-    @include rule(width, (xl: 24px, lg: 20px));
-    @include rule(height, (xl: 24px, lg: 20px));
-    @include rule(margin-right, (xl: 20px, lg: 10px));
+    @include rule(width, (xl: 22px, lg: 22px));
+    @include rule(height, (xl: 22px, lg: 22px));
+    @include rule(margin-right, (xl: 18px, lg: 8px));
 
-    background: orange;
+    fill: $color-main;
     flex-shrink: 0;
+
+    &_stroke {
+      fill: none;
+      stroke: $color-main;
+      stroke-width: 3px;
+    }
   }
 
   &__text {
-    font-size: 14px;
+    font-size: 15px;
     line-height: 1.2;
 
+    @include rule(color, (xl: $color-brown-light-5, lg: $color-brown));
+
     #{$b}__col_two & {
-      width: 60px;
+      width: 69px;
     }
   }
 
   &__big-title {
     @include rule(font-size, (xl: 16px, lg: 14px));
-    @include rule(margin-bottom, (xl: 20px, lg: 15px));
+    @include rule(margin-bottom, (xl: 23px, lg: 15px));
 
     line-height: 1.2;
-    color: orange;
-    font-weight: 700;
+    color: $color-main;
+    font-weight: 400;
   }
 }

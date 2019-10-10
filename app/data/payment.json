@@ -8,34 +8,34 @@
   "details": {
     "right": [
       {
-        "icon": "1",
+        "icon": "advantage_calendar",
         "text": "24 января, вторник <span>12:00</span>"
       },
       {
-        "icon": "2",
+        "icon": "advantage_clock",
         "text": "60 минут"
       },
       {
-        "icon": "3",
+        "icon": "advantage_pin",
         "text": "Достоевского, 17а, кв. 14"
       }
     ],
     "leftOne": [
       {
         "title": "Классический SPA",
-        "icon": "4",
+        "icon": "advantage_woman",
         "text": "Женский"
       }
     ],
     "leftTwo": [
       {
         "title": "Классический SPA",
-        "icon": "4",
+        "icon": "advantage_woman",
         "text": "Женский"
       },
       {
         "title": "Спортивный SPA",
-        "icon": "6",
+        "icon": "advantage_man",
         "text": "Мужской"
       }
     ]

@@ -12,14 +12,15 @@
   }
 
   &__circle {
-    width: 20px;
-    height: 20px;
-    border: 1px solid orange;
+    width: 22px;
+    height: 22px;
+    border: 2px solid $color-main;
     border-radius: 50%;
     display: flex;
     position: relative;
     flex-shrink: 0;
-    margin-right: 20px;
+
+    @include rule(margin-right, (xl: 13px, lg: 17px));
 
     &::after {
       content: '';
@@ -29,9 +30,9 @@
       right: 0;
       bottom: 0;
       margin: auto;
-      width: 12px;
-      height: 12px;
-      background: orange;
+      width: 14px;
+      height: 14px;
+      background: $color-main;
       border-radius: 50%;
       opacity: 0;
       transition: opacity $ease-main;
@@ -47,13 +48,15 @@
 
   &__content {
     flex: 1;
+    padding-top: 3px;
   }
 
   &__name {
-    @include rule(font-size, (xl: 18px, lg: 16px));
+    @include rule(font-size, (xl: 16px, lg: 15px));
 
     line-height: 1.2;
     transition: color $ease-main;
+    font-weight: 400;
 
     #{$b}__input:checked + #{$b}__box & {
       color: orange;
@@ -61,13 +64,19 @@
   }
 
   &__links {
-    margin-top: 5px;
+    margin-top: 12px;
     display: flex;
     align-items: center;
   }
 
   &__link {
-    font-size: 12px;
+    font-size: 14px;
     line-height: 1.2;
+    color: $color-brown;
+    transition: color $ease-main;
+
+    &:hover {
+      color: $color-main;
+    }
   }
 }

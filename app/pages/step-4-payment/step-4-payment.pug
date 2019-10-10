@@ -7,7 +7,7 @@ block content
   +steps(4)
 
   .container
-    +section
+    +section._payment
       +section-header
         +section-title Оплата заказа
         +section-subtitle Мы уверены в качестве услуг исполнителей и вернём полную стоимость заказа, если вас не устроит результат!
@@ -16,5 +16,7 @@ block content
         +payment(1)
 
       +section-buttons
-        +button()(href="#").__button Продолжить
-        +e.A.arrow-link(href="#") <- Назад
+        +button()(href="#")._mid.__button ПРОДОЛЖИТЬ
+        +e.A.arrow-link(href="#")
+          +icon('arrow_left')
+          span Назад

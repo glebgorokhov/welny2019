@@ -11,49 +11,51 @@
     @include screen('lg', min) {
       width: 420px;
       height: 265px;
-      border-radius: 10px;
+      border-radius: 15px;
       position: relative;
       box-sizing: border-box;
 
       &_left {
         z-index: 1;
-        background-color: lightgrey;
-        box-shadow: 0 3px 6px rgba(black, .15);
-        padding: 25px 40px 0;
+        background-color: #ebebeb;
+        box-shadow: 5px 5px 5px rgba(black, .15);
+        padding: 26px 40px 0;
       }
 
       &_right {
-        background-color: grey;
-        margin-left: 224px;
-        margin-top: -200px;
-        padding: 120px 50px 0 240px;
+        background-color: #ccc7c7;
+        margin-left: 230px;
+        margin-top: -210px;
+        padding: 129px 50px 0 241px;
 
         &::before {
           content: '';
           position: absolute;
-          top: 35px;
+          top: 40px;
           left: 0;
           right: 0;
-          height: 65px;
-          background: rgba(black, .3);
+          height: 55px;
+          background: #9c918f;
         }
 
         .input {
           width: 100px;
+          height: 33px;
         }
 
         p {
           margin-top: 10px;
           font-size: 14px;
-          line-height: 1.5;
+          line-height: 18px;
+          color: #333;
         }
       }
     }
 
     &_left {
       @include screen('lg') {
-        padding: 10px;
-        background-color: lightgrey;
+        padding: 14px;
+        background-color: #ebebeb;
         border-radius: 3px;
       }
     }
@@ -69,12 +71,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 26px;
 
     img {
-      width: 60px;
-      height: 30px;
-      background: orange;
 
       &:not(:first-child) {
         margin-left: 10px;
@@ -82,7 +81,19 @@
     }
   }
 
+  .input {
+    @include rule(height, (xl: 36px, lg: 50px));
+
+    padding: 0 12px;
+  }
+
   &__inputbox {
+
+    .inputbox__label {
+      margin-bottom: 9px;
+      font-size: 14px;
+      margin-top: 6px;
+    }
 
     div {
       display: flex;
@@ -93,7 +104,7 @@
       }
 
       .input:not(:first-child) {
-        margin-left: 20px;
+        margin-left: 15px;
       }
     }
   }
@@ -104,22 +115,23 @@
     display: flex;
 
     @include rule(align-items, (xl: center, lg: flex-start));
-    @include rule(margin-top, (xl: 40px, lg: 20px));
+    @include rule(margin-top, (xl: 26px, lg: 16px));
+    @include rule(padding, (xl: 0 30px 0 17px, lg: 0));
 
     img {
-      @include rule(margin-left, (xl: 30px, lg: 0));
-
       flex-shrink: 0;
-      width: 24px;
-      height: 24px;
-      margin-right: 20px;
-      background: orange;
+
+      @include rule(width, (xl: 19px, lg: 27px));
+      @include rule(margin-top, (lg: 5px));
+
+      margin-right: 17px;
     }
 
     span {
-      @include rule(font-size, (xl: 16px, lg: 12px));
+      @include rule(font-size, (xl: 13px, lg: 14px));
+      @include rule(line-height, (xl: 1.4, lg: 16px));
+      @include rule(color, (xl: $color-brown-light-5, lg: $color-brown));
 
-      line-height: 1.4;
       flex: 1;
     }
   }
@@ -134,29 +146,31 @@
   }
 
   &__radios {
-    margin-top: 20px;
+    @include rule(margin-top, (xl: 13px, lg: 14px));
   }
 
   &__radio {
-    @include rule(padding, (xl: 15px 30px, lg: 15px 0));
+    @include rule(padding, (xl: 13px 35px, lg: 15px 0 13px));
 
-    border-top: 1px solid lightgrey;
+    border-top: 1px solid #eeecec;
 
     &:last-child {
-      border-bottom: 1px solid lightgrey;
+      border-bottom: 1px solid #eeecec;
     }
   }
 
   &__or {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.2;
     font-weight: 700;
     text-align: center;
-    margin-top: 10px;
+    margin-top: 6px;
   }
 
   &__button {
     width: 100%;
-    margin-top: 10px;
+    margin-top: 9px;
+    height: 60px;
+    line-height: 58px;
   }
 }

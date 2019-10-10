@@ -7,7 +7,7 @@ mixin order-details(type)
         +e.item
           if item.title
             +e.P.title!= item.title
-          +icon(item.icon).__icon
+          +icon(item.icon).__icon._stroke
           +e.P.text!= item.text
 
     +e.col._right

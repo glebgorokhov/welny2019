@@ -5,9 +5,10 @@
   $b: &;
 
   &__title {
-    font-size: 14px;
+    font-size: 13px;
     line-height: 1.4;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
+    color: $color-brown-light-3;
 
     @include rule(display, (lg: none));
   }
@@ -20,6 +21,9 @@
     width: 100%;
     flex: 1;
 
+    @include rule(height, (xl: 33px, lg: 50px));
+    @include rule(padding, (lg: 0 13px));
+
     @include screen('lg', min) {
 
       &::placeholder {
@@ -30,17 +34,18 @@
 
   &__button {
     flex-shrink: 0;
-    height: 40px;
-    padding: 0 15px;
+    padding: 0 13px;
     display: flex;
     align-items: center;
     line-height: 1;
-    font-size: 14px;
     text-align: center;
     justify-content: center;
+    appearance: none;
 
-    @include rule(margin-left, (xl: 10px, lg: 0));
-    @include rule(margin-top, (lg: 15px));
+    @include rule(height, (xl: 33px, lg: 50px));
+    @include rule(font-size, (xl: 14px, lg: 15px));
+    @include rule(margin-left, (xl: 6px, lg: 0));
+    @include rule(margin-top, (lg: 20px));
     @include rule(width, (lg: 100%));
   }
 }

@@ -4,8 +4,8 @@ mixin cards(type)
       if (type === 1 || !type)
         +e.card_left
           +e.images.hide-lg
-            img(src="assets/images/payments/visa.svg" alt="Visa")
-            img(src="assets/images/payments/mastercard.svg" alt="MasterCard")
+            img(src="assets/images/payments/visa.png" alt="Visa")
+            img(src="assets/images/payments/mastercard.png" alt="MasterCard")
 
           +e.grid
             +grid.grid_card
@@ -46,7 +46,7 @@ mixin cards(type)
         +button()(href="#")._big._dashed.__button + Добавить карту
 
     +e.warning
-      img(src="assets/images/lock.svg" alt="@")
+      img(src="assets/images/lock.png" alt="@")
       span Ваш платёж защищён шифрованием 128-bit SSL и производится через платежный сервис Payture
 
 mixin ui-kit-cards()
