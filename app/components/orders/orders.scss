@@ -4,16 +4,349 @@
   $b: &;
 
   &__section-title {
-    font-size: 16px;
     line-height: 1.2;
-    font-weight: 700;
-    margin-bottom: 10px;
+    font-weight: 400;
+
+    @include rule(font-size, (xl: 15px, lg: 16px));
+    @include rule(margin-bottom, (xl: 13px, lg: 17px));
+
+    @include screen('lg') {
+      color: white;
+      font-size: 16px;
+      padding: 0 16px;
+    }
   }
 
   &__section {
 
     & + & {
-      margin-top: 25px;
+      @include rule(margin-top, (xl: 31px, lg: 26px));
+    }
+  }
+
+  // Карточки
+  // Head
+  &__item {
+    position: relative;
+
+    @include screen('lg') {
+      border-radius: 5px;
+      background: white;
+      padding: 16px 18px 18px;
+
+      &:not(:first-child) {
+        margin-top: 10px;
+      }
+    }
+
+    &.is-active {
+      z-index: 5;
+    }
+  }
+
+  &__head {
+    box-sizing: border-box;
+    position: relative;
+    z-index: 2;
+
+    @include screen('lg', min) {
+      border-radius: 10px;
+      padding: 10px 21px 10px 21px;
+      align-items: center;
+      display: flex;
+      height: 49px;
+
+      #{$b}__item:nth-of-type(2n + 1) & {
+        background-color: #f8f8f8;
+      }
+    }
+
+
+    > *:not(:first-child) {
+      @include rule(margin-left, (xl: 10px, lg: 0));
+      @include rule(margin-top, (lg: 15px));
+    }
+  }
+
+  &__date {
+    @include rule(font-size, (xl: 14px, lg: 16px));
+    @include rule(color, (xl: #666666, lg: $color-brown));
+    @include rule(width, (xl: 190px, lg: 100%));
+
+    line-height: 1;
+  }
+
+  &__description {
+    @include rule(font-size, (xl: 14px, lg: 16px));
+    @include rule(color, (xl: #666666, lg: $color-brown));
+
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  &__status {
+    @include rule(font-size, (xl: 14px, lg: 16px));
+    @include rule(text-align, (xl: right, lg: left));
+
+    color: $color-main;
+    line-height: 1;
+    flex: 1;
+    padding-right: 33px;
+    position: relative;
+    cursor: pointer;
+    transition: opacity $ease-main;
+    display: block;
+    box-sizing: border-box;
+
+    @include rule(width, (lg: 100%));
+
+    &:hover {
+      opacity: .5;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 5px;
+      right: 0;
+      top: 3px;
+      bottom: 0;
+      margin: auto;
+      transition: transform $ease-main;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      background-image: url('../images/arrow_accordion_mobile.svg');
+    }
+
+    #{$b}__item.is-finished & {
+      color: #b0b0b0;
+
+      &::after {
+        background-image: url('../images/arrow_accordion_mobile_grey.svg');
+      }
+    }
+
+    #{$b}__item.is-active & {
+      &::after {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  // Popup
+  &__popup {
+    background: white;
+    display: none;
+
+    @include screen('lg', min) {
+      overflow: hidden;
+      padding: 49px 21px 0;
+      border-radius: 10px;
+      box-shadow: 0px 15px 15px 0px rgba(0, 0, 0, 0.25);
+      top: 0;
+      left: 0;
+      right: 0;
+      position: absolute;
+    }
+
+    @include screen('lg') {
+      padding: 18px 0 0;
+    }
+
+    #{$b}__item.is-active & {
+      display: block;
+    }
+  }
+
+  &__orders {
+    @include rule(padding-top, (xl: 18px, lg: 16px));
+
+    @include screen('lg', min) {
+      #{$b}__item:nth-of-type(even) & {
+        border-top: 1px solid #d5d0cf;
+      }
+    }
+
+    @include screen('lg') {
+      border-top: 1px solid #d5d0cf;
+    }
+  }
+
+  &__order {
+    @include screen('lg', min) {
+      display: flex;
+      align-items: center;
+    }
+
+    &:not(:first-child) {
+      @include rule(margin-top, (xl: 21px, lg: 14px));
+    }
+
+    > *:not(:first-child) {
+      @include rule(margin-left, (xl: 10px, lg: 0));
+      @include rule(margin-top, (lg: 12px));
+    }
+  }
+
+  &__type {
+    line-height: 1.2;
+
+    @include rule(font-size, (xl: 14px, lg: 16px));
+    @include rule(color, (xl: #736357, lg: $color-brown));
+    @include rule(width, (xl: 130px, lg: 100%));
+  }
+
+  &__man {
+    display: flex;
+    align-items: center;
+
+    @include rule(width, (xl: 200px, lg: 100%));
+
+    &[href] {
+      color: $color-main;
+      transition: color $ease-main;
+      text-decoration: underline;
+
+      &:hover {
+        color: $color-main-light;
+      }
+    }
+
+    svg {
+      @include rule(width, (xl: 23px, lg: 17px));
+      @include rule(margin-right, (xl: 15px, lg: 7px));
+
+      height: 22px;
+      flex-shrink: 0;
+      stroke: $color-main;
+      fill: none;
+      stroke-width: 4px;
+    }
+
+    span {
+      @include rule(font-size, (xl: 14px, lg: 16px));
+
+      line-height: 1.2;
+    }
+  }
+
+  &__no-man {
+    @include rule(font-size, (xl: 14px, lg: 16px));
+
+    line-height: 1.2;
+    color: $color-main;
+  }
+
+  &__place {
+    @include rule(color, (xl: $color-brown-light-5, lg: $color-brown));
+    @include rule(font-size, (xl: 14px, lg: 16px));
+
+    line-height: 1.2;
+    display: flex;
+    align-items: center;
+    flex: 1;
+
+    svg {
+      width: 17px;
+      height: 22px;
+      flex-shrink: 0;
+
+      @include rule(margin-right, (xl: 20px, lg: 7px));
+
+      fill: $color-main;
+    }
+
+    span {
+
+    }
+  }
+
+  &__final {
+    border-top: 1px solid #d5d0cf;
+    padding-bottom: 19px;
+    display: flex;
+    align-items: center;
+
+    @include rule(padding-top, (xl: 17px, lg: 12px));
+    @include rule(margin-top, (xl: 14px, lg: 16px));
+    @include rule(flex-wrap, (lg: wrap));
+
+    @include screen('lg', min) {
+      > *:not(:first-child) {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  &__total {
+    @include rule(color, (xl: $color-brown-light-5, lg: $color-brown));
+    @include rule(font-size, (xl: 14px, lg: 16px));
+
+    line-height: 1.2;
+
+    @include rule(font-weight, (xl: 400, lg: 500));
+    @include rule(width, (xl: 130px, lg: auto));
+    @include rule(margin-right, (lg: auto));
+  }
+
+  &__price {
+    line-height: 1.2;
+    color: $color-main;
+
+    @include rule(font-weight, (lg: 500));
+    @include rule(font-size, (xl: 14px, lg: 16px));
+    @include rule(width, (xl: 200px, lg: auto));
+  }
+
+  &__bill {
+    display: flex;
+    align-items: center;
+    color: $color-main;
+    transition: color $ease-main;
+
+    @include screen('lg', min) {
+      flex: 1;
+    }
+
+    @include rule(width, (lg: 100%));
+    @include rule(margin-top, (lg: 16px));
+
+    &:hover {
+      color: $color-main-light;
+    }
+
+    svg {
+      width: 17px;
+      height: 18px;
+      flex-shrink: 0;
+      stroke: $color-main;
+      fill: none;
+      stroke-width: 20px;
+
+      @include rule(margin-right, (xl: 20px, lg: 7px));
+    }
+
+    span {
+      @include rule(font-size, (xl: 14px, lg: 16px));
+
+      line-height: 1.2;
+      text-decoration: underline;
+    }
+  }
+
+  &__button {
+    @include rule(margin, (xl: 10px -21px 0, lg: 20px 0 0));
+
+    font-size: 0;
+
+    .button {
+      width: 100%;
+
+      @include screen('lg') {
+        font-size: 16px;
+        height: 50px;
+      }
     }
   }
 }

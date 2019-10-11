@@ -5,7 +5,40 @@ mixin orders(data)
         +e.P.section-title!= section.title
         +e.items
           each item in section.items
-            +e.item
+            +e.item(class=item.class)
+              +e.head
+                +e.P.date!= item.date
+                +e.P.description!= item.description
+                +e.SPAN.status!= item.status
+
+              +e.popup
+                +e.orders
+                  if item.orders
+                    each order in item.orders
+                      +e.order
+                        +e.P.type!= order.type
+                        +e(order.man.icon ? 'a' : 'p')(href=(order.man.icon ? '#' : false)).man
+                          if order.man.icon
+                            +icon(order.man.icon)
+                            span!= order.man.name
+                          else
+                            +e.no-man Специалист не назначен
+
+                        if order.place
+                          +e.place
+                            +icon('advantage_pin')
+                            span!= order.place
+
+                +e.final
+                  +e.P.total Итого
+                  +e.P.price!= item.price
+                  +e.A.bill(href="#")
+                    +icon('bill')
+                    span Посмотреть чек
+
+                if item.button
+                  +e.button
+                    +button('button')(type="button")!= item.button
 
 mixin ui-kit-orders()
   +ui-section

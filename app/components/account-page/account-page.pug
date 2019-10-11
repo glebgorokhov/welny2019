@@ -9,7 +9,7 @@ mixin account-page(data, type)
 
         if (type === 1)
           +advantages(getData('advantages').welnyPlus)._account
-          +button()(href="#").__button Оформить подписку
+          +button()(href="#")._mid.__button Оформить подписку
         else
           +subscription(getData('subscription').desktop)._desktop
 
