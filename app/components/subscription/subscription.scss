@@ -6,8 +6,8 @@
   color: $color-brown;
 
   &_desktop {
-    background: rgba(orange, .15);
-    padding: 15px 15px 20px;
+    background: #fdf9f4;
+    padding: 21px 20px 20px 12px;
     border-radius: 10px;
   }
 
@@ -19,6 +19,10 @@
 
     &:not(:first-child) {
       margin-top: 26px;
+
+      #{$b}_desktop & {
+        margin-top: 14px;
+      }
     }
   }
 
@@ -39,12 +43,22 @@
     font-size: 16px;
     line-height: 1.2;
     flex: 1;
+
+    #{$b}_desktop & {
+      font-size: 14px;
+      color: #431d15;
+    }
   }
 
   &__value {
     margin-left: 10px;
     font-size: 16px;
     line-height: 1.2;
-    font-weight: 700;
+    font-weight: 500;
+
+    #{$b}_desktop & {
+      font-size: 14px;
+      color: #2d140d;
+    }
   }
 }
