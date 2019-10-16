@@ -4,6 +4,7 @@
   box-shadow: 0 4px 20px -9px rgba(0, 0, 0, .2);
   border: 1px solid #eee;
   flex-direction: column;
+  width: 100%;
 
   $b: &;
 
@@ -28,6 +29,8 @@
     line-height: 1.4;
     flex-grow: 1;
     color: $color-brown;
+    width: 100%;
+    box-sizing: border-box;
 
     #{$b}_static & {
       font-size: 16px;

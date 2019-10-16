@@ -4,7 +4,7 @@ include _internalIncludes
 doctype html
 html(lang='ru')
   include head
-  body
+  body(class=(bodyClass || false))
     +header
     +burger(class=(burgerActive ? 'is-active' : false))
     +b.MAIN.main

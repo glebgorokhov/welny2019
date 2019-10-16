@@ -27,7 +27,7 @@
     @include screen('lg', min) {
 
       &::placeholder {
-        opacity: 0;
+        color: transparent;
       }
     }
   }
@@ -35,13 +35,13 @@
   &__button {
     flex-shrink: 0;
     padding: 0 13px;
-    display: flex;
     align-items: center;
     line-height: 1;
     text-align: center;
     justify-content: center;
     appearance: none;
 
+    @include rule(display, (xl: flex, lg: block));
     @include rule(height, (xl: 33px, lg: 50px));
     @include rule(font-size, (xl: 14px, lg: 15px));
     @include rule(margin-left, (xl: 6px, lg: 0));

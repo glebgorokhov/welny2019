@@ -45,10 +45,20 @@ body {
   color: $color-brown;
 
   @include rule(background-image, (xl: url('../images/bg.jpg'), lg: url('../images/bg_mobile.jpg')));
+
+  &.body_index {
+    background-image: url(../images/index_dots.png), url(../images/bg_mobile.jpg);
+    background-size: auto, cover;
+    background-position: center;
+  }
 }
 
 .main {
   flex-grow: 1;
 
   @include rule(padding, (xl: 20px 0, lg: 25px 0 45px));
+}
+
+select::-ms-expand {
+  display: none;
 }

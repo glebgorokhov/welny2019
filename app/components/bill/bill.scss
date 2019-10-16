@@ -42,7 +42,7 @@
   $b: &;
 
   td {
-    @include rule(padding-top, (xl: 5px, lg: 2px));
+    @include rule(padding-top, (xl: 2px, lg: 2px));
 
     & + td {
       text-align: right;
