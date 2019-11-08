@@ -49,8 +49,7 @@
   }
 
   &__socials {
-    @include rule(display, (xl: none, lg: flex));
-
+    display: flex;
     align-items: center;
     justify-content: center;
     font-size: 0;
@@ -83,8 +82,7 @@
   }
 
   &__copyright {
-    @include rule(display, (xl: none, lg: block));
-
+    display: block;
     padding-top: 10px;
     border-top: 1px solid $color-brown-light-1;
     font-size: 12px;

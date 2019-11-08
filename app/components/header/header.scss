@@ -64,8 +64,7 @@
   }
 
   &__burger-button {
-    @include rule(display, (xl: none, lg: flex));
-
+    display: flex;
     width: 23px;
     height: 19px;
     flex-direction: column;

@@ -1,12 +1,7 @@
 mixin footer()
   +b.footer&attributes(attributes)
     .container
-      +e.UL.menu.hide-lg
-        each item in getData('footer').menuDesktop
-          +e.LI.item
-            +e.A.link(href="#")!= item
-
-      +e.UL.menu.show-lg
+      +e.UL.menu
         each item in getData('footer').menuMobile
           +e.LI.item
             +e.A.link(href="#")!= item

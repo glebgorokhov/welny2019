@@ -18,6 +18,17 @@
     span {
       color: $color-main;
     }
+
+    &-only {
+      @include screen('lg') {
+        color: white;
+        padding: 0 10px;
+
+        span {
+          color: $color-main;
+        }
+      }
+    }
   }
 
   &__item {
@@ -61,6 +72,17 @@
       &_stroke {
         fill: transparent;
         stroke: white;
+      }
+    }
+
+    #{$b}_mobile-only & {
+      @include screen('lg') {
+        fill: white;
+
+        &_stroke {
+          fill: transparent;
+          stroke: white;
+        }
       }
     }
   }

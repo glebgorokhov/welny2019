@@ -5,12 +5,12 @@ block head
 
 block content
   .container
-    +section._mobile
+    +section._mobile-only
       +section-header
         +section-title Спасибо, что пользуетесь Welny
 
       +section-content
-        +subscription(getData('subscription').mobile)._mobile
+        +subscription(getData('subscription').mobile)
 
       +section-buttons
         +button()(href="#")._mid.__button Заказать

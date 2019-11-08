@@ -2,6 +2,8 @@ mixin burger()
   +b.burger&attributes(attributes)
     +icon('close').__close
 
+    +button()(href="#")._big.__button Заказать
+
     +e.UL.menu
       each item in getData('burger')
         +e.LI.item
