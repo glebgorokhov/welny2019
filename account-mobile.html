@@ -24,15 +24,15 @@
 <body>
     <div class="header">
         <div class="container">
-            <div class="header__left"><a class="header__logo" href="#"><svg><use xlink:href="assets/images/icon.svg#icon_logo"></use></svg></a>
-                <p class="header__logo-text">Кабинет</p>
-            </div><a class="button header__button" href="#">Сделать заказ</a>
-            <div class="header__right"><a class="header__link" href="#">Выйти</a>
+            <div class="header__left"><a class="header__logo" href="#"><svg><use xlink:href="assets/images/icon.svg#icon_logo"></use></svg></a><!-- +e.P.logo-text Кабинет-->
+            </div><!-- +button()(href="#").__button Сделать заказ-->
+            <div class="header__right">
+                <!-- +e.A.link(href="#") Выйти-->
                 <div class="header__burger-button"><span></span></div>
             </div>
         </div>
     </div>
-    <div class="burger"><svg class="burger__close"><use xlink:href="assets/images/icon.svg#icon_close"></use></svg>
+    <div class="burger"><svg class="burger__close"><use xlink:href="assets/images/icon.svg#icon_close"></use></svg><a class="button button_big burger__button" href="#">Заказать</a>
         <ul class="burger__menu">
             <li class="burger__item"><a class="burger__link" href="#"><span class="burger__icon burger__icon_arrow"><svg><use xlink:href="assets/images/icon.svg#icon_arrow_burger"></use></svg></span><span class="burger__text">Аккаунт</span></a></li>
             <li class="burger__item"><a class="burger__link" href="#"><span class="burger__icon burger__icon_arrow"><svg><use xlink:href="assets/images/icon.svg#icon_arrow_burger"></use></svg></span><span class="burger__text">Welny+</span></a></li>
@@ -44,7 +44,7 @@
     </div>
     <main class="main" role="main">
         <div class="container">
-            <div class="section section_mobile">
+            <div class="section section_mobile-only">
                 <div class="section__header">
                     <h1 class="section__title">Аккаунт</h1>
                 </div>
@@ -67,13 +67,7 @@
     </main>
     <div class="footer">
         <div class="container">
-            <ul class="footer__menu hide-lg">
-                <li class="footer__item"><a class="footer__link" href="#">О нас</a></li>
-                <li class="footer__item"><a class="footer__link" href="#">FAQ</a></li>
-                <li class="footer__item"><a class="footer__link" href="#">Контакты</a></li>
-                <li class="footer__item"><a class="footer__link" href="#">Условия использования</a></li>
-            </ul>
-            <ul class="footer__menu show-lg">
+            <ul class="footer__menu">
                 <li class="footer__item"><a class="footer__link" href="#">О Welny</a></li>
                 <li class="footer__item"><a class="footer__link" href="#">Контакты</a></li>
                 <li class="footer__item"><a class="footer__link" href="#">Пресса о нас</a></li>
