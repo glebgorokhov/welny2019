@@ -1,3 +1,19 @@
+.is-loading {
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-image: url('../images/rolling.svg');
+    background-size: 20px 20px;
+    background-color: rgba($color-brown, .3);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
 .button {
   display: inline-block;
   padding: 0 15px;
@@ -5,7 +21,7 @@
   vertical-align: middle;
   box-sizing: border-box;
   background-color: $color-main;
-  transition: background-color $ease-main, opacity $ease-main;
+  transition: background-color $ease-main, opacity $ease-main, color $ease-main;
   cursor: pointer;
   font-size: 14px;
   line-height: 38px;
@@ -14,8 +30,17 @@
   appearance: none;
   border-radius: 5px;
   text-align: center;
+  position: relative;
 
   $b: &;
+
+  &.is-loading {
+    color: transparent;
+
+    &::after {
+      background-color: transparent;
+    }
+  }
 
   &[disabled] {
     opacity: .5;

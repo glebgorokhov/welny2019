@@ -1,0 +1,13 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = projectName + ' | buttons'
+
+block content
+  .container
+    +section._mobile
+      +section-buttons
+        +button('button')(style="margin-bottom: 20px;", type="button")._mid.__button Скопировать код: PRLJM
+        +button('button')(style="margin-bottom: 20px;", type="button")._mid.__button.is-loading Скопировать код: PRLJM
+        +button('button')(style="margin-bottom: 20px;", type="button", disabled)._mid.__button Скопировать код: PRLJM
+        div(style="padding: 40px; display: flex; align-items: center; justify-content: center; position: relative; background: white; text-align: center; border-radius: 3px; overflow: hidden;").is-loading Рандомный блок с лоадером
