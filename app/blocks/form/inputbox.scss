@@ -1,6 +1,8 @@
 .inputbox {
   display: block;
 
+  $b: &;
+
   &__label {
     @include rule(margin-bottom, (xl: 12px, lg: 9px));
     @include rule(font-size, (xl: 16px, lg: 18px));
@@ -10,5 +12,68 @@
 
   &__wrapper {
     position: relative;
+  }
+
+  &__suggestions {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+
+    @include rule(max-width, (xl: 300px, lg: 100%));
+    @include rule(font-size, (xl: 14px, lg: 16px));
+    @include rule(max-height, (xl: 142px, lg: 125px));
+
+    color: $color-basic;
+    border: 1px solid #d3d3d3;
+    border-radius: 3px;
+    margin-top: 2px;
+    background: white;
+    z-index: 10;
+    overflow: auto;
+    box-shadow: 0 3px 5px 0 #00000036;
+    line-height: normal;
+    box-sizing: border-box;
+
+    li {
+      @include rule(padding, (xl: 8px 9px, lg: 10px 18px));
+
+      transition: background-color $ease-main, color $ease-main;
+      cursor: pointer;
+
+      &:hover {
+        color: white;
+        background-color: $color-main;
+      }
+    }
+  }
+
+  &__calendar {
+
+  }
+
+  &_suggestions {
+    position: relative;
+
+    input:focus + #{$b}__suggestions {
+      display: block;
+    }
+  }
+
+  &_calendar {
+    position: relative;
+
+    .calendar {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      margin-top: 5px;
+    }
+
+    input:focus + .calendar {
+      display: block;
+    }
   }
 }

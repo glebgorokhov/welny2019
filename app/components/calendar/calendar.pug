@@ -1,0 +1,36 @@
+mixin calendar()
+  +b.calendar&attributes(attributes)
+    +e.block
+      +e.wrapper
+        +e.head
+          +e.BUTTON.button(type="button")._prev
+            +icon('arrow_left')
+
+          +e.P.month Ноябрь, 2019
+
+          +e.BUTTON.button(type="button")._next
+            +icon('arrow_left')
+
+        +e.titles
+          each title in ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс']
+            +e.title!= title
+
+        +e.days
+          each day in getData('days')
+            +e.day(class=day.class)!= day.text
+
+mixin ui-kit-calendar()
+  +ui-section
+    +ui-section-head
+      +ui-title Компонент calendar
+      +ui-path
+        p Компонент: components/calendar/calendar
+      +ui-description
+        p Описание компонента
+
+    +ui-section-content()
+      +calendar
+
+    //- При +ui-section-content(true) контейнер отсутствует
+    //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()
+    //- Рамка вокруг особой секции: +ui-special()

@@ -44,7 +44,7 @@ body {
   font-weight: 300;
   color: $color-brown;
 
-  @include rule(background-image, (xl: url('../images/bg.jpg'), lg: url('../images/bg_mobile.jpg')));
+  @include rule(background-image, (xl: url('../images/bg_mobile.jpg')));
 
   &.body_index {
     background-image: url(../images/index_dots.png), url(../images/bg_mobile.jpg);

@@ -16,7 +16,9 @@ block content
           +col({xl: 6, lg: 12})
             +inputbox
               +label Дата
-              +input(type="date" name="date")
+              +inputbox._calendar
+                +input(type="text" name="date" placeholder="дд.мм.гггг")
+                +calendar
 
           +col({xl: 6, lg: 12})
             +inputbox

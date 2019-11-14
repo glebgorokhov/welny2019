@@ -14,10 +14,19 @@ block content
 
       +section-content
         +grid
-          +col({xl: 6, lg: 12})
+          +col({xl: 12})
             +inputbox
               +label Улица, дом
-              +input(type="text" name="address")
+              +inputbox._suggestions
+                +input(type="text" name="address")
+                +e.UL.suggestions
+                  li Москва
+                  li Санкт-Петербург
+                  li Самара
+                  li Тольятти
+                  li Санкт-Петербург
+                  li Самара
+                  li Тольятти
 
           +col({xl: 6, lg: 12})
             +inputbox

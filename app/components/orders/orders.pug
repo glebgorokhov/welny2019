@@ -14,20 +14,21 @@ mixin orders(data)
               +e.popup
                 +e.orders
                   if item.orders
-                    each order in item.orders
-                      +e.order
-                        +e.P.type!= order.type
-                        +e(order.man.icon ? 'a' : 'p')(href=(order.man.icon ? '#' : false)).man
-                          if order.man.icon
-                            +icon(order.man.icon)
-                            span!= order.man.name
-                          else
-                            +e.no-man Специалист не назначен
+                    +e.orders-wrap
+                      each order in item.orders
+                        +e.order
+                          +e.P.type!= order.type
+                          +e(order.man.icon ? 'a' : 'p')(href=(order.man.icon ? '#' : false)).man
+                            if order.man.icon
+                              +icon(order.man.icon)
+                              span!= order.man.name
+                            else
+                              +e.no-man Специалист не назначен
 
-                        if order.place
-                          +e.place
-                            +icon('advantage_pin')
-                            span!= order.place
+                    if item.place
+                      +e.place
+                        +icon('advantage_pin')
+                        span!= item.place
 
                 +e.final
                   +e.P.total Итого

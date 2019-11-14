@@ -5,11 +5,11 @@
   padding: 12px 15px 36px;
   color: $color-brown;
 
-  @include screen('lg', min) {
-    background: #fdf9f4;
-    padding: 21px 20px 20px 12px;
-    border-radius: 10px;
-  }
+  // @include screen('lg', min) {
+  //   background: #fdf9f4;
+  //   padding: 21px 20px 20px 12px;
+  //   border-radius: 10px;
+  // }
 
   $b: &;
 
@@ -20,9 +20,9 @@
     &:not(:first-child) {
       margin-top: 26px;
 
-      @include screen('lg', min) {
-        margin-top: 14px;
-      }
+      // @include screen('lg', min) {
+      //   margin-top: 14px;
+      // }
     }
   }
 
@@ -44,10 +44,10 @@
     line-height: 1.2;
     flex: 1;
 
-    @include screen('lg', min) {
-      font-size: 14px;
-      color: #431d15;
-    }
+    // @include screen('lg', min) {
+    //   font-size: 14px;
+    //   color: #431d15;
+    // }
   }
 
   &__value {
@@ -56,9 +56,9 @@
     line-height: 1.2;
     font-weight: 500;
 
-    @include screen('lg', min) {
-      font-size: 14px;
-      color: #2d140d;
-    }
+    // @include screen('lg', min) {
+    //   font-size: 14px;
+    //   color: #2d140d;
+    // }
   }
 }

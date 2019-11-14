@@ -2,7 +2,7 @@
   display: block;
   color: white;
 
-  @include rule(background, (xl: rgba($color-brown, .5), lg: $color-brown-1));
+  @include rule(background, (xl: $color-brown-1));
   @include rule(padding, (xl: 15px 0, lg: 14px 0));
   @include rule(box-shadow, (lg: 0 9px 15px 0 rgba(black, .25)));
 
@@ -32,7 +32,7 @@
     svg {
       @include rule(width, (xl: 45px, lg: 28px));
       @include rule(height, (xl: 45px, lg: 28px));
-      @include rule(fill, (xl: white, lg: $color-main));
+      @include rule(fill, (xl: $color-main));
     }
   }
 

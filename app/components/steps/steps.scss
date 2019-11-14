@@ -28,7 +28,7 @@
       height: 2px;
       flex-grow: 1;
 
-      @include rule(background, (xl: #111, lg: $color-brown));
+      @include rule(background, (xl: $color-brown));
     }
 
     #{$b}__item:first-child &::before, #{$b}__item:last-child &::after {

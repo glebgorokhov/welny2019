@@ -57,10 +57,17 @@
   &_mobile {
     padding: 0;
     background: transparent;
-    min-height: calc(100vh - 200px);
+
+    @include rule(min-height, (xl: calc(100vh - 115px), lg: calc(100vh - 200px)));
+
     display: flex;
     flex-direction: column;
     position: relative;
+    max-width: 410px;
+
+    &_orders {
+      max-width: 710px;
+    }
 
     &-only {
       @include screen('lg', max) {
@@ -124,10 +131,8 @@
     font-size: 14px;
     line-height: 20px;
 
-    #{$b}_mobile-only & {
-      @include screen('lg') {
-        color: white;
-      }
+    #{$b}_mobile & {
+      color: white;
     }
 
     span {
