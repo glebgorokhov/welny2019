@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Welny | Попробуйте Welny+</title>
+    <title>Welny | Порядок оплаты</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
@@ -43,29 +43,18 @@
         <div class="burger__overlay"></div>
     </div>
     <main class="main" role="main">
-        <div class="container">
-            <div class="section section_mobile">
-                <div class="section__header">
-                    <h1 class="section__title">Попробуйте Welny+!</h1>
-                </div>
-                <div class="section__content">
-                    <ul class="advantages advantages_mobile">
-                        <li class="advantages__item"><svg class="advantages__icon"><use xlink:href="assets/images/icon.svg#icon_advantage_hands"></use></svg>
-                            <div class="advantages__text">Польза массажа зависит от его регулярности. Заботьтесь о себе чаще с подпиской Welny+, дающей доступ к скидкам до <span>24%</span> на каждый час массажа.</div>
-                        </li>
-                        <li class="advantages__item"><svg class="advantages__icon"><use xlink:href="assets/images/icon.svg#icon_advantage_pig"></use></svg>
-                            <div class="advantages__text">С ценой Welny+ от <span>999 рублей</span> - попробовать ничего не стоит. Вы сразу же получаете скидку на ваш заказ.</div>
-                        </li>
-                        <li class="advantages__item"><svg class="advantages__icon"><use xlink:href="assets/images/icon.svg#icon_advantage_clock"></use></svg>
-                            <div class="advantages__text">Только вы решаете, когда и на какой срок вам оформить подписку. Подписка не продляется автоматически.</div>
-                        </li>
-                        <li class="advantages__item"><svg class="advantages__icon advantages__icon_stroke"><use xlink:href="assets/images/icon.svg#icon_advantage_info"></use></svg>
-                            <div class="advantages__text">Все данные о вашей подписке доступны в меню</div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="section__buttons">
-                    <p class="section__buttons-text"><span>Оформите подписку</span> во время вашего заказа!</p><a class="button button_mid section__button" href="#">Заказать</a>
+        <div class="popup">
+            <div class="popup__container">
+                <div class="popup-payment">
+                    <div class="popup-payment__content">
+                        <p class="popup-payment__title">Порядок оплаты</p>
+                        <ol class="popup-payment__list">
+                            <li class="popup-payment__item">После оформления заказа мы блокируем стоимость услуги на вашей карте. Банк проверяет, есть ли на вашем счете данная сумма, и резервирует ее.</li>
+                            <li class="popup-payment__item">Вы можете отменить заказ в любой момент до начала процедуры.</li>
+                            <li class="popup-payment__item">В случае отмены заказа не менее, чем за 2 часа до начала процедуры мы мгновенно разблокируем средства в полном объеме.</li>
+                            <li class="popup-payment__item">Стоимость услуги будет списана с вашего счета только после завершения процедуры.</li>
+                        </ol>
+                    </div><button class="button popup-payment__button" type="button">ОК</button>
                 </div>
             </div>
         </div>

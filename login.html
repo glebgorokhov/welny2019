@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Welny | Попап</title>
+    <title>Welny | Авторизация</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
@@ -43,13 +43,19 @@
         <div class="burger__overlay"></div>
     </div>
     <main class="main" role="main">
-        <div class="popup">
-            <div class="popup__container">
-                <div class="popup__block"><svg class="popup__close"><use xlink:href="assets/images/icon.svg#icon_close"></use></svg>
-                    <div class="popup__top">
-                        <p class="popup__title">Яна</p>
-                        <div class="popup__image"><img src="assets/images/avatar.jpg" /></div>
-                    </div><button class="popup__button" type="button">Удалить из избранных</button>
+        <div class="container">
+            <div class="popup-login">
+                <div class="popup-login__container">
+                    <div class="popup-login__header">
+                        <p class="popup-login__title">Авторизация</p>
+                        <p class="popup-login__subtitle">Введите номер телефона</p>
+                    </div>
+                    <form class="popup-login__content" action="#" method="post">
+                        <div class="inputbox inputbox_relative popup-login__inputbox"><input class="input input_login input_phone" type="text" name="tel" placeholder="+7 (___) ___-__-__" required="required" />
+                            <div class="inputbox__country"><img src="assets/images/russia.svg" /></div>
+                        </div>
+                        <div class="popup-login__text">Это позволит вам заходить в личный кабинет и просматривать свои заказы</div><button class="button button_mid popup-login__button" type="submit" disabled="disabled">Получить код</button>
+                    </form>
                 </div>
             </div>
         </div>
