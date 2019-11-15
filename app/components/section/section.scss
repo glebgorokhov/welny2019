@@ -58,7 +58,7 @@
     padding: 0;
     background: transparent;
 
-    @include rule(min-height, (xl: calc(100vh - 115px), lg: calc(100vh - 200px)));
+    @include rule(min-height, (xl: calc(100vh - 270px), lg: calc(100vh - 200px)));
 
     display: flex;
     flex-direction: column;

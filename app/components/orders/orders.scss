@@ -3,30 +3,19 @@
 
   $b: &;
 
-  @include screen('lg', min) {
-    background: white;
-    border-radius: 10px;
-    padding: 20px;
-  }
-
   &__section-title {
     line-height: 1.2;
     font-weight: 400;
-
-    @include rule(font-size, (xl: 15px, lg: 16px));
-    @include rule(margin-bottom, (xl: 13px, lg: 17px));
-
-    @include screen('lg') {
-      color: white;
-      font-size: 16px;
-      padding: 0 16px;
-    }
+    font-size: 16px;
+    margin-bottom: 17px;
+    color: white;
+    padding: 0 16px;
   }
 
   &__section {
 
     & + & {
-      @include rule(margin-top, (xl: 31px, lg: 26px));
+      margin-top: 26px;
     }
   }
 
@@ -35,15 +24,12 @@
 
   &__item {
     position: relative;
+    border-radius: 5px;
+    background: white;
+    padding: 16px 18px 18px;
 
-    @include screen('lg') {
-      border-radius: 5px;
-      background: white;
-      padding: 16px 18px 18px;
-
-      &:not(:first-child) {
-        margin-top: 10px;
-      }
+    &:not(:first-child) {
+      margin-top: 10px;
     }
 
     &.is-active {
@@ -56,45 +42,28 @@
     position: relative;
     z-index: 2;
 
-    @include screen('lg', min) {
-      border-radius: 10px;
-      padding: 10px 21px;
-      align-items: center;
-      display: flex;
-      height: 49px;
-
-      #{$b}__item:nth-of-type(2n + 1) & {
-        background-color: #f8f8f8;
-      }
-    }
-
-
     > *:not(:first-child) {
-      @include rule(margin-left, (xl: 10px, lg: 0));
-      @include rule(margin-top, (lg: 15px));
+      margin-top: 15px;
     }
   }
 
   &__date {
-    @include rule(font-size, (xl: 14px, lg: 16px));
-    @include rule(color, (xl: #666666, lg: $color-brown));
-    @include rule(width, (xl: 190px, lg: 100%));
-
+    font-size: 16px;
+    color: $color-brown;
+    width: 100%;
     line-height: 1;
   }
 
   &__description {
-    @include rule(font-size, (xl: 14px, lg: 16px));
-    @include rule(color, (xl: #666666, lg: $color-brown));
-
+    font-size: 16px;
+    color: $color-brown;
     line-height: 1;
     flex-shrink: 0;
   }
 
   &__status {
-    @include rule(font-size, (xl: 14px, lg: 16px));
-    @include rule(text-align, (xl: right, lg: left));
-
+    font-size: 16px;
+    text-align: left;
     color: $color-main;
     line-height: 1;
     flex: 1;
@@ -104,8 +73,7 @@
     transition: opacity $ease-main;
     display: block;
     box-sizing: border-box;
-
-    @include rule(width, (lg: 100%));
+    width: 100%;
 
     &:hover {
       opacity: .5;
@@ -147,21 +115,7 @@
   &__popup {
     background: white;
     display: none;
-
-    @include screen('lg', min) {
-      overflow: hidden;
-      padding: 49px 21px 0;
-      border-radius: 10px;
-      box-shadow: 0 15px 15px 0 rgba(0, 0, 0, .25);
-      top: 0;
-      left: 0;
-      right: 0;
-      position: absolute;
-    }
-
-    @include screen('lg') {
-      padding: 18px 0 0;
-    }
+    padding: 18px 0 0;
 
     #{$b}__item.is-active & {
       display: block;
@@ -169,58 +123,40 @@
   }
 
   &__orders-wrap {
-    @include rule(width, (xl: 340px, lg: 100%));
-
+    width: 100%;
     flex-shrink: 0;
   }
 
   &__orders {
     align-items: flex-end;
-
-    @include rule(display, (xl: flex, lg: block));
-    @include rule(padding-top, (xl: 18px, lg: 16px));
-
-    @include screen('lg', min) {
-
-      #{$b}__item:nth-of-type(even) & {
-        border-top: 1px solid #d5d0cf;
-      }
-    }
-
-    @include screen('lg') {
-      border-top: 1px solid #d5d0cf;
-    }
+    display: block;
+    padding-top: 16px;
+    border-top: 1px solid #d5d0cf;
   }
 
   &__order {
-    @include screen('lg', min) {
-      display: flex;
-      align-items: center;
-    }
-
     &:not(:first-child) {
-      @include rule(margin-top, (xl: 21px, lg: 14px));
+      margin-top: 14px;
     }
 
     > *:not(:first-child) {
-      @include rule(margin-left, (xl: 10px, lg: 0));
-      @include rule(margin-top, (lg: 12px));
+      margin-left: 0;
+      margin-top: 12px;
     }
   }
 
   &__type {
     line-height: 1.2;
 
-    @include rule(font-size, (xl: 14px, lg: 16px));
-    @include rule(color, (xl: #736357, lg: $color-brown));
-    @include rule(width, (xl: 130px, lg: 100%));
+    font-size: 16px;
+    color: $color-brown;
+    width: 100%;
   }
 
   &__man {
     display: flex;
     align-items: center;
-
-    @include rule(width, (xl: 200px, lg: 100%));
+    width: 100%;
 
     &[href] {
       color: $color-main;
@@ -233,9 +169,8 @@
     }
 
     svg {
-      @include rule(width, (xl: 23px, lg: 17px));
-      @include rule(margin-right, (xl: 15px, lg: 7px));
-
+      width: 17px;
+      margin-right: 7px;
       height: 22px;
       flex-shrink: 0;
       stroke: $color-main;
@@ -244,25 +179,22 @@
     }
 
     span {
-      @include rule(font-size, (xl: 14px, lg: 16px));
-
+      font-size: 16px;
       line-height: 1.2;
     }
   }
 
   &__no-man {
-    @include rule(font-size, (xl: 14px, lg: 16px));
-
+    font-size: 16px;
     line-height: 1.2;
     color: $color-main;
   }
 
   &__place {
-    @include rule(color, (xl: $color-brown-light-5, lg: $color-brown));
-    @include rule(font-size, (xl: 14px, lg: 16px));
-    @include rule(margin-left, (xl: 10px, lg: 0));
-    @include rule(margin-top, (lg: 14px));
-
+    color: $color-brown;
+    font-size: 16px;
+    margin-left: 0;
+    margin-top: 14px;
     line-height: 1.2;
     display: flex;
     align-items: center;
@@ -272,9 +204,7 @@
       width: 17px;
       height: 22px;
       flex-shrink: 0;
-
-      @include rule(margin-right, (xl: 20px, lg: 7px));
-
+      margin-right: 7px;
       fill: $color-main;
     }
 
@@ -289,36 +219,29 @@
     display: flex;
     align-items: center;
 
-    @include rule(padding-top, (xl: 17px, lg: 12px));
-    @include rule(margin-top, (xl: 14px, lg: 16px));
-    @include rule(flex-wrap, (lg: wrap));
-
-    @include screen('lg', min) {
-
-      > *:not(:first-child) {
-        margin-left: 10px;
-      }
-    }
+    @include rule(padding-top, (xl: 12px));
+    @include rule(margin-top, (xl: 16px));
+    @include rule(flex-wrap, (xl: wrap));
   }
 
   &__total {
-    @include rule(color, (xl: $color-brown-light-5, lg: $color-brown));
-    @include rule(font-size, (xl: 14px, lg: 16px));
+    @include rule(color, (xl: $color-brown));
+    @include rule(font-size, (xl: 16px));
 
     line-height: 1.2;
 
-    @include rule(font-weight, (xl: 400, lg: 500));
-    @include rule(width, (xl: 130px, lg: auto));
-    @include rule(margin-right, (lg: auto));
+    @include rule(font-weight, (xl: 500));
+    @include rule(width, (xl: auto));
+    @include rule(margin-right, (xl: auto));
   }
 
   &__price {
     line-height: 1.2;
     color: $color-main;
 
-    @include rule(font-weight, (lg: 500));
-    @include rule(font-size, (xl: 14px, lg: 16px));
-    @include rule(width, (xl: 200px, lg: auto));
+    @include rule(font-weight, (xl: 500));
+    @include rule(font-size, (xl: 16px));
+    @include rule(width, (xl: auto));
   }
 
   &__bill {
@@ -327,12 +250,8 @@
     color: $color-main;
     transition: color $ease-main;
 
-    @include screen('lg', min) {
-      flex: 1;
-    }
-
-    @include rule(width, (lg: 100%));
-    @include rule(margin-top, (lg: 16px));
+    @include rule(width, (xl: 100%));
+    @include rule(margin-top, (xl: 16px));
 
     &:hover {
       color: $color-main-light;
@@ -346,11 +265,11 @@
       fill: none;
       stroke-width: 20px;
 
-      @include rule(margin-right, (xl: 20px, lg: 7px));
+      @include rule(margin-right, (xl: 7px));
     }
 
     span {
-      @include rule(font-size, (xl: 14px, lg: 16px));
+      @include rule(font-size, (xl: 16px));
 
       line-height: 1.2;
       text-decoration: underline;
@@ -358,17 +277,14 @@
   }
 
   &__button {
-    @include rule(margin, (xl: 10px -21px 0, lg: 20px 0 0));
+    @include rule(margin, (xl: 20px 0 0));
 
     font-size: 0;
 
     .button {
       width: 100%;
-
-      @include screen('lg') {
-        font-size: 16px;
-        height: 50px;
-      }
+      font-size: 16px;
+      height: 50px;
     }
   }
 }
