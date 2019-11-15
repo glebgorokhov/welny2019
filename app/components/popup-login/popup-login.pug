@@ -38,7 +38,7 @@ mixin ui-kit-popup-login()
         p Компонент: components/popup-login/popup-login
 
     +ui-section-content()
-      +popup-login
+      +popup-login(getData('login').login)
 
     //- При +ui-section-content(true) контейнер отсутствует
     //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()
