@@ -1,0 +1,103 @@
+.popup-login {
+  display: block;
+  background: white;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  box-sizing: border-box;
+
+  @include rule(max-width, (xl: 645px, lg: 390px));
+  @include rule(border-radius, (xl: 16px, lg: 5px));
+  @include rule(padding, (xl: 23px 30px 26px, lg: 5px 15px 15px));
+
+  $b: &;
+
+  &__header {
+
+  }
+
+  &__title {
+    @include rule(font-size, (xl: 24px, lg: 20px));
+
+    line-height: 30px;
+    color: #2d140d;
+  }
+
+  &__subtitle {
+    font-size: 16px;
+    line-height: 21px;
+    color: #666;
+
+    &:not(:first-child) {
+      @include rule(margin-top, (xl: 10px, lg: 8px));
+    }
+  }
+
+  &__content {
+    &:not(:first-child) {
+      margin-top: 28px;
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 17px;
+    color: #aeaeae;
+    text-align: left;
+
+    a {
+      color: #3d51c8;
+      text-decoration: underline;
+      transition: color $ease-main;
+
+      &:hover {
+        color: $color-main;
+      }
+    }
+
+    &:not(:first-child) {
+      margin-top: 16px;
+    }
+  }
+
+  &__button {
+    width: 100%;
+
+    &:not(:first-child) {
+      margin-top: 20px;
+    }
+  }
+
+  &__container {
+    @include rule(max-width, (xl: 280px, lg: none));
+
+    margin: 0 auto;
+  }
+
+  &__arrow-link {
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    line-height: 1;
+    fill: $color-brown;
+    color: $color-brown;
+    transition: fill $ease-main, color $ease-main;
+
+    &:hover {
+      fill: $color-main;
+      color: $color-main;
+    }
+
+    svg {
+      width: 14px;
+      height: 10px;
+      margin-right: 10px;
+    }
+
+    &:not(:first-child) {
+      margin-top: 17px
+    }
+  }
+}

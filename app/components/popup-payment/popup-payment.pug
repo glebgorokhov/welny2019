@@ -1,0 +1,23 @@
+mixin popup-payment()
+  +b.popup-payment&attributes(attributes)
+    +e.content
+      +e.P.title Порядок оплаты
+      +e.OL.list
+        each item in getData('payment-order')
+          +e.LI.item!= item
+
+    +button('button')(type="button").__button ОК
+
+mixin ui-kit-popup-payment()
+  +ui-section
+    +ui-section-head
+      +ui-title Порядок оплаты
+      +ui-path
+        p Компонент: components/popup-payment/popup-payment
+
+    +ui-section-content()
+      +popup-payment
+
+    //- При +ui-section-content(true) контейнер отсутствует
+    //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()
+    //- Рамка вокруг особой секции: +ui-special()

@@ -3,6 +3,39 @@
 
   $b: &;
 
+  &_relative {
+    position: relative;
+  }
+
+  &__error-text {
+    font-size: 14px;
+    line-height: normal;
+    font-weight: 400;
+    color: $color-red;
+    text-align: left;
+
+    &:not(:first-child) {
+      margin-top: 10px;
+    }
+  }
+
+  &__country {
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
   &__label {
     @include rule(margin-bottom, (xl: 12px, lg: 9px));
     @include rule(font-size, (xl: 16px, lg: 18px));

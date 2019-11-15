@@ -1,0 +1,45 @@
+mixin popup-login(data)
+  +b.popup-login&attributes(attributes)
+    +e.container
+      +e.header
+        +e.P.title!= data.title
+        +e.P.subtitle!= data.subtitle
+
+      +e.FORM.content(action="#" method="post")
+        +inputbox._relative.__inputbox
+          if data.phone
+            +input(type="text" name="tel" placeholder="+7 (___) ___-__-__" required="required")._login._phone(class=(data.error ? 'has-error' : false))
+            +e.country
+              img(src="assets/images/russia.svg")
+
+          if data.code
+            +input(type="text" name="code" placeholder="Код подтверждения" required="required")._login(class=(data.error ? 'has-error' : false))
+
+          if data.error
+            +e.error-text!= data.error
+
+        if data.text
+          +e.text!= data.text
+
+        if data.button
+          +button('button')(type="submit", disabled=data.button.disabled)._mid.__button!= data.button.text
+
+        if data.back
+          +e.A.arrow-link(href="#")
+            +icon('arrow_left')
+            span Назад
+
+
+mixin ui-kit-popup-login()
+  +ui-section
+    +ui-section-head
+      +ui-title Попап авторизации
+      +ui-path
+        p Компонент: components/popup-login/popup-login
+
+    +ui-section-content()
+      +popup-login
+
+    //- При +ui-section-content(true) контейнер отсутствует
+    //- Для перечисления инлайновых блоков используется миксин +ui-elements-list()
+    //- Рамка вокруг особой секции: +ui-special()

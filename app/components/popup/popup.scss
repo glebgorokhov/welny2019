@@ -1,5 +1,5 @@
 .popup {
-  display: flex;
+  display: block;
   position: fixed;
   left: 0;
   top: 0;
@@ -7,12 +7,33 @@
   bottom: 0;
   z-index: 999;
   background: rgba($color-brown-4, .8);
-  align-items: center;
-  justify-content: center;
+  box-sizing: border-box;
+
+  @include rule(padding, (xl: 20px, lg: 14px));
+
+  overflow: auto;
+  text-align: center;
+  font-size: 0;
 
   $b: &;
 
+  &::before, &::after {
+    content: "";
+    display: inline-block;
+    font-size: 0;
+    height: 100%;
+    vertical-align: middle;
+    width: 0;
+  }
+
+  &__container {
+    vertical-align: middle;
+    display: inline-block;
+    width: 100%;
+  }
+
   &__block {
+    display: inline-block;
     width: 325px;
     background: white;
     border-radius: 10px;
@@ -21,7 +42,7 @@
     text-align: center;
     font-size: 0;
     overflow: hidden;
-    max-width: calc(100% - 20px);
+    max-width: 100%;
     box-sizing: border-box;
   }
 

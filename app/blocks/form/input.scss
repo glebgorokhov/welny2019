@@ -7,9 +7,34 @@
   border-radius: 3px;
   min-height: 0;
   background-color: white;
+  transition: color $ease-main, border-color $ease-main;
 
   @include rule(padding, (xl: 0 9px, lg: 0 18px));
   @include rule(font-size, (xl: 14px, lg: 16px));
+
+  &_login {
+    padding: 0 17px;
+
+    &::placeholder {
+      color: rgba(#666666, .5);
+    }
+  }
+
+  &_phone {
+    padding-left: 47px;
+  }
+
+  &::placeholder {
+    transition: color $ease-main;
+  }
+
+  &.has-error {
+    color: $color-red;
+
+    &::placeholder {
+      color: $color-red !important;
+    }
+  }
 }
 
 .textarea {

@@ -1,12 +1,18 @@
 mixin popup()
   +b.popup&attributes(attributes)
-    +e.block
-      +icon('close').__close
-      +e.top
-        +e.P.title Яна
-        +e.image
-          img(src="assets/images/avatar.jpg")
-      +e.BUTTON.button(type="button") Удалить из избранных
+    +e.container
+      +e.block
+        +icon('close').__close
+        +e.top
+          +e.P.title Яна
+          +e.image
+            img(src="assets/images/avatar.jpg")
+        +e.BUTTON.button(type="button") Удалить из избранных
+
+mixin popup-wrapper()
+  +b.popup&attributes(attributes)
+    +e.container
+      block
 
 mixin ui-kit-popup()
   +ui-section

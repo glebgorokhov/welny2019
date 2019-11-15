@@ -1,0 +1,8 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = projectName + ' | Подтверждение'
+
+block content
+  .container
+    +popup-login(getData('login').confirmError)
