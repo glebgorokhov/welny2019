@@ -29,5 +29,27 @@
     },
     "error": "Неверный код подтверждения",
     "back": true
+  },
+  "registrationFinal": {
+    "subtitle": "Пожалуйста, введите ваши данные, чтобы завершить регистрацию:",
+    "phone": true,
+    "name": true,
+    "lastName": true,
+    "email": true,
+    "button": {
+      "text": "Завершить регистрацию"
+    }
+  },
+  "accountUpdate": {
+    "personName": "ИВАН<br> ИВАНОВ",
+    "subtitle": "КРЕДИТЫ: 500 Р",
+    "subtitleClass": "_price",
+    "phone": true,
+    "name": true,
+    "lastName": true,
+    "email": true,
+    "button": {
+      "text": "Обновить"
+    }
   }
 }

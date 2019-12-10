@@ -16,6 +16,16 @@
 
   }
 
+  &__person-name {
+    font-size: 24px;
+    line-height: 30px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #666;
+
+    @include rule(padding-top, (lg: 15px));
+  }
+
   &__title {
     @include rule(font-size, (xl: 24px, lg: 20px));
 
@@ -30,6 +40,10 @@
 
     &:not(:first-child) {
       @include rule(margin-top, (xl: 10px, lg: 8px));
+    }
+
+    &_price {
+      font-weight: 400;
     }
   }
 
@@ -99,6 +113,13 @@
 
     &:not(:first-child) {
       margin-top: 17px;
+    }
+  }
+
+  &__inputbox {
+
+    &:not(:first-child) {
+      margin-top: 15px;
     }
   }
 }

@@ -135,6 +135,7 @@
   }
 
   &__order {
+
     &:not(:first-child) {
       margin-top: 14px;
     }
@@ -147,7 +148,6 @@
 
   &__type {
     line-height: 1.2;
-
     font-size: 16px;
     color: $color-brown;
     width: 100%;

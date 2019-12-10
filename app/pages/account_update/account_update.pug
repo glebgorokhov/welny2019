@@ -1,0 +1,13 @@
+extends ../../layouts/default
+
+block head
+  - var pageTitle = projectName + ' | Обновить аккаунт'
+
+block content
+  .container
+    +section._mobile._mobile_update
+      +section-header
+        +section-title Аккаунт
+
+      +section-content
+        +popup-login(getData('login').accountUpdate)

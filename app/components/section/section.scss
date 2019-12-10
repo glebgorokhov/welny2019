@@ -69,6 +69,10 @@
       max-width: 710px;
     }
 
+    &_update {
+      max-width: none;
+    }
+
     &-only {
       @include screen('lg', max) {
         padding: 0;
