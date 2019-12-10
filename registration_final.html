@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Welny | Карта верстки</title>
+    <title>Welny | Завершение регистрации</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
@@ -43,9 +43,22 @@
         <div class="burger__overlay"></div>
     </div>
     <main class="main" role="main">
-        <div class="sitemap">
-            <div class="container"><a class="sitemap__link" href="ui-kit.html">UI-kit (ui-kit.html)</a><a class="sitemap__link" href="welnyplus.html">Попробуйте Welny+ (welnyplus.html)</a><a class="sitemap__link" href="bill.html">Чек (bill.html)</a><a class="sitemap__link" href="add-review.html">Оставить отзыв (add-review.html)</a><a class="sitemap__link" href="popup.html">Попап сотрудника (popup.html)</a><!-- +e.A.link(href="account.html") Личный кабинет (account.html)-->
-                <!-- +e.A.link(href="account-page-two.html") Личный кабинет (2) (account-page-two.html)--><a class="sitemap__link" href="step-1.html">1. Массаж для одного (step-1.html)</a><a class="sitemap__link" href="step-1-two-people.html">1. Массаж для двоих (step-1-two-people.html)</a><a class="sitemap__link" href="step-1-parameters-1.html">1. Массаж для одного (параметры) (step-1-parameters-1.html)</a><a class="sitemap__link" href="step-1-parameters-two-people.html">1. Массаж для двоих (параметры) (step-1-parameters-two-people.html)</a><a class="sitemap__link" href="step-2.html">2. Выбор времени (step-2.html)</a><a class="sitemap__link" href="step-3.html">3. Укажите адрес (step-3.html)</a><a class="sitemap__link" href="step-3-address.html">3. Новый адрес (step-3-address.html)</a><a class="sitemap__link" href="step-4.html">4. Выбор подписки (step-4.html)</a><a class="sitemap__link" href="step-4-payment.html">4. Оплата заказа (step-4-payment.html)</a><a class="sitemap__link" href="step-4-payment-two-people.html">4. Оплата заказа для двоих (step-4-payment-two-people.html)</a><br><br><a class="sitemap__link" href="index.html">[Mobile] Главная (index.html)</a><br><br><a class="sitemap__link" href="thankyou.html">Спасибо, что пользуетесь Welny (thankyou.html)</a><a class="sitemap__link" href="welnyplus-mobile.html">Попробуйте Welny+ (welnyplus-mobile.html)</a><a class="sitemap__link" href="account-mobile.html">Аккаунт (account-mobile.html)</a><a class="sitemap__link" href="invite.html">Пригласить друзей (invite.html)</a><a class="sitemap__link" href="orders.html">Заказы (orders.html)</a><a class="sitemap__link" href="burger.html">Бургер-меню (burger.html)</a><br><br><a class="sitemap__link" href="buttons.html">Демонстрация кнопок (buttons.html)</a><a class="sitemap__link" href="popup_payment.html">Порядок оплаты (popup_payment.html)</a><a class="sitemap__link" href="login.html">Авторизация (login.html)</a><a class="sitemap__link" href="confirm.html">Подтверждение (confirm.html)</a><a class="sitemap__link" href="confirm_error.html">Подтверждение (ошибка) (confirm_error.html)</a><br><br><a class="sitemap__link" href="registration_final.html">Завершение регистрации (registration_final.html)</a><a class="sitemap__link" href="account_update.html">Обновить аккаунт (account_update.html)</a></div>
+        <div class="container">
+            <div class="popup-login">
+                <div class="popup-login__container">
+                    <div class="popup-login__header">
+                        <p class="popup-login__subtitle">Пожалуйста, введите ваши данные, чтобы завершить регистрацию:</p>
+                    </div>
+                    <form class="popup-login__content" action="#" method="post">
+                        <div class="inputbox inputbox_relative popup-login__inputbox"><input class="input input_login" type="text" name="name" placeholder="Имя" required="required" /></div>
+                        <div class="inputbox inputbox_relative popup-login__inputbox"><input class="input input_login" type="text" name="lastName" placeholder="Фамилия" required="required" /></div>
+                        <div class="inputbox inputbox_relative popup-login__inputbox"><input class="input input_login input_phone" type="text" name="tel" placeholder="+7 (___) ___-__-__" required="required" />
+                            <div class="inputbox__country"><img src="assets/images/russia.svg" /></div>
+                        </div>
+                        <div class="inputbox inputbox_relative popup-login__inputbox"><input class="input input_login" type="ext" name="email" placeholder="E-mail" required="required" /></div><button class="button button_mid popup-login__button" type="submit">Завершить регистрацию</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </main>
     <div class="footer">
